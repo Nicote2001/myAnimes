@@ -2,15 +2,14 @@
     <app-carousel [recommandationAnimes] = "recommandationAnimes"></app-carousel>
 </div>
 <div>
-    <div class="row row-cols-1 row-cols-md-4 g-4 mt-1 mb-1">
-        <div class="col" *ngFor="
+    <div class="row row-cols-4 row-cols-md-4 mt-2 mb-2">
+        <div class="card-container" *ngFor="
         let anime of recentAnimes">
-              <button class="card" style="background: black; color:white" (click)="goToAnime(anime)">
+              <button class="card" (click)="goToAnime(anime)">
                 <img
                   src="{{anime.image}}"
                   class="card-img-top"
                   alt="..."
-                  style="height: 20rem;"
                 />
                 <div class="card-body">
                   <h5 class="card-title">{{anime.title.slice(0,20) + " - Episode " +anime.episodenumber}}</h5>

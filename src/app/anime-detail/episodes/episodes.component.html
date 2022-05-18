@@ -1,16 +1,16 @@
-<div  style="background:  #181717;">
-    <mdb-tabs class="tab-episode" *ngIf="totalEpisodes > 100">
+<div class="episode-container" style="background:  #202020;">
+    <mdb-tabs  class="tab-episode" *ngIf="totalEpisodes > 100">
         <mdb-tab  title="{{label.label}}" *ngFor="
         let label of labelsEpisodes">
-            <div style="background: #181717;">
+            <div style="background:  #202020;">
              <button *ngFor="
-                let episode of label.episodes" type="button" class="episode-button" (click)="testclick(episode)">{{episode}}</button>
+                let episode of label.episodes" type="button" class="episode-button " (click)="testclick(episode)">{{episode}}</button>
             </div>
         </mdb-tab>
     </mdb-tabs>
     <div style="background: #1C1C1C;" *ngIf="totalEpisodes < 100">
         <button *ngFor="
-        let episode of labelsEpisodes[0].episodes" type="button" class="btn btn-secondary m-1" (click)="testclick(episode)">{{episode}}</button>
+        let episode of labelsEpisodes[0].episodes" type="button" class="episode-button " (click)="testclick(episode)">{{episode}}</button>
     </div>
 </div>
 

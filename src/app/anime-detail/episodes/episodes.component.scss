@@ -1,19 +1,28 @@
-
+.episode-container{
+    width: fit-content;
+}
 .episode-button {
-    background-color: #f8f9fa;
-    border: 1px solid #f8f9fa;
-    border-radius: 4px;
-    color: #3c4043;
-    text-align: center;
+    background-color: #2d2e30;
+    border: none;
+    border-radius: 0.3rem;
     margin-top: 0.5rem;
-    margin-left: 0.5rem;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
     width: 4rem;
-    margin-bottom: 0.5rem;
     text-align: center;
+    color: rgb(173, 170, 170);
+}
+.episode-button a {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .episode-button:hover{
 background-color: red;
 }
 .tab-episode{
     text-align: center;
+}
+.classic-tabs .nav li a {
+    text-transform: none !important;
+    padding: 10px !important; 
+    color: white;
 }
