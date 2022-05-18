@@ -1,0 +1,6 @@
+<h1 style="text-align: center; color: red;">{{animeInfo.title +" Episode "+episode}}</h1>
+<iframe  [src]="safeSrc" width="100%" height="50%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+</iframe>
+<div>
+      <app-episodes [totalEpisodes] = "animeInfo.totalepisode" (PageEmiter)="changerEpisode($event)"></app-episodes>
+</div>

@@ -1,0 +1,74 @@
+<mdb-carousel [controls]="true" [indicators]="true" [animation]="'fade'" style="width: 40rem;">
+    <mdb-carousel-item>
+      <img
+        src="{{recommandationAnimes[0].images.webp.large_image_url}}"
+        class="d-block w-100"
+        style="height: 400px;"
+        alt="..."
+      />
+      <div class="carousel-caption d-none d-md-block">
+        <h5>{{recommandationAnimes[0].title}}</h5>
+        <button type="button" class="btn btn-info btn-rounded" (click)="goToAnimeFromCarousel(recommandationAnimes[0].title)">Regarder</button>
+      </div>
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+      <img
+        src="{{recommandationAnimes[1].images.webp.large_image_url}}"
+        class="d-block w-100"
+        style="height: 400px;"
+        alt="..."
+      />
+      <div class="carousel-caption d-none d-md-block">
+        <h5>{{recommandationAnimes[1].title}}</h5>
+        <button type="button" class="btn btn-info btn-rounded" (click)="goToAnimeFromCarousel(recommandationAnimes[1].title)">Regarder</button>
+      </div>
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+      <img
+        src="{{recommandationAnimes[2].images.webp.large_image_url}}"
+        class="d-block w-100"
+        style="height: 400px;"
+        alt="..."
+      />
+      <div class="carousel-caption d-none d-md-block">
+        <h5>{{recommandationAnimes[2].title}}</h5>
+        <button type="button" class="btn btn-info btn-rounded" (click)="goToAnimeFromCarousel(recommandationAnimes[2].title)">Regarder</button>
+      </div>
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+      <img
+        src="{{recommandationAnimes[3].images.webp.large_image_url}}"
+        class="d-block w-100"
+        style="height: 400px;"
+        alt="..."
+      />
+      <div class="carousel-caption d-none d-md-block">
+        <h5>{{recommandationAnimes[3].title}}</h5>
+        <button type="button" class="btn btn-info btn-rounded" (click)="goToAnimeFromCarousel(recommandationAnimes[3].title)">Regarder</button>
+      </div>
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+      <img
+        src="{{recommandationAnimes[4].images.webp.large_image_url}}"
+        class="d-block w-100"
+        style="height: 400px;"
+        alt="..."
+      />
+      <div class="carousel-caption d-none d-md-block">
+        <h5>{{recommandationAnimes[4].title}}</h5>
+        <button type="button" class="btn btn-info btn-rounded" (click)="goToAnimeFromCarousel(recommandationAnimes[4].title)">Regarder</button>
+      </div>
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+      <img
+        src="{{recommandationAnimes[5].images.webp.large_image_url}}"
+        class="d-block w-100"
+        style="height: 400px;"
+        alt="..."
+      />
+      <div class="carousel-caption d-none d-md-block">
+        <h5>{{recommandationAnimes[5].title}}</h5>
+        <button type="button" class="btn btn-info btn-rounded" (click)="goToAnimeFromCarousel(recommandationAnimes[5].title)">Regarder</button>
+      </div>
+    </mdb-carousel-item>
+  </mdb-carousel>

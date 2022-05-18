@@ -1,0 +1,28 @@
+<div class="container d-flex justify-content-center">
+    <app-carousel [recommandationAnimes] = "recommandationAnimes"></app-carousel>
+</div>
+<div>
+    <div class="row row-cols-1 row-cols-md-4 g-4 mt-1 mb-1">
+        <div class="col" *ngFor="
+        let anime of recentAnimes">
+              <button class="card" style="background: black; color:white" (click)="goToAnime(anime)">
+                <img
+                  src="{{anime.image}}"
+                  class="card-img-top"
+                  alt="..."
+                  style="height: 20rem;"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">{{anime.title.slice(0,20) + " - Episode " +anime.episodenumber}}</h5>
+                </div>
+              </button>
+            </div>
+    </div>
+    
+</div>
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item" (click)=" onClickChangePage(-1)"><a class="page-link" href="#"><fa-icon [icon]="faAngleLeft"></fa-icon></a></li>
+    <li class="page-item" (click)=" onClickChangePage(1)"><a class="page-link" href="#"><fa-icon [icon]="faAngleRight"></fa-icon></a></li>
+  </ul>
+</nav>
