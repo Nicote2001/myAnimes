@@ -23,10 +23,14 @@ export class AnimeDetailComponent implements OnInit {
   constructor(private route:ActivatedRoute, public sanitizer: DomSanitizer, public api: AnimeDetailsApiCallerService, private router: Router) 
   { 
     route.params.subscribe(val => {
-      this.animeId = this.route.snapshot.params['id'];
+      if(this.route.snapshot.params['id'] !== this.animeId)
+      {
+        this.animeId = this.route.snapshot.params['id'];
+        this.getAnimeInfo();
+      }
+
       this.episode = this.route.snapshot.params['episode'];
       this.getWatch();
-      this.getAnimeInfo();
     });
   }
 

@@ -1,26 +1,36 @@
-import { Component, EventEmitter, Injectable, Input, OnInit, Output } from '@angular/core';
+import { ActiveDescendantKeyManager } from '@angular/cdk/a11y';
+import { AfterViewInit, Component, EventEmitter, Injectable, Input, OnInit, Output, Renderer2 } from '@angular/core';
 import { faFileCirclePlus } from '@fortawesome/free-solid-svg-icons';
+import { MdbTabsComponent } from 'mdb-angular-ui-kit/tabs';
+import { totalmem } from 'os';
 
 @Component({
   selector: 'app-episodes',
   templateUrl: './episodes.component.html',
   styleUrls: ['./episodes.component.scss']
 })
-export class EpisodesComponent implements OnInit {
+export class EpisodesComponent implements OnInit,AfterViewInit {
 
   @Input() totalEpisodes: number;
+  @Input() current: number;
   @Output() PageEmiter = new EventEmitter<number>();
 
   labelsEpisodes: LabelEpisode[] = [];
   Episodes: number[] =[];
   maximum = 100;
+  lastActive = 0;
 
-  constructor() { 
+  constructor(private renderer: Renderer2) {
+  }
+
+  ngAfterViewInit() {
   }
 
   ngOnInit(): void {
     this.calculateLabels(this.totalEpisodes);
   }
+
+  
 
   //ne faire que si +100 episodes
   calculateLabels(totalEpisodes:number)

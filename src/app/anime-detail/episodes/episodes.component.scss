@@ -12,6 +12,19 @@
     text-align: center;
     color: rgb(173, 170, 170);
 }
+
+    .episode-button-active {
+    background-color: red;
+    border: none;
+    border-radius: 0.3rem;
+    margin-top: 0.5rem;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    width: 4rem;
+    text-align: center;
+    color: rgb(173, 170, 170);
+}
+
 .episode-button a {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -20,6 +33,8 @@ background-color: red;
 }
 .tab-episode{
     text-align: center;
+    color: white;
+    background: red;
 }
 .classic-tabs .nav li a {
     text-transform: none !important;
