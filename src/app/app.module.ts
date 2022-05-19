@@ -34,6 +34,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { AppRoutingModule } from './app-routing.module';
 import { AnimeDetailComponent } from './anime-detail/anime-detail.component';
 import { EpisodesComponent } from './anime-detail/episodes/episodes.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { EpisodesComponent } from './anime-detail/episodes/episodes.component';
     CarouselComponent,
     SideBarComponent,
     AnimeDetailComponent,
-    EpisodesComponent
+    EpisodesComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
