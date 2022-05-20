@@ -10,3 +10,15 @@
     opacity: 0.98;
     display: block;
 }
+
+.elementDropDown
+{
+    color: black;
+}
+
+.elementDropDown:hover
+{
+    color: red;
+    background-color: gray;
+    opacity: 75%;
+}
