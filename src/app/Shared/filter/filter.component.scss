@@ -1,0 +1,22 @@
+.labelFilter
+{
+    background-color: blue; 
+    text-align: center; 
+    width: 9rem; 
+    margin: auto;
+    padding-top: 0.2rem ;
+    padding-bottom: 0.2rem ;
+    margin: 0.2rem;
+}
+
+.dropdown-content {
+    position: absolute;
+    width: 20rem;
+    max-height: 60rem;
+    z-index: 10;
+    background-color: #1C1C1C;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: block;
+    border-radius: 10px;
+    -ms-overflow-style: none;
+  }

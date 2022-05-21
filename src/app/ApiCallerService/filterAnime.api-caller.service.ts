@@ -22,5 +22,13 @@ export class FilterAnimeApiCallerService
     public getAnimeById(animeId:string){
         return this.http.get<any>('https://krish-anime-api-98k6.vercel.app/api/details/' + animeId)
     }
+
+    public getGenre(){
+        return this.http.get<any>('https://api.jikan.moe/v4/genres/anime?filter=genres')
+    }
+
+    public getAnimesSearchByFilter(apiRequest: string){
+        return this.http.get<any>(apiRequest)
+    }
     
 }

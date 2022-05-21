@@ -35,6 +35,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AnimeDetailComponent } from './anime-detail/anime-detail.component';
 import { EpisodesComponent } from './anime-detail/episodes/episodes.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FilterComponent } from './Shared/filter/filter.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     SideBarComponent,
     AnimeDetailComponent,
     EpisodesComponent,
-    NavbarComponent
+    NavbarComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
