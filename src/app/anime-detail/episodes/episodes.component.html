@@ -8,7 +8,7 @@
             </div>
         </mdb-tab>
     </mdb-tabs>
-    <div style="background: #1C1C1C;" *ngIf="totalEpisodes < 100">
+    <div style="background: #1C1C1C;" *ngIf="totalEpisodes < 100" class="tab-episode">
         <button *ngFor="
         let episode of labelsEpisodes[0].episodes" type="button" [ngClass]="{'episode-button': episode !== current-0, 'episode-button-active': episode === current-0}" (click)="testclick(episode)">{{episode}}</button>
     </div>
