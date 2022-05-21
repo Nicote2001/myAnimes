@@ -9,7 +9,7 @@ export class CommonService
 
     }
 
-    private rExp : RegExp = /[:;°!]/g;
+    private rExp : RegExp = /[:;°!.]/g;
 
     public FormatAnimeTitle(animeTitle: string)
     {

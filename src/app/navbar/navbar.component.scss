@@ -1,0 +1,24 @@
+.search-drop-down {
+    position: absolute;
+    width: 150%;
+    max-height: 300px;
+    margin-top: 3rem;
+    overflow-y: auto;
+    z-index: 10;
+    background-color: #F6F6F6;
+    font-family: sans-serif;
+    opacity: 0.98;
+    display: block;
+}
+
+.elementDropDown
+{
+    color: black;
+}
+
+.elementDropDown:hover
+{
+    color: red;
+    background-color: gray;
+    opacity: 75%;
+}
