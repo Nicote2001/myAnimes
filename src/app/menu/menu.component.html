@@ -3,7 +3,7 @@
 </div>
 <h3 style="color: white; margin-top: 3rem;">Recently Added</h3>
 <div>
-    <div class="row row-cols-4 row-cols-md-4 mt-2 mb-2 ">
+    <div class="row row-cols-4 row-cols-md-4 mt-2 mb-2 card-container ">
         <div class="card-container" *ngFor="
         let anime of recentAnimes">
               <button class="card" (click)="goToAnime(anime)">
@@ -21,7 +21,7 @@
 </div>
 <nav aria-label="Page navigation example">
   <ul class="pagination justify-content-center">
-    <li class="page-item" (click)=" onClickChangePage(-1)"><a class="page-link" href="#"><fa-icon [icon]="faAngleLeft"></fa-icon></a></li>
-    <li class="page-item" (click)=" onClickChangePage(1)"><a class="page-link" href="#"><fa-icon [icon]="faAngleRight"></fa-icon></a></li>
+    <li class="page-item" (click)=" onClickChangePage(-1)"><a class="page-link" style="color: white;" href="#"><fa-icon [icon]="faAngleLeft"></fa-icon></a></li>
+    <li class="page-item" (click)=" onClickChangePage(1)"><a class="page-link" style="color: white;" href="#"><fa-icon [icon]="faAngleRight"></fa-icon></a></li>
   </ul>
 </nav>
