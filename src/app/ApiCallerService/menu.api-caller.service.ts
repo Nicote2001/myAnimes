@@ -20,12 +20,12 @@ export class MenuApiCallerService
 
     public getRecommandationAnimes(): Observable<any>
     {
-        return this.http.get<any>('https://api.jikan.moe/v4/recommendations/anime');
+        return this.http.get<any>('https://api.jikan.moe/v4/recommendations/anime?filter=bypopularity');
     }
 
     public getTopManga(): Observable<any>
     {
-        return this.http.get<any>('https://api.jikan.moe/v4/top/manga');
+        return this.http.get<any>('https://api.jikan.moe/v4/top/anime?filter=airing');
     }
 
     public getRecentAnimes(page: number): Observable<any>

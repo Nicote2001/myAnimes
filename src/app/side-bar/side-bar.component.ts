@@ -13,7 +13,7 @@ import { CommonService } from '../Shared/common.service';
 export class SideBarComponent implements OnInit {
 
   public topAnimes: IAnime[] = [];
-  public topMangas: IAnime[] = [];
+  public topAnimeNow: IAnime[] = [];
   faRankingStar = faRankingStar;
 
   constructor(private api:MenuApiCallerService, private router:Router, private commonService: CommonService) { }
@@ -35,7 +35,7 @@ export class SideBarComponent implements OnInit {
   getTopManga()
   {
     this.api.getTopManga().subscribe(data =>{
-      this.topMangas = data.data.slice(0,5);
+      this.topAnimeNow = data.data.slice(0,5);
     })
   }
 
