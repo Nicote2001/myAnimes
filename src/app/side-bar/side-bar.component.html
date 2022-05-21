@@ -10,7 +10,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div style=" color: gray; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;;">
+                    <div style=" color: gray; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
                         <a 
                         target="_blank"
                         key=­{{anime.mal_id}} 
@@ -33,12 +33,12 @@
             <div class="section-top-ranking" *ngFor="let anime of topAnimeNow; let index = index">
                 <div class="row" (click)="goToAnimeFromRanking(anime.title)">
                 <div class="col-3">
-                    <div>
-                        <img src="{{anime.images.webp.small_image_url}}" style="width: 3rem; margin: 0.2rem;"/>
+                    <div class="img-container">
+                        <img src="{{anime.images.webp.small_image_url}}" style="width: 3rem; margin: 0.2rem; border-radius: 5px;"/>
                     </div>
                 </div>
                 <div class="col">
-                    <div style=" color: gray;">
+                    <div style=" color: gray; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
                         <a 
                         target="_blank"
                         key=­{{anime.mal_id}} 
@@ -46,7 +46,7 @@
                         {{anime.title}}
                         </a>
                     </div>
-                <div style="margin-left: 0.3rem; color: gray;">
+                <div style="margin-left: 0.3rem; color: gray; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
                     <fa-icon [icon]="faRankingStar"></fa-icon>
                     <a>
                         {{anime.score}}/10

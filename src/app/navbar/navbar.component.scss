@@ -54,3 +54,14 @@
 .navbar-css a {
     color: white;
 }
+.fa-bars{
+    color: white;
+}
+.navbar-toggler{
+justify-content: start;
+}
+@media (max-width: 991px) {
+    .container-fluid{
+        justify-content: left;
+    }
+}

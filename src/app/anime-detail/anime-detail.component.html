@@ -1,4 +1,10 @@
-<h1 style="text-align: center; color: red;">{{animeInfo.title +" Episode "+episode}}</h1>
+<div class="flex-row description-card"><img class="card-img-sm-left description-card-img" style="width: 10rem;" src="{{animeInfo.image}}"/>
+      <div class="card-body">
+        <h4 class="card-title h5 h4-sm">{{animeInfo.title}}</h4>
+        <p class="card-text">{{animeInfo.summary.slice(0,700) + " ..."}}</p>
+      </div>
+    </div>
+<h1 style="text-align: center; color: red; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">{{animeInfo.title +" Episode "+episode}}</h1>
 <iframe  [src]="safeSrc" width="100%" height="50%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
 </iframe>
 <div>
