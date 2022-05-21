@@ -5,20 +5,51 @@
     margin-top: 3rem;
     overflow-y: auto;
     z-index: 10;
-    background-color: #F6F6F6;
-    font-family: sans-serif;
-    opacity: 0.98;
+    background-color: #1C1C1C;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     display: block;
+    border-radius: 10px;
+    -ms-overflow-style: none;
+}
+.search-drop-down::-webkit-scrollbar{
+    display: none;
 }
 
 .elementDropDown
 {
-    color: black;
+    color: rgb(173, 170, 170);
 }
 
 .elementDropDown:hover
 {
-    color: red;
+    color: white;
     background-color: gray;
-    opacity: 75%;
+}
+.navbar-image{
+    margin: 0.5rem;
+    width: 3rem;
+    border-radius: 0.5rem;
+}
+.container-link{
+    justify-content:right;
+}
+.container-link a:hover{
+    color: red;
+}
+.placeholder-css:focus{
+    border: 1px solid red;
+    outline: none !important;
+    box-shadow: 0 0 10px red;
+}
+.search-css{
+    cursor:pointer;
+}
+.search-css i:hover{
+    color: red;
+}
+.navbar-css{
+    background-color: #0e0e0e;
+}
+.navbar-css a {
+    color: white;
 }

@@ -2,7 +2,13 @@
     background-color: transparent;
 }
 .card-title{
-    font-family: 'Courier New', Courier, monospace;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: white;
     font-size: 1rem;
+}
+.card-title:hover{
+    color: red;
+}
+.card-css:hover{
+    color: red;
 }

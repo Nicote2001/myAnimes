@@ -3,14 +3,13 @@
 </div>
 <h3 style="color: white; margin-top: 3rem;">Recently Added</h3>
 <div>
-    <div class="row row-cols-4 row-cols-md-4 mt-2 mb-2">
+    <div class="row row-cols-4 row-cols-md-4 mt-2 mb-2 ">
         <div class="card-container" *ngFor="
         let anime of recentAnimes">
               <button class="card" (click)="goToAnime(anime)">
                 <img
                   src="{{anime.image}}"
-                  class="card-img-top"
-                  alt="..."
+                  class="card-img-top "
                 />
                 <div class="card-body">
                   <h5 class="card-title">{{anime.title.slice(0,20) + " - Episode " +anime.episodenumber}}</h5>
