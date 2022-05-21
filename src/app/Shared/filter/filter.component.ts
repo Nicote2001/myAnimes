@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faAngleDown, faRankingStar } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown, faRankingStar, faFilter } from '@fortawesome/free-solid-svg-icons';
 import { FilterAnimeApiCallerService } from 'src/app/ApiCallerService/filterAnime.api-caller.service';
 import { IAnime } from 'src/app/objects/anime.model';
 import { Filter } from 'src/app/objects/filter.model';
@@ -27,6 +27,7 @@ export class FilterComponent implements OnInit {
   animes : IAnime[];
 
   faAngleDown = faAngleDown;
+  faFilter = faFilter;
 
   ngOnInit(): void {
     this.getGenres();
