@@ -9,29 +9,63 @@
                  <!--genres drop down-->
                 <div class="">
                     <div class="">
-                        <div class="form-check" *ngFor=" let genre of genres.slice(0,25)">
+                        <div class="form-check" *ngFor=" let genre of genres.slice(0,50)">
                             <input class="form-check-input" type="checkbox" value="{{genre.isActive}}" id="flexCheckDefault" (change)="changeGenre(genre)">
                             <label class="form-check-label" for="flexCheckDefault">
                             {{genre.title}}
                             </label>
                         </div>
                     </div>
-                    <!--
-                    <div class="col-6">
-                        <div class="form-check" *ngFor=" let genre of genres.slice(25,50)">
-                            <input class="form-check-input" type="checkbox" value="{{genre.isActive}}" id="flexCheckDefault" (change)="changeGenre(genre)">
-                            <label class="form-check-label" for="flexCheckDefault">
-                            {{genre.title}}
-                            </label> 
-                        </div>
-                    </div>
-                    -->
                 </div>
                 <!-- nd genres drop down-->
             </span>
-            <div class="labelFilter">
-                Year <fa-icon [icon]="faAngleDown" style="margin-left: 0.5rem; "></fa-icon>
+            <div class="labelFilter"  (click)="onClickDrop(producerString)">
+                Producers <fa-icon [icon]="faAngleDown" style="margin-left: 0.5rem; "></fa-icon>
             </div>
+            <span class="dropdown-content" [hidden]="!producerDropped">
+                <!--genres drop down-->
+                <div class="row">
+                    <div class="col-4">
+                        <div class="container d-inline-block justify-content-left">
+                            <div class="">
+                                <div class="">
+                                    <div class="form-check" *ngFor=" let item of producers.slice(0,33)">
+                                        <input class="form-check-input" type="checkbox" value="{{item.isActive}}" id="flexCheckDefault" (change)="changeGenre(item)">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                        {{item.title.slice(0,20)}}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="">
+                            <div class="">
+                                <div class="form-check" *ngFor=" let item of producers.slice(33,66)">
+                                    <input class="form-check-input" type="checkbox" value="{{item.isActive}}" id="flexCheckDefault" (change)="changeGenre(item)">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                    {{item.title.slice(0,20)}}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="">
+                            <div class="">
+                                <div class="form-check" *ngFor=" let item of producers.slice(66,99)">
+                                    <input class="form-check-input" type="checkbox" value="{{item.isActive}}" id="flexCheckDefault" (change)="changeGenre(item)">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                    {{item.title.slice(0,20)}}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               <!-- nd genres drop down-->
+           </span>
             <div class="labelFilter">
                 Year <fa-icon [icon]="faAngleDown" style="margin-left: 0.5rem; "></fa-icon>
             </div>

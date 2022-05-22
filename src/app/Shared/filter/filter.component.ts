@@ -14,23 +14,24 @@ export class FilterComponent implements OnInit {
   constructor(private api: FilterAnimeApiCallerService) { }
 
   readonly genreString:string ="genre";
-  readonly sortString:string ="sort";
+  readonly producerString:string ="producer";
   readonly yearString:string ="year";
   readonly statusString:string ="status";
   readonly apiStringBase:string = "https://api.jikan.moe/v4/anime?"
 
   genres : Filter[] = [];
   genreDropped : boolean;
-  sort : Filter[] = [];
-  years : Filter[] = [];
-  status : Filter[] = [];
-  animes : IAnime[];
+  
+  producers : Filter[]= [];
+  producerDropped : boolean;
 
   faAngleDown = faAngleDown;
   faFilter = faFilter;
 
+  animes : IAnime[] = [];
+
   ngOnInit(): void {
-    this.getGenres();
+    this.callStartFunction();
     this.genreDropped = false;
   }
 
@@ -40,8 +41,20 @@ export class FilterComponent implements OnInit {
     {
       if(this.genres[i].title == genre.title)
       {
-        genre.isActive = true;
-        this.genres[i].isActive = true;
+        genre.isActive = !genre.isActive;
+        this.genres[i].isActive = genre.isActive;
+      }
+    }
+  }
+
+  changeProducer(producer: Filter)
+  {
+    for(let i=0; i<this.producers.length; i++)
+    {
+      if(this.producers[i].title == producer.title)
+      {
+        producer.isActive = !producer.isActive;
+        this.genres[i].isActive = producer.isActive;
       }
     }
   }
@@ -56,15 +69,29 @@ export class FilterComponent implements OnInit {
     })
   }
 
+  getProducers()
+  {
+    this.api.getProducers().subscribe(data =>{
+      for(let i=0; i<data.data.length; i++)
+      {
+         this.producers.push(new Filter(data.data[i].mal_id,data.data[i].name,false));
+      }
+      console.log(this.producers);
+    })
+  }
+
   onClickDrop(filter:string)
   {
       if(filter === this.genreString)
       {
         this.genreDropped = !this.genreDropped;
       }
-      else if(filter === this.genreString)
+      else if(filter === this.producerString)
       {
+        this.producerDropped = !this.producerDropped;
       }
+      else{}
+      
   }
 
   onBlurDrop(filter:string)
@@ -81,21 +108,17 @@ export class FilterComponent implements OnInit {
 
     if(this.genres.length>0)
     {
-      if(apiCall !== this.apiStringBase)
+      if(apiCall === this.apiStringBase)
       {
-        //put &
+        apiCall+="genres="
       }
 
 
-      for(let i=0; i<this.genres.length-1; i++)
+      for(let i=0; i<this.genres.length; i++)
       {
         if(this.genres[i].isActive === true){
           apiCall+=this.genres[i].mal_id+",";
         }
-      }
-      
-      if(this.genres[this.genres.length-1].isActive === true){
-        apiCall+=this.genres[this.genres.length-1].mal_id+",";
       }
     }
 
@@ -103,6 +126,17 @@ export class FilterComponent implements OnInit {
       this.animes=data.data;
       console.log(this.animes);
     })
+  }
+
+  delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
+  }
+
+  async callStartFunction()
+  {
+    this.getGenres();
+    await this.delay(3000);
+    this.getProducers();
   }
 
 
