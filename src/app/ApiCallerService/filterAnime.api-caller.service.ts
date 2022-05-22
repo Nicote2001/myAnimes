@@ -24,12 +24,14 @@ export class FilterAnimeApiCallerService
     }
 
     public getGenre(){
-        return this.http.get<any>('https://api.jikan.moe/v4/genres/anime?filter=genres')
+        return this.http.get<any>('https://api.jikan.moe/v4/genres/anime?filter=genres');
     }
 
     public getProducers(){
         return this.http.get<any>('https://api.jikan.moe/v4/producers')
     }
+
+
 
     public getAnimesSearchByFilter(apiRequest: string){
         return this.http.get<any>(apiRequest)

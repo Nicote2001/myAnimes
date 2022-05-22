@@ -3,6 +3,7 @@ import { faAngleDown, faRankingStar, faFilter } from '@fortawesome/free-solid-sv
 import { FilterAnimeApiCallerService } from 'src/app/ApiCallerService/filterAnime.api-caller.service';
 import { IAnime } from 'src/app/objects/anime.model';
 import { Filter } from 'src/app/objects/filter.model';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-filter',
@@ -15,9 +16,12 @@ export class FilterComponent implements OnInit {
 
   readonly genreString:string ="genre";
   readonly producerString:string ="producer";
+  readonly seasonString:string ="season";
   readonly yearString:string ="year";
   readonly statusString:string ="status";
+  readonly sortString:string ="sort";
   readonly apiStringBase:string = "https://api.jikan.moe/v4/anime?"
+  
 
   genres : Filter[] = [];
   genreDropped : boolean;
@@ -25,10 +29,22 @@ export class FilterComponent implements OnInit {
   producers : Filter[]= [];
   producerDropped : boolean;
 
+  seasons : Filter[]= [new Filter(0,"winter",false),new Filter(0,"spring",false),new Filter(0,"summer",false),new Filter(0,"fall",false)];
+  seasonDropped : boolean;
+
+  years : Filter[]= [];
+  yearDropped : boolean;
+
   faAngleDown = faAngleDown;
   faFilter = faFilter;
 
   animes : IAnime[] = [];
+
+  sort:string;
+  sortDropped: boolean;
+
+  status:string;
+  statusDropped: boolean;
 
   ngOnInit(): void {
     this.callStartFunction();
@@ -59,13 +75,15 @@ export class FilterComponent implements OnInit {
     }
   }
 
-  getGenres()
+  async getGenres()
   {
-    this.api.getGenre().subscribe(data =>{
+    this.api.getGenre().subscribe(async data =>{
       for(let i=0; i<19; i++)
       {
          this.genres.push(new Filter(data.data[i].mal_id,data.data[i].name,false));
       }
+      await this.delay(1000);
+      this.getProducers();
     })
   }
 
@@ -90,7 +108,22 @@ export class FilterComponent implements OnInit {
       {
         this.producerDropped = !this.producerDropped;
       }
-      else{}
+      else if(filter === this.yearString)
+      {
+        this.yearDropped = !this.yearDropped;
+      }
+      else if(filter === this.seasonString)
+      {
+        this.seasonDropped = !this.seasonDropped;
+      }
+      else if(filter === this.sortString)
+      {
+        this.sortDropped = !this.sortDropped;
+      }
+      else if(filter === this.statusString)
+      {
+        this.statusDropped = !this.statusDropped;
+      }
       
   }
 
@@ -102,7 +135,7 @@ export class FilterComponent implements OnInit {
       }
   }
 
-  SearchAnimesByFilter()
+  SearchAnimesByFilter(form: NgForm)
   {
     var apiCall = this.apiStringBase;
 
@@ -135,8 +168,22 @@ export class FilterComponent implements OnInit {
   async callStartFunction()
   {
     this.getGenres();
-    await this.delay(3000);
-    this.getProducers();
+    this.getLastYears();
+  }
+
+  getLastYears()
+  {
+    var currentYear = new Date().getFullYear();
+
+    for(let i=currentYear; i>currentYear-21 ; i--)
+      {
+          this.years.push(new Filter(0,i.toString(),false,i));
+      }
+  }
+
+  submitForm(form: NgForm) 
+  {
+      this.sort = form.value.sort;
   }
 
 

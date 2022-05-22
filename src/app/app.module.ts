@@ -36,6 +36,7 @@ import { AnimeDetailComponent } from './anime-detail/anime-detail.component';
 import { EpisodesComponent } from './anime-detail/episodes/episodes.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FilterComponent } from './Shared/filter/filter.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -73,7 +74,8 @@ import { FilterComponent } from './Shared/filter/filter.component';
     VgControlsModule,
     VgOverlayPlayModule,
     VgBufferingModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

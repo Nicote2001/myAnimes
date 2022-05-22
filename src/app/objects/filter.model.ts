@@ -3,7 +3,8 @@ export class Filter
     constructor(
         public mal_id : number,
         public title : string,
-        public isActive : boolean
+        public isActive : boolean,
+        public time?: number,
     ){
     }
 }
