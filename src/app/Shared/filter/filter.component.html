@@ -76,10 +76,10 @@
                 <h2>Filter By Date between</h2>
                 <!--genres drop down-->
                 <label for="startDate" >Start Date :</label>
-                <input type="date" class="" id="startDate" name="startDate"/>
+                <input type="date" class="" id="startDate" name="startDate"  ngModel required/>
 
                 <label for="endDate" >End Date :</label>
-                <input type="date" class="" id="endDate" name="startDate"/>
+                <input type="date" class="" id="endDate" name="endDate"  ngModel required/>
                <!-- nd genres drop down-->
             </div>
            </span>
@@ -153,7 +153,7 @@
                  </div >
                  <div class="year-container">
                     <label class="form-check-label-special" for="flexCheckDefault">Year -></label>
-                   <input class="form-input-special" type="text" id="flexCheckDefault">
+                   <input class="form-input-special" type="text" name="seasonYear" id="flexCheckDefault" ngModel required>
                 </div>
 
                 </div>

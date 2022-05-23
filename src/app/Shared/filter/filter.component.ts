@@ -141,6 +141,9 @@ export class FilterComponent implements OnInit {
   //search animes when user click on filter button
   SearchAnimesByFilter(form: NgForm)
   {
+
+    this.fillItemByForm(form);
+
     var apiCall = this.apiStringBase;
 
     //fill call with genres if any in table
@@ -306,6 +309,41 @@ export class FilterComponent implements OnInit {
 
     }
 
+  }
+
+  fillItemByForm(form:NgForm)
+  {
+    if(form.value.season !== undefined && form.value.season !== "")
+    {
+      this.seasons = form.value.season;
+    }
+
+    if(form.value.sort !== undefined && form.value.sort !== "")
+    {
+      this.sort = form.value.sort;
+    }
+
+    if(form.value.status !== undefined && form.value.status !== "")
+    {
+      this.status = form.value.status;
+    }
+
+    if(form.value.startDate !== undefined && form.value.startDate !== "")
+    {
+      this.startDate = form.value.startDate;
+    }
+
+    if(form.value.endDate !== undefined && form.value.endDate !== "")
+    {
+      this.endDate = form.value.endDate;
+    }
+
+    if(form.value.seasonYear !== undefined && form.value.seasonYear !== "")
+    {
+      this.seasonyear = form.value.seasonYear;
+    }
+
+    console.log("ok");
   }
 
 

@@ -12,30 +12,32 @@
         <i class="fas fa-bars"></i>
       </button>
       <a class="navbar-brand" href="#">Navbar</a>
-      <form class="d-flex input-group w-auto">
-        <input
-          class="form-control rounded placeholder-css"
-          placeholder="Search"
-          aria-label="Search"
-          aria-describedby="search-addon"
-          (input)="onKeyPress($event)"
-          [value]="searchFilter"
-        />
-        <div class="search-drop-down" >
-             <div *ngFor="let anime of animesResults;" class="elementDropDown" (click)="goToAnime(anime.title)">
-               <img class="navbar-image" src="{{anime.images.webp.small_image_url}}">
-              {{anime.title.slice(0,35)+"..."}}
-             </div>
-        </div>
-        <span class="input-group-text text-white border-0 search-css" id="search-addon">
-          <i class="fas fa-search"></i>
-        </span>
-      </form>
-      <div class="collapse navbar-collapse container-link" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-          <a class="nav-link" href="#">Features</a>
-          <a class="nav-link" href="#">Pricing</a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <form class="d-flex input-group w-auto">
+          <input
+            class="form-control rounded placeholder-css"
+            placeholder="Search"
+            aria-label="Search"
+            aria-describedby="search-addon"
+            (input)="onKeyPress($event)"
+            [value]="searchFilter"
+          />
+          <div class="search-drop-down" >
+               <div *ngFor="let anime of animesResults;" class="elementDropDown" (click)="goToAnime(anime.title)">
+                 <img class="navbar-image" src="{{anime.images.webp.small_image_url}}">
+                {{anime.title.slice(0,35)+"..."}}
+               </div>
+          </div>
+          <span class="input-group-text text-white border-0 search-css" id="search-addon">
+            <i class="fas fa-search"></i>
+          </span>
+        </form>
+        <div class="collapse navbar-collapse container-link" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="#">Pricing</a>
+          </div>
         </div>
       </div>
       </div>
