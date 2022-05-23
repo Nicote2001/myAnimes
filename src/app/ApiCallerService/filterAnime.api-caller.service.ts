@@ -15,7 +15,7 @@ export class FilterAnimeApiCallerService
 
     public getSearchBarAnime(search: string): Observable<any>
     {
-        return this.http.get<any>('https://api.jikan.moe/v4/anime?letter='+search);
+        return this.http.get<any>('https://api.jikan.moe/v4/anime?letter='+search+'&type=tv');
         
     }
 
@@ -30,7 +30,7 @@ export class FilterAnimeApiCallerService
     public getProducers(){
         return this.http.get<any>('https://api.jikan.moe/v4/producers')
     }
-    
+
     public getAnimesSearchByFilter(apiRequest: string){
         return this.http.get<any>(apiRequest)
     }
