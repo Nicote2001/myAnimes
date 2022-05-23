@@ -1,27 +1,29 @@
-<mdb-carousel [controls]="true" [indicators]="true" [animation]="'fade'" style="width: 20rem; height: 30rem; ">
+<mdb-carousel [controls]="true" [indicators]="true" [animation]="'fade'" style="width: 20rem; height: 20rem; ">
   <mdb-carousel-item class="color-container" >
-    <img  (click)="goToAnimeFromCarousel(recommandationAnimes[0].title)"
+    <img  
       src="{{recommandationAnimes[0].image}}"
       class="d-block img-caroussel"
       style=""
       alt="..."
     />
     <div class="caroussel-info-body"> 
-      <h5>{{recommandationAnimes[0].title}}</h5>
-      <p>{{recommandationAnimes[0].summary}}</p>
+      <h5 (click)="goToAnimeFromCarousel(recommandationAnimes[0].title)">{{recommandationAnimes[0].title}}</h5>
+      <p>{{recommandationAnimes[0].summary.slice(0,195) + " ..."}}</p>
+      <button (click)="goToAnimeFromCarousel(recommandationAnimes[0].title)" class="button" >Watch Now</button>
     </div>
   </mdb-carousel-item >
     <mdb-carousel-item class="color-container"  *ngFor=" let item of recommandationAnimes.slice(1,recommandationAnimes.length)">
-      <img  (click)="goToAnimeFromCarousel(item.title)"
+      <img  
         src="{{item.image}}"
         class="d-block img-caroussel"
         style=""
         alt="..."
       />
       <div class="caroussel-info-body"> 
-        <h5>{{item.title}}</h5>
-        <p>{{item.summary}}</p>
+        <h5 (click)="goToAnimeFromCarousel(item.title)">{{item.title}}</h5>
+        <p>{{item.summary.slice(0,195) + " ..."}}</p>
+        <button (click)="goToAnimeFromCarousel(item.title)" class="button" >Watch Now</button>
       </div>
-      
+     
     </mdb-carousel-item >
   </mdb-carousel>
