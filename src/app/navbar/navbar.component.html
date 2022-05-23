@@ -24,7 +24,7 @@
         <div class="search-drop-down" >
              <div *ngFor="let anime of animesResults;" class="elementDropDown" (click)="goToAnime(anime.title)">
                <img class="navbar-image" src="{{anime.images.webp.small_image_url}}">
-              {{anime.title}}
+              {{anime.title.slice(0,35)+"..."}}
              </div>
         </div>
         <span class="input-group-text text-white border-0 search-css" id="search-addon">

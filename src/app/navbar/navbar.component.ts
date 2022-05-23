@@ -43,9 +43,9 @@ export class NavbarComponent implements OnInit {
   getSearchBarAnimes()
   {
     this.apiSearch.getSearchBarAnime(this.searchFilter).subscribe(data =>{
-      this.animesResults = data.data.slice(0,5);
+      this.animesResults = data.data.slice(0,15);
       console.log(data);
-      if(this.searchFilter ==="")
+    if(this.searchFilter ==="")
     {
       this.animesResults = [];
     }
@@ -54,6 +54,10 @@ export class NavbarComponent implements OnInit {
 
   goToAnime(anime:string)
   {
+    if(anime ==="Naruto: Shippuuden")
+    {
+      anime ="Naruto-Shippuden";
+    }
     var formatedAnimeTitle = this.commonService.FormatAnimeTitle(anime)
 
     this.animesResults = [];
