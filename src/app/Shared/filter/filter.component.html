@@ -1,5 +1,5 @@
 <div class="filter-container" style="background-color: #1C1C1C;">
-    <h3> Quick Filter</h3>
+    <h3>{{title}}</h3>
     <form #myForm="ngForm" (submit)="SearchAnimesByFilter(myForm)" novalidate>
                 
     <div class="row ">
@@ -160,6 +160,9 @@
            </div>
            <!-- nd genres drop down-->
        </span>
+        </div>
+        <div class="">
+           <input placeholder="Search..." class="form-input-special" type="text" name="search" id="flexCheckDefault" ngModel required>
         </div>
         <button class="button-filter" type="submit">Filter <fa-icon [icon]="faFilter" style="margin-left: 0.5rem; "></fa-icon></button>
       </div>

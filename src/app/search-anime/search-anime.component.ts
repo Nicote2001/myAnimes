@@ -17,19 +17,33 @@ export class SearchAnimeComponent implements OnInit {
 
   constructor(private route:ActivatedRoute, public sanitizer: DomSanitizer, public api: FilterAnimeApiCallerService, private router: Router) 
   { 
-    this.apiCall = this.router.getCurrentNavigation().extras.state.apiCall;
+    if(this.router.getCurrentNavigation().extras.state !== undefined){
+      this.apiCall = this.router.getCurrentNavigation().extras.state.apiCall;
+    }
 
-    route.params.subscribe(val => {
-      this.apiCall = this.route.snapshot.paramMap.get('apiCall');
-      console.log(this.apiCall);
-    });
+    if(this.apiCall === undefined ||this.apiCall ==="" )
+    {
+      this.apiCall = "https://api.jikan.moe/v4/anime?genre=";
+    }
+
+    console.log(this.apiCall);
   }
 
   ngOnInit(): void {
 
+    this.getAnimeResult(this.apiCall);
+  }
+
+  apiCallChange(call:string)
+  {
+    this.apiCall = call;
+    this.getAnimeResult(this.apiCall);
+  }
+
+  getAnimeResult(call:string){
     this.api.getAnimesSearchByFilter(this.apiCall).subscribe(data =>{
-      this.animes=data.data;
-    })
+      this.animes=data.data.slice(0,24);
+    });
   }
 
 }

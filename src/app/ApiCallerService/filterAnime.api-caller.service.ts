@@ -32,7 +32,7 @@ export class FilterAnimeApiCallerService
     }
 
     public getAnimesSearchByFilter(apiRequest: string){
-        return this.http.get<any>(apiRequest)
+        return this.http.get<any>(apiRequest+="&type=tv")
     }
     
 }

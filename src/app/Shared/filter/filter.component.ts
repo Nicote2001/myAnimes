@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { faAngleDown, faRankingStar, faFilter } from '@fortawesome/free-solid-svg-icons';
 import { FilterAnimeApiCallerService } from 'src/app/ApiCallerService/filterAnime.api-caller.service';
 import { IAnime } from 'src/app/objects/anime.model';
@@ -14,6 +14,9 @@ import { Router } from '@angular/router';
 })
 export class FilterComponent implements OnInit {
 
+  @Input() isQuickFilter:boolean;
+  @Output() apiCallChanged: EventEmitter<string> =   new EventEmitter();
+
   constructor(private api: FilterAnimeApiCallerService, private router:Router) { }
 
   readonly genreString:string ="genre";
@@ -25,6 +28,7 @@ export class FilterComponent implements OnInit {
   readonly apiStringBase:string = "https://api.jikan.moe/v4/anime?"
   
 
+  title:string;
   genres : Filter[] = [];
   genreDropped : boolean;
   
@@ -50,9 +54,19 @@ export class FilterComponent implements OnInit {
   status:string;
   statusDropped: boolean;
 
+  search:string;
+
   ngOnInit(): void {
     this.callStartFunction();
     this.genreDropped = false;
+    if(this.isQuickFilter)
+    {
+      this.title="Quick Filter";
+    }
+    else
+    {
+      this.title="Full Filter";
+    }
   }
 
   changeGenre(genre: Filter)
@@ -159,10 +173,19 @@ export class FilterComponent implements OnInit {
     //fill call whith status if not null
     apiCall = this.StatusConstuctFilterCall(apiCall);
 
-    //fill call whith status if not null
+    //fill call whith sort if not null
     apiCall = this.SortConstuctFilterCall(apiCall);
 
-    this.router.navigateByUrl('anime/search',{state:{apiCall:apiCall}});
+    //fill call whith searc if not null
+    apiCall = this.SearchConstuctFilterCall(apiCall);
+
+    if(this.isQuickFilter)
+    {
+      this.router.navigateByUrl('anime/search',{state:{apiCall:apiCall}});
+    }
+    else{
+      this.apiCallChanged.emit(apiCall);
+    }
   }
 
   delay(ms: number) {
@@ -295,6 +318,25 @@ export class FilterComponent implements OnInit {
     return apiCall;
   }
 
+  SearchConstuctFilterCall(apiCall: string)
+  {
+    if(this.search !== undefined)
+    {
+      if(apiCall === this.apiStringBase)
+      {
+        apiCall+="letter="
+      }
+      else
+      {
+        apiCall+="&letter="
+      }
+
+      apiCall+= this.search;
+    }
+
+    return apiCall;
+  }
+
   CallSeason()
   {
     if(this.seasons !== undefined)
@@ -339,6 +381,11 @@ export class FilterComponent implements OnInit {
     if(form.value.seasonYear !== undefined && form.value.seasonYear !== "")
     {
       this.seasonyear = form.value.seasonYear;
+    }
+
+    if(form.value.search !== undefined && form.value.search !== "")
+    {
+      this.search = form.value.search;
     }
 
     console.log("ok");

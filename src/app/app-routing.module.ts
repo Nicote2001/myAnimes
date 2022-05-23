@@ -9,7 +9,8 @@ const routes: Routes =
     {path: '', component: MenuComponent},
     {path: 'menu', component: MenuComponent},
     {path: 'anime/:id/:episode', component: AnimeDetailComponent},
-    {path: 'anime/search', component: SearchAnimeComponent}
+    {path: 'anime/search', component: SearchAnimeComponent},
+    {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
 
 @NgModule({
