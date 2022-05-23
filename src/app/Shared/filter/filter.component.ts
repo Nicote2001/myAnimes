@@ -170,6 +170,7 @@ export class FilterComponent implements OnInit {
 
   async callStartFunction()
   {
+    this.delay(2000);
     this.getGenres();
   }
 

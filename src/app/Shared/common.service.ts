@@ -9,7 +9,8 @@ export class CommonService
 
     }
 
-    private rExp : RegExp = /[:;°!.]/g;
+    private rExp : RegExp = /[:;°!.★]/g;
+    private rExpReplace : RegExp = /[★]/g;
 
     public FormatAnimeTitle(animeTitle: string)
     {
@@ -17,7 +18,7 @@ export class CommonService
 
         for(let i = 0 ; i < animeTitle.length ; i++)
         {
-            if(animeTitle[i] === " ")
+            if(animeTitle[i] === " " || this.rExpReplace.test(animeTitle[i]))
             {
                 formatedTitle += "-";
             }

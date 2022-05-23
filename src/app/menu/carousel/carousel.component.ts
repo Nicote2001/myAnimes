@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuApiCallerService } from 'src/app/ApiCallerService/menu.api-caller.service';
 import { IAnime } from 'src/app/objects/anime.model';
+import { AnimeDetail } from 'src/app/objects/animeDetail.model';
 import { CommonService } from 'src/app/Shared/common.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { CommonService } from 'src/app/Shared/common.service';
 })
 export class CarouselComponent implements OnInit {
 
-  @Input() recommandationAnimes: IAnime[];
+  @Input() recommandationAnimes: AnimeDetail[];
 
   public topAnimes: IAnime[] = [];
 
