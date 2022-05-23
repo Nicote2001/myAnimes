@@ -10,9 +10,8 @@ import { CommonService } from 'src/app/Shared/common.service';
   styleUrls: ['./carousel.component.scss']
 })
 export class CarouselComponent implements OnInit {
-
+  
   @Input() recommandationAnimes: IAnime[];
-
   public topAnimes: IAnime[] = [];
 
   constructor(private api : MenuApiCallerService, private commonService:CommonService, private router:Router) 

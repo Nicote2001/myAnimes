@@ -5,9 +5,8 @@
     width: 9rem; 
     padding-top: 0.2rem ;
     padding-bottom: 0.2rem ;
-    margin: 0.4rem;
     border-radius: 10px;
-    margin-left: 1.5rem;
+    margin-left: 1.6rem;
     color: gray; 
     margin-top: 0.5rem;
 }
@@ -20,6 +19,7 @@
     background-color:red;
     border-color: red;
     }
+    
 .dropdown-content {
     position: absolute;
     width: 45rem;
@@ -130,8 +130,10 @@
     background-color: red;
   }
   .filter-container{
+      width: 26rem;
       height: 16.5rem;
       border-radius: 10px;
+      margin: auto;
   }
   .filter-container h3{
       color: white;
