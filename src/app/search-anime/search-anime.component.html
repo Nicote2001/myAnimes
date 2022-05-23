@@ -1,0 +1,18 @@
+<h3 style="color: white; margin-top: 3rem;">Recently Added</h3>
+<div>
+    <div class="row row-cols-4 row-cols-md-4 mt-2 mb-2 card-container ">
+        <div class="card-container" *ngFor="
+        let anime of animes">
+              <button class="card" (click)="goToAnime(anime)">
+                <img
+                  src="{{anime.images.webp.image_url}}"
+                  class="card-img-top "
+                />
+                <div class="card-body">
+                  <h5 class="card-title">{{anime.title.slice(0,20)}</h5>
+                </div>
+              </button>
+            </div>
+    </div>
+    
+</div>

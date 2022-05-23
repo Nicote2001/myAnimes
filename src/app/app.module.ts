@@ -37,6 +37,7 @@ import { EpisodesComponent } from './anime-detail/episodes/episodes.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FilterComponent } from './Shared/filter/filter.component';
 import { FormsModule } from '@angular/forms';
+import { SearchAnimeComponent } from './search-anime/search-anime.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { FormsModule } from '@angular/forms';
     AnimeDetailComponent,
     EpisodesComponent,
     NavbarComponent,
-    FilterComponent
+    FilterComponent,
+    SearchAnimeComponent
   ],
   imports: [
     BrowserModule,

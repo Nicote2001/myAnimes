@@ -5,6 +5,7 @@ import { IAnime } from 'src/app/objects/anime.model';
 import { Filter } from 'src/app/objects/filter.model';
 import { NgForm } from '@angular/forms';
 import { runInThisContext } from 'vm';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-filter',
@@ -13,7 +14,7 @@ import { runInThisContext } from 'vm';
 })
 export class FilterComponent implements OnInit {
 
-  constructor(private api: FilterAnimeApiCallerService) { }
+  constructor(private api: FilterAnimeApiCallerService, private router:Router) { }
 
   readonly genreString:string ="genre";
   readonly producerString:string ="producer";
@@ -34,8 +35,8 @@ export class FilterComponent implements OnInit {
   seasonyear : number;
   seasonDropped : boolean;
 
-  startDate : Date;
-  endDate : Date;
+  startDate : string;
+  endDate : string;
   yearDropped : boolean;
 
   faAngleDown = faAngleDown;
@@ -161,10 +162,7 @@ export class FilterComponent implements OnInit {
     //fill call whith status if not null
     apiCall = this.SortConstuctFilterCall(apiCall);
 
-    this.api.getAnimesSearchByFilter(apiCall).subscribe(data =>{
-      this.animes=data.data;
-      console.log(this.animes);
-    })
+    this.router.navigateByUrl('anime/search',{state:{apiCall:apiCall}});
   }
 
   delay(ms: number) {
@@ -230,7 +228,7 @@ export class FilterComponent implements OnInit {
 
   YearSeasonConstuctFilterCall(apiCall: string)
   {
-    if(this.startDate === undefined || this.startDate === null)
+    if(this.startDate !== undefined)
     {
       if(apiCall === this.apiStringBase)
       {
@@ -240,10 +238,10 @@ export class FilterComponent implements OnInit {
       {
         apiCall+="&start_date="
       }
-      apiCall+=this.startDate.getFullYear();
+      apiCall+=this.startDate.slice(0,4);
     }
 
-    if(this.endDate === undefined || this.endDate === null)
+    if(this.endDate !== undefined)
     {
       if(apiCall === this.apiStringBase)
       {
@@ -253,7 +251,7 @@ export class FilterComponent implements OnInit {
       {
         apiCall+="&end_date="
       }
-      apiCall+=this.startDate.getFullYear();
+      apiCall+=this.endDate.slice(0,4);
     }
 
     return apiCall;
