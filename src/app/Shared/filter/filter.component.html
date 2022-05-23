@@ -7,7 +7,7 @@
             <div class="labelFilter" (click)="onClickDrop(genreString)" (blur)="onBlurDrop(genreString)">
                 Genre  <fa-icon [icon]="faAngleDown" style="margin-left: 0.5rem; "></fa-icon>
             </div>
-            <span class="dropdown-content" [hidden]="!genreDropped">
+            <span class="dropdown-content-genre" [hidden]="!genreDropped">
                  <!--genres drop down-->
                 <div class="">
                     <div class="">
@@ -71,92 +71,95 @@
             <div class="labelFilter" (click)="onClickDrop(yearString)">
                 Years <fa-icon [icon]="faAngleDown" style="margin-left: 0.5rem; "></fa-icon>
             </div>
-            <span class="dropdown-content" [hidden]="!yearDropped">
-                <h3>Filter By Date between</h3>
+            <span class="dropdown-content-years" [hidden]="!yearDropped">
+                <div class="date-container"> 
+                <h2>Filter By Date between</h2>
                 <!--genres drop down-->
-                <label for="startDate" style="color:white">Start Date :</label>
-                <input type="date" class="form-control" id="startDate" name="startDate"/>
+                <label for="startDate" >Start Date :</label>
+                <input type="date" class="" id="startDate" name="startDate"/>
 
-                <label for="endDate" style="color:white">End Date :</label>
-                <input type="date" class="form-control" id="endDate" name="startDate"/>
+                <label for="endDate" >End Date :</label>
+                <input type="date" class="" id="endDate" name="startDate"/>
                <!-- nd genres drop down-->
-           </span>
-            <div class="labelFilter" (click)="onClickDrop(seasonString)">
-                Seasons <fa-icon [icon]="faAngleDown" style="margin-left: 0.5rem; "></fa-icon>
             </div>
-            <span class="dropdown-content" [hidden]="!seasonDropped">
-                <!--genres drop down-->
-               <div class="">
-                   *this filter is needed to be used without the other ones
-                   <div class="">
-                    <div>
-                        <input id="winter" type="radio" class="custom-control-input" value="winter" name="season" ngModel required>
-                        <label class="custom-control-label" for="winter">Winter</label>
-                     </div>
-                     <div>
-                        <input id="spring" type="radio" class="custom-control-input" value="spring" name="season" ngModel required>
-                        <label class="custom-control-label" for="spring">Spring</label>
-                     </div>
-                     <div>
-                        <input id="summer" type="radio" class="custom-control-input" value="summer" name="season" ngModel required>
-                        <label class="custom-control-label" for="summer">Summer</label>
-                     </div>
-                     <div>
-                        <input id="fall" type="radio" class="custom-control-input" value="fall" name="season" ngModel required>
-                        <label class="custom-control-label" for="fall">Fall</label>
-                     </div>
-                       <input class="form-input" type="text" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">Year</label>
-                    </div>
-               </div>
-               <!-- nd genres drop down-->
            </span>
+           
         </div>
         <div class="col">
             <div class="labelFilter" (click)="onClickDrop(statusString)">
                 Status <fa-icon [icon]="faAngleDown" style="margin-left: 0.5rem; "></fa-icon>
             </div>
-            <span class="dropdown-content" [hidden]="!statusDropped">
+            <span class="dropdown-content-statut" [hidden]="!statusDropped">
                 <!--genres drop down-->
                 <!-- Gender -->
-                <div>
-                    <input id="airing" type="radio" class="custom-control-input" value="default" name="status" ngModel required>
-                    <label class="custom-control-label" for="airing">airing</label>
+                <div class="form-radio">
+
+                    <input id="airing" type="radio" class="custom-control-input" value="airing" name="status" ngModel required>
+                    <label class="custom-control-label" for="airing">Airing</label>
                  </div>
-                 <div>
+                 <div class="form-radio">
                     <input id="complete" type="radio" class="custom-control-input" value="title" name="status" ngModel required>
-                    <label class="custom-control-label" for="complete">complete</label>
+                    <label class="custom-control-label" for="complete">Complete</label>
                  </div>
                <!-- nd genres drop down-->
            </span>
             <div class="labelFilter" (click)="onClickDrop(sortString)">
                 Sort<fa-icon [icon]="faAngleDown" style="margin-left: 0.5rem; "></fa-icon>
             </div>
-            <span class="dropdown-content" [hidden]="!sortDropped">
+            <span class="dropdown-content-sort" [hidden]="!sortDropped">
                 <!--genres drop down-->
                 <!-- Gender -->
-                <div>
-                    <input id="default" type="radio" class="custom-control-input" value="default" name="sort" ngModel required>
-                    <label class="custom-control-label" for="default">Default</label>
-                 </div>
-                 <div>
+                <div class="form-radio">
                     <input id="title" type="radio" class="custom-control-input" value="title" name="sort" ngModel required>
                     <label class="custom-control-label" for="title">Name A-Z</label>
                  </div>
-                 <div>
+                 <div class="form-radio">
                      <input id="score" type="radio" class="custom-control-input" value="score" name="sort" ngModel required>
                      <label class="custom-control-label" for="score">Score</label>
                   </div>
-                  <div>
+                  <div class="form-radio">
                      <input id="popularity" type="radio" class="custom-control-input" value="popularity" name="sort" ngModel required>
                      <label class="custom-control-label" for="popularity">Popularity</label>
                   </div>
-                  <div>
+                  <div class="form-radio">
                      <input id="episodes" type="radio" class="custom-control-input" value="episodes" name="sort" ngModel required>
                      <label class="custom-control-label" for="episodes">Episodes</label>
                   </div>
                <!-- nd genres drop down-->
            </span>
+           <div class="labelFilter" (click)="onClickDrop(seasonString)">
+            Seasons <fa-icon [icon]="faAngleDown" style="margin-left: 0.5rem; "></fa-icon>
+        </div>
+        <span class="dropdown-content-season" [hidden]="!seasonDropped">
+            <!--genres drop down-->
+           <div class="season-container">
+               <h2>*this filter is needed to be used without the other ones</h2>
+               <div class="">
+                <div class="form-radio">
+                    <input id="winter" type="radio" class="custom-control-input" value="winter" name="season" ngModel required>
+                    <label class="custom-control-label" for="winter">Winter</label>
+                 </div>
+                 <div class="form-radio">
+                    <input id="spring" type="radio" class="custom-control-input" value="spring" name="season" ngModel required>
+                    <label class="custom-control-label" for="spring">Spring</label>
+                 </div>
+                 <div class="form-radio">
+                    <input id="summer" type="radio" class="custom-control-input" value="summer" name="season" ngModel required>
+                    <label class="custom-control-label" for="summer">Summer</label>
+                 </div>
+                 <div class="form-radio">
+                    <input id="fall" type="radio" class="custom-control-input" value="fall" name="season" ngModel required>
+                    <label class="custom-control-label" for="fall">Fall</label>
+                 </div >
+                 <div class="year-container">
+                    <label class="form-check-label-special" for="flexCheckDefault">Year -></label>
+                   <input class="form-input-special" type="text" id="flexCheckDefault">
+                </div>
+
+                </div>
+           </div>
+           <!-- nd genres drop down-->
+       </span>
         </div>
         <button class="button-filter" type="submit">Filter <fa-icon [icon]="faFilter" style="margin-left: 0.5rem; "></fa-icon></button>
       </div>

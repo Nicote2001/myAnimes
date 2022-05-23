@@ -1,75 +1,27 @@
-<mdb-carousel [controls]="true" [indicators]="true" [animation]="'fade'" style="width: 24.5rem; ">
-    <mdb-carousel-item >
-      <img
-        src="{{recommandationAnimes[0].image}}"
-        class="d-block w-100"
-        style="height: 400px;"
+<mdb-carousel [controls]="true" [indicators]="true" [animation]="'fade'" style="width: 20rem; height: 30rem; ">
+  <mdb-carousel-item class="color-container" >
+    <img  (click)="goToAnimeFromCarousel(recommandationAnimes[0].title)"
+      src="{{recommandationAnimes[0].image}}"
+      class="d-block img-caroussel"
+      style=""
+      alt="..."
+    />
+    <div class="caroussel-info-body"> 
+      <h5>{{recommandationAnimes[0].title}}</h5>
+      <p>{{recommandationAnimes[0].summary}}</p>
+    </div>
+  </mdb-carousel-item >
+    <mdb-carousel-item class="color-container"  *ngFor=" let item of recommandationAnimes.slice(1,recommandationAnimes.length)">
+      <img  (click)="goToAnimeFromCarousel(item.title)"
+        src="{{item.image}}"
+        class="d-block img-caroussel"
+        style=""
         alt="..."
       />
-      <div class="carousel-caption d-none d-md-block">
-        <h5>{{recommandationAnimes[0].title}}</h5>
-        <button type="button" class="btn btn-info btn-rounded" (click)="goToAnimeFromCarousel(recommandationAnimes[0].title)">Regarder</button>
+      <div class="caroussel-info-body"> 
+        <h5>{{item.title}}</h5>
+        <p>{{item.summary}}</p>
       </div>
       
-    </mdb-carousel-item>
-    <mdb-carousel-item>
-      <img
-        src="{{recommandationAnimes[1].image}}"
-        class="d-block w-100"
-        style="height: 400px;"
-        alt="..."
-      />
-      <div class="carousel-caption d-none d-md-block">
-        <h5>{{recommandationAnimes[1].title}}</h5>
-        <button type="button" class="btn btn-info btn-rounded" (click)="goToAnimeFromCarousel(recommandationAnimes[1].title)">Regarder</button>
-      </div>
-    </mdb-carousel-item>
-    <mdb-carousel-item>
-      <img
-        src="{{recommandationAnimes[2].image}}"
-        class="d-block w-100"
-        style="height: 400px;"
-        alt="..."
-      />
-      <div class="carousel-caption d-none d-md-block">
-        <h5>{{recommandationAnimes[2].title}}</h5>
-        <button type="button" class="btn btn-info btn-rounded" (click)="goToAnimeFromCarousel(recommandationAnimes[2].title)">Regarder</button>
-      </div>
-    </mdb-carousel-item>
-    <mdb-carousel-item>
-      <img
-        src="{{recommandationAnimes[3].image}}"
-        class="d-block w-100"
-        style="height: 400px;"
-        alt="..."
-      />
-      <div class="carousel-caption d-none d-md-block">
-        <h5>{{recommandationAnimes[3].title}}</h5>
-        <button type="button" class="btn btn-info btn-rounded" (click)="goToAnimeFromCarousel(recommandationAnimes[3].title)">Regarder</button>
-      </div>
-    </mdb-carousel-item>
-    <mdb-carousel-item>
-      <img
-        src="{{recommandationAnimes[4].image}}"
-        class="d-block w-100"
-        style="height: 400px;"
-        alt="..."
-      />
-      <div class="carousel-caption d-none d-md-block">
-        <h5>{{recommandationAnimes[4].title}}</h5>
-        <button type="button" class="btn btn-info btn-rounded" (click)="goToAnimeFromCarousel(recommandationAnimes[4].title)">Regarder</button>
-      </div>
-    </mdb-carousel-item>
-    <mdb-carousel-item>
-      <img
-        src="{{recommandationAnimes[5].image}}"
-        class="d-block w-100"
-        style="height: 400px;"
-        alt="..."
-      />
-      <div class="carousel-caption d-none d-md-block">
-        <h5>{{recommandationAnimes[5].title}}</h5>
-        <button type="button" class="btn btn-info btn-rounded" (click)="goToAnimeFromCarousel(recommandationAnimes[5].title)">Regarder</button>
-      </div>
-    </mdb-carousel-item>
+    </mdb-carousel-item >
   </mdb-carousel>

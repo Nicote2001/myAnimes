@@ -5,10 +5,10 @@
     width: 9rem; 
     padding-top: 0.2rem ;
     padding-bottom: 0.2rem ;
-    margin: 0.4rem;
     border-radius: 10px;
-    margin-left: 1.5rem;
+    margin-left: 1.6rem;
     color: gray; 
+    margin-top: 0.5rem;
 }
 .labelFilter:hover{
     background-color: gray;
@@ -18,8 +18,8 @@
 .form-check input:checked {
     background-color:red;
     border-color: red;
-    box-shadow: none;
     }
+    
 .dropdown-content {
     position: absolute;
     width: 45rem;
@@ -31,28 +31,109 @@
     border-radius: 10px;
     -ms-overflow-style: none;
   }
+  .dropdown-content-season{
+    position: absolute;
+    width: 20rem;
+    max-height: 90rem;
+    z-index: 10;
+    background-color: #1C1C1C;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: block;
+    border-radius: 10px;
+    -ms-overflow-style: none;
+  }
+  .dropdown-content-sort{
+    position: absolute;
+    width: 15rem;
+    max-height: 90rem;
+    z-index: 10;
+    background-color: #1C1C1C;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: block;
+    border-radius: 10px;
+    -ms-overflow-style: none;
+  }
+  .dropdown-content-genre{
+    position: absolute;
+    width: 20rem;
+    max-height: 90rem;
+    z-index: 10;
+    background-color: #1C1C1C;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: block;
+    border-radius: 10px;
+    -ms-overflow-style: none;
+  }
+  .dropdown-content-statut{
+    position: absolute;
+    width: 10rem;
+    max-height: 90rem;
+    z-index: 10;
+    background-color: #1C1C1C;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: block;
+    border-radius: 10px;
+    -ms-overflow-style: none;
+  }
+  .dropdown-content-years{
+    position: absolute;
+    width: 20rem;
+    max-height: 90rem;
+    z-index: 10;
+    background-color: #1C1C1C;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: block;
+    border-radius: 10px;
+    -ms-overflow-style: none;
+  }
+  .season-container h2{
+      color: red;
+      margin-left: 1rem;
+      font-size: 0.8rem;
+  }
+  
   .form-check:hover{
     background-color: gray;
     cursor: pointer;
     color: white;
   }
+  .form-radio:hover{
+    background-color: gray;
+    cursor: pointer;
+    color: white;
+  }
+  .form-radio label,input:hover{
+    cursor: pointer;
+  }
+  .form-radio input[type="radio"]{
+    accent-color:red;
+  } 
+  .custom-control-input{
+    margin-left: 1rem;
+  }
+  .custom-control-label{
+      margin-left: 1rem;
+  }
   .button-filter{
       width: 23rem;
       margin: auto;
-      height: 2.5rem;
+      height: 4rem;
       border-radius: 10px;
       background-color: rgb(189, 13, 13);
       font-size: 1.5rem;
       color: white;
       font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
       border: none;
+      margin-top: 0.5rem;
   }
   .button-filter:hover{
     background-color: red;
   }
   .filter-container{
+      width: 26rem;
       height: 16.5rem;
       border-radius: 10px;
+      margin: auto;
   }
   .filter-container h3{
       color: white;
@@ -60,3 +141,46 @@
       padding-left: 1.6rem;
       padding-top: 1rem;
   }
+  .form-check-label-special{
+    margin-left:1rem ;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+    cursor: default;
+  }
+  .form-input-special {
+    margin-left:1rem ;
+    margin-bottom: 0.5rem;
+    border-radius: 10px;
+    width: 14rem;
+  }
+  .form-input-special:hover{
+      cursor: text;
+  }
+.year-container{
+    border-top: 1px solid white;
+    margin-top: 1rem;
+}
+.year-container input[type=text]:focus {
+    background-color: rgb(241, 237, 237);
+}
+  .date-container label{
+      width: 5rem;
+      margin-left: 1rem;
+  }
+  .date-container input{
+    width: 10rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+  }
+  .date-container h2{
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+  .date-container input:hover{
+      cursor: text;
+  }
+  .date-container input[type=date]:focus {
+    background-color: rgb(241, 237, 237);
+}
