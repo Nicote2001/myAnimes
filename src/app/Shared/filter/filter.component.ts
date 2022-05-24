@@ -179,6 +179,9 @@ export class FilterComponent implements OnInit {
     //fill call whith searc if not null
     apiCall = this.SearchConstuctFilterCall(apiCall);
 
+    //fill season if not null
+    apiCall = this.CallSeason(apiCall);
+
     if(this.isQuickFilter)
     {
       this.router.navigateByUrl('anime/search',{state:{apiCall:apiCall}});
@@ -337,18 +340,15 @@ export class FilterComponent implements OnInit {
     return apiCall;
   }
 
-  CallSeason()
+  CallSeason(apiCall:string)
   {
-    if(this.seasons !== undefined)
+    if(this.seasons !== undefined || this.seasonyear !== undefined)
     {
-      if(this.seasonyear === undefined){
-        this.seasonyear = new Date().getFullYear();
-      }
-
-      
-
+      return 'https://api.jikan.moe/v4/seasons/'+this.seasonyear+'/'+this.seasons;
     }
-
+    else{
+      return apiCall;
+    }
   }
 
   fillItemByForm(form:NgForm)
@@ -387,8 +387,6 @@ export class FilterComponent implements OnInit {
     {
       this.search = form.value.search;
     }
-
-    console.log("ok");
   }
 
 

@@ -1,10 +1,12 @@
 import { Injectable } from "@angular/core";
+import { AnimeDetailsApiCallerService } from "../ApiCallerService/animeDetails.api-caller.service";
+import { IAnime } from "../objects/anime.model";
 
 @Injectable({providedIn: 'root'})
 
 export class CommonService
 {
-    constructor()
+    constructor(public api: AnimeDetailsApiCallerService)
     {
 
     }
@@ -22,7 +24,7 @@ export class CommonService
             {
                 formatedTitle += "-";
             }
-            else if(this.rExp.test(animeTitle[i]))
+            else if(this.rExp.test(animeTitle[i]) || animeTitle[i] == "!" ||  animeTitle[i] == "/")
             {
                 formatedTitle += "";
             }

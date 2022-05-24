@@ -32,7 +32,12 @@ export class FilterAnimeApiCallerService
     }
 
     public getAnimesSearchByFilter(apiRequest: string){
-        return this.http.get<any>(apiRequest+="&type=tv")
+        if(apiRequest.slice(0,32)=="https://api.jikan.moe/v4/seasons"){
+            return this.http.get<any>(apiRequest)
+        }
+        else{
+            return this.http.get<any>(apiRequest+="&type=tv")
+        }
     }
     
 }

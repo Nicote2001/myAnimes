@@ -18,7 +18,7 @@ export class SearchAnimeComponent implements OnInit {
   animes: IAnime[] = [];
 
 
-  constructor(private route:ActivatedRoute, public sanitizer: DomSanitizer, public api: FilterAnimeApiCallerService, private router: Router, private commonService:CommonService) 
+  constructor(private route:ActivatedRoute, public sanitizer: DomSanitizer, public api: FilterAnimeApiCallerService, private router: Router, private commonService:CommonService, private apiAnimeDetails:AnimeDetailsApiCallerService) 
   { 
     if(this.router.getCurrentNavigation().extras.state !== undefined){
       this.apiCall = this.router.getCurrentNavigation().extras.state.apiCall;
@@ -50,6 +50,12 @@ export class SearchAnimeComponent implements OnInit {
   }
   goToAnime(anime : IAnime)
   {
-    this.router.navigateByUrl('anime/'+this.commonService.FormatAnimeTitle(anime.title)+'/'+ 1);
+    this.apiAnimeDetails.getAnimeById(this.commonService.FormatAnimeTitle(anime.title)).subscribe(data =>{
+      this.router.navigateByUrl('anime/'+this.commonService.FormatAnimeTitle(anime.title)+'/'+ 1);
+    });
+
+    this.apiAnimeDetails.getAnimeById(this.commonService.FormatAnimeTitle(anime.title_english)).subscribe(data =>{
+      this.router.navigateByUrl('anime/'+this.commonService.FormatAnimeTitle(anime.title_english)+'/'+ 1);
+    });
   }
 }

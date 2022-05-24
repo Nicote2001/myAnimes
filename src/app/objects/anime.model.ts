@@ -4,6 +4,7 @@ export class IAnime
 {
     constructor(
         public title : string,
+        public title_english: string,
         public images : Images,
         public episodes: number,
         public score: number,

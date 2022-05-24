@@ -7,7 +7,7 @@
             <div [ngClass]="{'labelFilter': isQuickFilter, 'labelFilter-full': !isQuickFilter}" (click)="onClickDrop(genreString)" (blur)="onBlurDrop(genreString)">
                 Genre  <fa-icon [icon]="faAngleDown" style="margin-left: 0.5rem; "></fa-icon>
             </div>
-            <span [ngClass]="{'dropdown-content-genre': isQuickFilter, 'dropdown-content-genre-full': !isQuickFilter}" [hidden]="!genreDropped">
+            <span [ngClass]="{'dropdown-content-genre': isQuickFilter, 'dropdown-content-genre-full': !isQuickFilter}" [hidden]="!genreDropped" hidden="true">
                  <!--genres drop down-->
                 <div class="">
                     <div class="">
@@ -24,7 +24,7 @@
             <div [ngClass]="{'labelFilter': isQuickFilter, 'labelFilter-full': !isQuickFilter}"  (click)="onClickDrop(producerString)">
                 Producers <fa-icon [icon]="faAngleDown" style="margin-left: 0.5rem; "></fa-icon>
             </div>
-            <span [ngClass]="{'dropdown-content': isQuickFilter, 'dropdown-content-full': !isQuickFilter}" [hidden]="!producerDropped">
+            <span [ngClass]="{'dropdown-content': isQuickFilter, 'dropdown-content-full': !isQuickFilter}" [hidden]="!producerDropped" hidden="true">
                 <!--genres drop down-->
                 <div class="row">
                     <div class="col-4">
@@ -71,7 +71,7 @@
             <div [ngClass]="{'labelFilter': isQuickFilter, 'labelFilter-full': !isQuickFilter}"  (click)="onClickDrop(yearString)">
                 Years <fa-icon [icon]="faAngleDown" style="margin-left: 0.5rem; "></fa-icon>
             </div>
-            <span [ngClass]="{'dropdown-content-years': isQuickFilter, 'dropdown-content-years-full': !isQuickFilter}"  [hidden]="!yearDropped">
+            <span [ngClass]="{'dropdown-content-years': isQuickFilter, 'dropdown-content-years-full': !isQuickFilter}"  [hidden]="!yearDropped" hidden="true">
                 <div  [ngClass]="{'date-container': isQuickFilter, 'date-container-full': !isQuickFilter}"> 
                 <h2>Filter By Date between</h2>
                 <!--genres drop down-->
@@ -89,7 +89,7 @@
             <div [ngClass]="{'labelFilter': isQuickFilter, 'labelFilter-full': !isQuickFilter}"  (click)="onClickDrop(statusString)">
                 Status <fa-icon [icon]="faAngleDown" style="margin-left: 0.5rem; "></fa-icon>
             </div>
-            <span [ngClass]="{'dropdown-content-statut': isQuickFilter, 'dropdown-content-statut-full': !isQuickFilter}" [hidden]="!statusDropped">
+            <span [ngClass]="{'dropdown-content-statut': isQuickFilter, 'dropdown-content-statut-full': !isQuickFilter}" [hidden]="!statusDropped" hidden="true">
                 <!--genres drop down-->
                 <!-- Gender -->
                 <div [ngClass]="{'form-radio': isQuickFilter, 'form-radio-full': !isQuickFilter}">
@@ -106,7 +106,7 @@
             <div [ngClass]="{'labelFilter': isQuickFilter, 'labelFilter-full': !isQuickFilter}"  (click)="onClickDrop(sortString)">
                 Sort<fa-icon [icon]="faAngleDown" style="margin-left: 0.5rem; "></fa-icon>
             </div>
-            <span  [ngClass]="{'dropdown-content-sort': isQuickFilter, 'dropdown-content-sort-full': !isQuickFilter}" [hidden]="!sortDropped">
+            <span  [ngClass]="{'dropdown-content-sort': isQuickFilter, 'dropdown-content-sort-full': !isQuickFilter}" [hidden]="!sortDropped" hidden="true">
                 <!--genres drop down-->
                 <!-- Gender -->
                 <div [ngClass]="{'form-radio': isQuickFilter, 'form-radio-full': !isQuickFilter}">
@@ -130,7 +130,7 @@
            <div [ngClass]="{'labelFilter': isQuickFilter, 'labelFilter-full': !isQuickFilter}"  (click)="onClickDrop(seasonString)">
             Seasons <fa-icon [icon]="faAngleDown" style="margin-left: 0.5rem; "></fa-icon>
         </div>
-        <span  [ngClass]="{'dropdown-content-season': isQuickFilter, 'dropdown-content-season-full': !isQuickFilter}" [hidden]="!seasonDropped">
+        <span  [ngClass]="{'dropdown-content-season': isQuickFilter, 'dropdown-content-season-full': !isQuickFilter}" [hidden]="!seasonDropped" hidden="true">
             <!--genres drop down-->
            <div  [ngClass]="{'season-container': isQuickFilter, 'season-container-full': !isQuickFilter}" >
                <h2>*this filter is needed to be used without the other ones</h2>
