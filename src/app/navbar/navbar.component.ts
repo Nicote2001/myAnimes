@@ -15,8 +15,8 @@ export class NavbarComponent implements OnInit {
   searchFilter:string;
   lastRequest:Date;
   animesResults: IAnime[] = [];
-
-
+  isDropped: boolean=false;
+  
   constructor(private apiSearch: FilterAnimeApiCallerService, private commonService: CommonService, private router: Router) { }
 
   ngOnInit(): void {
@@ -64,6 +64,9 @@ export class NavbarComponent implements OnInit {
     this.searchFilter ="";
 
     this.router.navigateByUrl('anime/'+formatedAnimeTitle+'/'+1);
+  }
+  onClickDropped(){
+    this.isDropped=!this.isDropped;
   }
 
 }

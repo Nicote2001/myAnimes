@@ -65,3 +65,15 @@ justify-content: start;
         justify-content: left;
     }
 }
+.dropdown-content-years-full{
+    position: absolute;
+    margin-top: 13rem;
+    width: 20rem;
+    max-height: 90rem;
+    z-index: 10;
+    background-color: #1C1C1C;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: block;
+    border-radius: 10px;
+    -ms-overflow-style: none;
+  }

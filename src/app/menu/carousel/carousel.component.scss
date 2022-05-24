@@ -10,7 +10,7 @@
 }
 .caroussel-info-body h5{
     padding-top: 0.5rem;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
 }
 .caroussel-info-body p{
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -32,9 +32,9 @@
     cursor: pointer;
 }
 .button{
-    background-color: #2d2e30;
+    background-color: rgb(189, 13, 13);
     border: none;
-    color:gray;
+    color:white;
     border-radius: 25px;
     width: 10rem;
     height: 3rem;
@@ -42,7 +42,7 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .button:hover{
-    background-color: gray;
+    background-color: red;
     color: white;
 }
 .color-container{
