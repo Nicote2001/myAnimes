@@ -1,0 +1,28 @@
+.card{
+    background-color: transparent;
+}
+.card-title{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+}
+.card-title:hover{
+    color: red;
+}
+.card-css:hover{
+    color: red;
+}
+.card:hover h5{
+    color: red;
+}
+.card-img-top {
+    height: 15rem;
+    width: 10rem;
+}
+.card-container{
+    margin: auto;
+}
+.card-body{
+    width: 10rem;
+}

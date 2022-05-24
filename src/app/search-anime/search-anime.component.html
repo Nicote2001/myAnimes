@@ -1,4 +1,4 @@
-<app-filter [isQuickFilter]="false" (apiCallChanged)="apiCallChange($event)"></app-filter>
+<app-filter  [isQuickFilter]="false" (apiCallChanged)="apiCallChange($event)"> </app-filter>
 <h3 style="color: white; margin-top: 3rem;">Animes Results</h3>
 <div>
     <div class="row row-cols-4 row-cols-md-4 mt-2 mb-2 card-container ">
@@ -8,12 +8,13 @@
                 <img
                   src="{{anime.images.webp.image_url}}"
                   class="card-img-top "
+                  style="text-align: center;"
                 />
                 <div class="card-body">
                   <h5 class="card-title">{{anime.title.slice(0,20)}}</h5>
                 </div>
               </button>
-            </div>
+            </div> 
     </div>
     
 </div>

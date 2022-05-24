@@ -125,14 +125,14 @@
       color: white;
       font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
       border: none;
-      margin-top: 0.5rem;
+      margin-top: 1rem;
   }
   .button-filter:hover{
     background-color: red;
   }
   .filter-container{
       width: 26rem;
-      height: 16.5rem;
+      height: 21rem;
       border-radius: 10px;
       margin: auto;
   }
@@ -185,4 +185,248 @@
   }
   .date-container input[type=date]:focus {
     background-color: rgb(241, 237, 237);
+}
+.form-input-researsh{
+  display: block;
+  width: 23rem;
+  margin: auto;
+  border-radius: 10px;
+  height: 3rem;
+}
+.research-container input:hover{
+  cursor: text;
+}
+.research-container input[type=text]:focus {
+  background-color: rgb(241, 237, 237);
+}
+.button-filter-container{
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+
+
+
+/* second filter */ 
+
+
+
+.labelFilter-full
+{
+    display: block;
+    background-color: #2d2e30; 
+    text-align: center; 
+    width: 19.7rem; 
+    padding-top: 0.2rem ;
+    padding-bottom: 0.2rem ;
+    border-radius: 10px;
+    margin-left: 1.6rem;
+    color: gray; 
+    margin-top: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.labelFilter-full:hover{
+    background-color: gray;
+    cursor: pointer;
+    color: white;
+}
+.form-check-full input:checked {
+  background-color:red;
+  border-color: red;
+  }
+.form-check-full label{
+  margin-left: 0.5rem;
+}
+.dropdown-content-full {
+    position: absolute;
+    width: 45rem;
+    max-height: 90rem;
+    z-index: 10;
+    background-color: #1C1C1C;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: block;
+    border-radius: 10px;
+    -ms-overflow-style: none;
+  }
+  .dropdown-content-season-full{
+    position: absolute;
+    width: 20rem;
+    max-height: 90rem;
+    z-index: 10;
+    background-color: #1C1C1C;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: block;
+    border-radius: 10px;
+    -ms-overflow-style: none;
+  }
+  .dropdown-content-sort-full{
+    position: absolute;
+    width: 15rem;
+    max-height: 90rem;
+    z-index: 10;
+    background-color: #1C1C1C;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: block;
+    border-radius: 10px;
+    -ms-overflow-style: none;
+  }
+  .dropdown-content-genre-full{
+    position: absolute;
+    width: 20rem;
+    max-height: 90rem;
+    z-index: 10;
+    background-color: #1C1C1C;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: block;
+    border-radius: 10px;
+    -ms-overflow-style: none;
+  }
+  .dropdown-content-statut-full{
+    position: absolute;
+    width: 10rem;
+    max-height: 90rem;
+    z-index: 10;
+    background-color: #1C1C1C;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: block;
+    border-radius: 10px;
+    -ms-overflow-style: none;
+  }
+  .dropdown-content-years-full{
+    position: absolute;
+    width: 20rem;
+    max-height: 90rem;
+    z-index: 10;
+    background-color: #1C1C1C;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: block;
+    border-radius: 10px;
+    -ms-overflow-style: none;
+  }
+  .season-container-full h2{
+      color: red;
+      margin-left: 1rem;
+      font-size: 0.8rem;
+      padding-top: 0.5rem;
+  }
+  
+  .form-check-full:hover{
+    background-color: gray;
+    cursor: pointer;
+    color: white;
+  }
+  .form-radio-full:hover{
+    background-color: gray;
+    cursor: pointer;
+    color: white;
+  }
+  .form-radio-full label,input:hover{
+    cursor: pointer;
+  }
+  .form-radio-full input[type="radio"]{
+    accent-color:red;
+  } 
+  .custom-control-input-full{
+    margin-left: 1rem;
+  }
+  .custom-control-label-full{
+      margin-left: 1rem;
+  }
+  .button-filter-full{
+      width: 19.7rem;
+      margin: auto;
+      height: 4rem;
+      border-radius: 10px;
+      background-color: rgb(189, 13, 13);
+      font-size: 1.5rem;
+      color: white;
+      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      border: none;
+      margin-top: 1rem;
+      display: inline;
+      margin-left: 1rem;
+  }
+  .button-filter-full:hover{
+    background-color: red;
+  }
+  .filter-container-full{
+      width: 46.5rem;
+      height: 16.5rem;
+      border-radius: 10px;
+      margin: auto;
+  }
+  .filter-container-full h3{
+      color: white;
+      font-size: 1.5rem;
+      padding-left: 1.6rem;
+      padding-top: 1rem;
+      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  .form-check-label-special-full{
+    margin-left:1rem ;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+    cursor: default;
+  }
+  .form-input-special-full {
+    margin-left:1rem ;
+    margin-bottom: 0.5rem;
+    border-radius: 10px;
+    width: 14rem;
+  }
+  .form-input-special-full:hover{
+      cursor: text;
+  }
+.year-container-full{
+    border-top: 1px solid white;
+    margin-top: 1rem;
+}
+.year-container-full input[type=text]:focus {
+    background-color: rgb(241, 237, 237);
+}
+  .date-container-full label{
+      width: 5rem;
+      margin-left: 1rem;
+  }
+  .date-container-full input{
+    width: 10rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+  }
+  .date-container-full h2{
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 1.5rem;
+    padding-top: 0.5rem;
+  }
+  .date-container-full input:hover{
+      cursor: text;
+  }
+  .date-container-full input[type=date]:focus {
+    background-color: rgb(241, 237, 237);
+}
+.form-input-researsh-full{
+  width: 20rem;
+  margin: auto;
+  border-radius: 10px;
+  height: 3rem;
+}
+.research-container-full{
+  width: 22rem;
+  display: inline;
+  margin-left: 1.2rem;
+}
+.research-container-full input:hover{
+  cursor: text;
+}
+.research-container-full input[type=text]:focus {
+  background-color: rgb(241, 237, 237);
+}
+.button-filter-container-full{
+  display: inline;
+  width: 20rem;
 }

@@ -4,18 +4,21 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AnimeDetailsApiCallerService } from '../ApiCallerService/animeDetails.api-caller.service';
 import { FilterAnimeApiCallerService } from '../ApiCallerService/filterAnime.api-caller.service';
 import { IAnime } from '../objects/anime.model';
+import { CommonService } from '../Shared/common.service';
 
 @Component({
   selector: 'app-search-anime',
   templateUrl: './search-anime.component.html',
   styleUrls: ['./search-anime.component.scss']
+
 })
 export class SearchAnimeComponent implements OnInit {
 
   apiCall:string;
   animes: IAnime[] = [];
 
-  constructor(private route:ActivatedRoute, public sanitizer: DomSanitizer, public api: FilterAnimeApiCallerService, private router: Router) 
+
+  constructor(private route:ActivatedRoute, public sanitizer: DomSanitizer, public api: FilterAnimeApiCallerService, private router: Router, private commonService:CommonService) 
   { 
     if(this.router.getCurrentNavigation().extras.state !== undefined){
       this.apiCall = this.router.getCurrentNavigation().extras.state.apiCall;
@@ -45,5 +48,8 @@ export class SearchAnimeComponent implements OnInit {
       this.animes=data.data.slice(0,24);
     });
   }
-
+  goToAnime(anime : IAnime)
+  {
+    this.router.navigateByUrl('anime/'+this.commonService.FormatAnimeTitle(anime.title)+'/'+ 1);
+  }
 }
