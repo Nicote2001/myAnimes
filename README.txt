@@ -1,15 +1,5 @@
-MDB 5 Angular
+**PROJET DE SESSION ANGULAR NICOLAS***
 
-Version: FREE 2.1.0
+pour lancer le projet il suffit de cloner le projet et lancer un ng serve
 
-Documentation:
-https://mdbootstrap.com/docs/b5/angular/
 
-Installation:
-https://mdbootstrap.com/docs/b5/angular/getting-started/installation/
-
-CLI & hosting:
-https://mdbootstrap.com/docs/standard/cli/
-
-Support:
-https://mdbootstrap.com/support/cat/angular/
