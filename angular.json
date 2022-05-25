@@ -103,6 +103,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "mdb-angular-ui-kit-free:build:production",
+            "firebaseProject": "myanimesdub",
+            "firebaseHostingSite": "myanimesdub"
+          }
         }
       }
     }

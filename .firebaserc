@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "myanimesdub": {
+      "hosting": {
+        "mdb-angular-ui-kit-free": [
+          "myanimesdub"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "myanimesdub"
+  }
+}

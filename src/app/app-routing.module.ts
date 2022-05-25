@@ -1,5 +1,8 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { ForgotPasswordComponent } from "./account/forgot-password/forgot-password.component";
+import { LoginComponent } from "./account/login/login.component";
+import { RegisterComponent } from "./account/register/register.component";
 import { AnimeDetailComponent } from "./anime-detail/anime-detail.component";
 import { MenuComponent } from "./menu/menu.component";
 import { SearchAnimeComponent } from "./search-anime/search-anime.component";
@@ -10,7 +13,10 @@ const routes: Routes =
     {path: 'menu', component: MenuComponent},
     {path: 'anime/:id/:episode', component: AnimeDetailComponent},
     {path: 'anime/search', component: SearchAnimeComponent},
-    {path: '**', redirectTo: '', pathMatch: 'full'}
+    {path: 'login', component: LoginComponent},
+    {path: 'register', component: RegisterComponent},
+    {path: 'forgot-password', component: ForgotPasswordComponent},
+    {path: '**', redirectTo: '', pathMatch: 'full'},
 ];
 
 @NgModule({

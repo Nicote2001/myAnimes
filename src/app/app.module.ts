@@ -38,6 +38,14 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FilterComponent } from './Shared/filter/filter.component';
 import { FormsModule } from '@angular/forms';
 import { SearchAnimeComponent } from './search-anime/search-anime.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { LoginComponent } from './account/login/login.component';
+import { RegisterComponent } from './account/register/register.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { ForgotPasswordComponent } from './account/forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +57,10 @@ import { SearchAnimeComponent } from './search-anime/search-anime.component';
     EpisodesComponent,
     NavbarComponent,
     FilterComponent,
-    SearchAnimeComponent
+    SearchAnimeComponent,
+    LoginComponent,
+    RegisterComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +88,10 @@ import { SearchAnimeComponent } from './search-anime/search-anime.component';
     VgOverlayPlayModule,
     VgBufferingModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore())
   ],
   providers: [],
   bootstrap: [AppComponent]
