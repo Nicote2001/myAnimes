@@ -39,10 +39,9 @@ export class SideBarComponent implements OnInit {
     })
   }
 
-  goToAnimeFromRanking(animeTitle: string)
+  goToAnimeFromRanking(anime: IAnime)
   {
-    var formatedTitle = this.commonService.FormatAnimeTitle(animeTitle); 
-    this.router.navigateByUrl('anime/'+formatedTitle+'/'+1);
+    this.commonService.goToAnime(anime);
   }
 
 }

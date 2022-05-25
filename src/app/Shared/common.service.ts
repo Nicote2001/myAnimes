@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { Router } from "@angular/router";
 import { AnimeDetailsApiCallerService } from "../ApiCallerService/animeDetails.api-caller.service";
 import { IAnime } from "../objects/anime.model";
 
@@ -6,7 +7,7 @@ import { IAnime } from "../objects/anime.model";
 
 export class CommonService
 {
-    constructor(public api: AnimeDetailsApiCallerService)
+    constructor(public api: AnimeDetailsApiCallerService, public apiAnimeDetails: AnimeDetailsApiCallerService, private router: Router)
     {
 
     }
@@ -35,5 +36,32 @@ export class CommonService
         }
 
         return formatedTitle
+    }
+
+    public delay(ms: number) 
+    {
+        return new Promise( resolve => setTimeout(resolve, ms) );
+    }
+
+    async goToAnime(anime : IAnime)
+    {
+        var isFound = false;
+
+      this.apiAnimeDetails.getAnimeById(this.FormatAnimeTitle(anime.title)).subscribe(data =>{
+        this.router.navigateByUrl('anime/'+this.FormatAnimeTitle(anime.title)+'/'+ 1);
+        isFound = true;
+      });
+  
+      this.apiAnimeDetails.getAnimeById(this.FormatAnimeTitle(anime.title_english)).subscribe(data =>{
+        this.router.navigateByUrl('anime/'+this.FormatAnimeTitle(anime.title_english)+'/'+ 1);
+        isFound = true;
+      })
+  
+      await this.delay(1000);
+      
+      if(!isFound)
+      {
+        this.router.navigateByUrl('error/anime');
+      }
     }
 }

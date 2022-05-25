@@ -56,15 +56,10 @@ export class SearchAnimeComponent implements OnInit {
     });
     this.currentPage = 1;
   }
+
   goToAnime(anime : IAnime)
   {
-    this.apiAnimeDetails.getAnimeById(this.commonService.FormatAnimeTitle(anime.title)).subscribe(data =>{
-      this.router.navigateByUrl('anime/'+this.commonService.FormatAnimeTitle(anime.title)+'/'+ 1);
-    });
-
-    this.apiAnimeDetails.getAnimeById(this.commonService.FormatAnimeTitle(anime.title_english)).subscribe(data =>{
-      this.router.navigateByUrl('anime/'+this.commonService.FormatAnimeTitle(anime.title_english)+'/'+ 1);
-    });
+    this.commonService.goToAnime(anime);
   }
 
   onClickChangePage(number: number)

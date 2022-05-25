@@ -4,6 +4,7 @@ import { ForgotPasswordComponent } from "./account/forgot-password/forgot-passwo
 import { LoginComponent } from "./account/login/login.component";
 import { RegisterComponent } from "./account/register/register.component";
 import { AnimeDetailComponent } from "./anime-detail/anime-detail.component";
+import { AnimeEpisodeErrorComponent } from "./errors/anime-episode-error/anime-episode-error.component";
 import { MenuComponent } from "./menu/menu.component";
 import { SearchAnimeComponent } from "./search-anime/search-anime.component";
 
@@ -16,6 +17,7 @@ const routes: Routes =
     {path: 'login', component: LoginComponent},
     {path: 'register', component: RegisterComponent},
     {path: 'forgot-password', component: ForgotPasswordComponent},
+    {path: 'error/anime', component: AnimeEpisodeErrorComponent},
     {path: '**', redirectTo: '', pathMatch: 'full'},
 ];
 

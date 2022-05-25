@@ -10,6 +10,7 @@ export class RegisterComponent implements OnInit {
 
   email : string = '';
   password : string = '';
+  userName : string = '';
 
   constructor(private auth : AuthService) { }
 
@@ -28,10 +29,16 @@ export class RegisterComponent implements OnInit {
       return;
     }
 
-    this.auth.register(this.email,this.password);
+    if(this.userName == '') {
+      alert('Please enter username');
+      return;
+    }
+
+    this.auth.register(this.email,this.password, this.userName);
     
     this.email = '';
     this.password = '';
+    this.userName = '';
 
   }
 

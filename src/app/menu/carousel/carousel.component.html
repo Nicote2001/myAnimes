@@ -20,7 +20,7 @@
         alt="..."
       />
       <div class="caroussel-info-body"> 
-        <h5 (click)="goToAnimeFromCarousel(item.title)">{{item.title}}</h5>
+        <h5 (click)="goToAnimeFromCarousel(item)">{{item.title}}</h5>
         <p>{{item.summary.slice(0,275) + " ..."}}</p>
         <button (click)="goToAnimeFromCarousel(item.title)" class="button" >Watch Now</button>
       </div>

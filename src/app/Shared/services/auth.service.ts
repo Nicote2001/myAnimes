@@ -1,24 +1,27 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { GoogleAuthProvider, GithubAuthProvider, FacebookAuthProvider} from '@angular/fire/auth'
+import { GoogleAuthProvider, GithubAuthProvider, FacebookAuthProvider, user} from '@angular/fire/auth'
 import { Router } from '@angular/router';
+import { UserService } from './user.service';
+import { IUser } from 'src/app/objects/DataBaseObject/user.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private fireauth : AngularFireAuth, private router : Router) { }
+  constructor(private fireauth : AngularFireAuth, private router : Router, private userService: UserService) { }
 
   // login method
   login(email : string, password : string) {
     this.fireauth.signInWithEmailAndPassword(email,password).then( res => {
-        localStorage.setItem('token','true');
-
+        localStorage.setItem('uid',res.user.uid);
+        this.getUser(res.user.uid);
+        alert("Login Succesful")
         if(res.user?.emailVerified == true) {
           this.router.navigate(['']);
         } else {
-          this.router.navigate(['/varify-email']);
+          this.router.navigate(['/error-anime']);
         }
 
     }, err => {
@@ -28,9 +31,10 @@ export class AuthService {
   }
 
   // register method
-  register(email : string, password : string) {
+  register(email : string, password : string, username:string) {
     this.fireauth.createUserWithEmailAndPassword(email, password).then( res => {
       alert('Registration Successful');
+      this.userService.addUser(new IUser("",username,res.user.uid));
       this.sendEmailForVarification(res.user);
       this.router.navigate(['/login']);
     }, err => {
@@ -42,7 +46,7 @@ export class AuthService {
   // sign out
   logout() {
     this.fireauth.signOut().then( () => {
-      localStorage.removeItem('token');
+      localStorage.removeItem('uid');
       this.router.navigate(['/login']);
     }, err => {
       alert(err.message);
@@ -78,6 +82,18 @@ export class AuthService {
     }, err => {
       alert(err.message);
     })
+  }
+
+   getUser(uid:string)
+  {
+     this.userService.getUserByUid(uid).subscribe(res => {      
+      var username = res.map((e: any) => {
+        const data = e.payload.doc.data();
+        data.username = e.payload.doc.username;
+        localStorage.setItem('username',String(data.username))
+        console.log(localStorage.getItem('username'));
+      })
+      })
   }
 
 }

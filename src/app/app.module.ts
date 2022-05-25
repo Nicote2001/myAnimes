@@ -46,6 +46,9 @@ import { LoginComponent } from './account/login/login.component';
 import { RegisterComponent } from './account/register/register.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { ForgotPasswordComponent } from './account/forgot-password/forgot-password.component';
+import { AnimeEpisodeErrorComponent } from './errors/anime-episode-error/anime-episode-error.component';
+import { EditAccountComponent } from './account/edit-account/edit-account.component';
+import { CommentsComponent } from './anime-detail/comments/comments.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +63,10 @@ import { ForgotPasswordComponent } from './account/forgot-password/forgot-passwo
     SearchAnimeComponent,
     LoginComponent,
     RegisterComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    AnimeEpisodeErrorComponent,
+    EditAccountComponent,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,
@@ -91,7 +97,7 @@ import { ForgotPasswordComponent } from './account/forgot-password/forgot-passwo
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore())
+    provideFirestore(() => getFirestore()),
   ],
   providers: [],
   bootstrap: [AppComponent]
