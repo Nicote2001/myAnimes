@@ -10,3 +10,4 @@
 <div>
       <app-episodes [totalEpisodes] = "animeInfo.totalepisode" [current] = "episode" (PageEmiter)="changerEpisode($event)"></app-episodes>
 </div>
+<app-comments [animeId]="animeId"></app-comments>

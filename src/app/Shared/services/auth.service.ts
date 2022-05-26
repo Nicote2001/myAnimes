@@ -10,6 +10,8 @@ import { IUser } from 'src/app/objects/DataBaseObject/user.model';
 })
 export class AuthService {
 
+  private currentUser : IUser;
+
   constructor(private fireauth : AngularFireAuth, private router : Router, private userService: UserService) { }
 
   // login method
@@ -17,6 +19,7 @@ export class AuthService {
     this.fireauth.signInWithEmailAndPassword(email,password).then( res => {
         localStorage.setItem('uid',res.user.uid);
         this.getUser(res.user.uid);
+        console.log(localStorage.getItem('username'));
         alert("Login Succesful")
         if(res.user?.emailVerified == true) {
           this.router.navigate(['']);
@@ -47,6 +50,8 @@ export class AuthService {
   logout() {
     this.fireauth.signOut().then( () => {
       localStorage.removeItem('uid');
+      localStorage.removeItem('username');
+      this.currentUser = undefined;
       this.router.navigate(['/login']);
     }, err => {
       alert(err.message);
@@ -64,7 +69,6 @@ export class AuthService {
 
   // email varification
   sendEmailForVarification(user : any) {
-    console.log(user);
     user.sendEmailVerification().then((res : any) => {
       this.router.navigate(['/varify-email']);
     }, (err : any) => {
@@ -78,22 +82,18 @@ export class AuthService {
 
       this.router.navigate(['/dashboard']);
       localStorage.setItem('token',JSON.stringify(res.user?.uid));
+      this.getUser(res.user?.uid);
 
     }, err => {
       alert(err.message);
     })
   }
 
-   getUser(uid:string)
+  async getUser(uid:string)
   {
-     this.userService.getUserByUid(uid).subscribe(res => {      
-      var username = res.map((e: any) => {
-        const data = e.payload.doc.data();
-        data.username = e.payload.doc.username;
-        localStorage.setItem('username',String(data.username))
-        console.log(localStorage.getItem('username'));
-      })
-      })
+    var results = await this.userService.getUserByUid(uid);
+    this.currentUser = results[0];
+    localStorage.setItem('username',this.currentUser.username);
   }
 
 }

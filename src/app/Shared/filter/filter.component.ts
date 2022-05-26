@@ -112,7 +112,6 @@ export class FilterComponent implements OnInit {
       {
          this.producers.push(new Filter(data.data[i].mal_id,data.data[i].name,false));
       }
-      console.log(this.producers);
     })
   }
 

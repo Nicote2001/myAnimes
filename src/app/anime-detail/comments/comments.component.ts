@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, Input, OnInit } from '@angular/core';
+import { AnimeDetail } from 'src/app/objects/animeDetail.model';
 import { IComment } from 'src/app/objects/DataBaseObject/comment.model';
 import { CommentsService } from 'src/app/Shared/services/comment.service';
 
@@ -9,23 +10,25 @@ import { CommentsService } from 'src/app/Shared/services/comment.service';
 })
 export class CommentsComponent implements OnInit {
 
-  anime : string = '';
+  @Input() animeId : string ;
   comment : string = '';
-  animeId:string;
+  commentTabs: IComment[];
 
   constructor(private commentService:CommentsService) { }
 
   ngOnInit(): void {
+    this.GetCommentaire();
   }
 
-  GetCommentaire()
+  async GetCommentaire()
   {
-
+    this.commentTabs = await this.commentService.getCommentsByAnimeId(this.animeId);
   }
 
   PostComment()
   {
-    this.commentService.addComment(new IComment("",this.animeId,localStorage.getItem('token'),new Date().toString(),this.comment))
+    this.commentService.addComment(new IComment("",this.animeId,localStorage.getItem('username'),new Date().toString(),this.comment));
+    this.GetCommentaire();
   }
 
 }

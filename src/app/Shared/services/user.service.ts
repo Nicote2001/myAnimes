@@ -27,8 +27,8 @@ export class UserService {
 
   getUserByUid(uid : string) 
   {
-    return this.afs.collection('Users', ref => ref.where('uid', '==', uid)).valueChanges();
-  }
-  
-    
+    return new Promise<any>((resolve)=> {
+      this.afs.collection('Users', ref => ref.where('uid', '==', uid)).valueChanges().subscribe(users => resolve(users))
+      })
+      }
 }

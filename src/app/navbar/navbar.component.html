@@ -62,9 +62,10 @@
         <div class="collapse navbar-collapse container-link" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
-            <a class="nav-link"   [routerLink]="['/login']">Login</a>
-            <a class="nav-link"   [routerLink]="['/register']">Register</a>
-            
+            <a class="nav-link"   [routerLink]="['/login']" *ngIf="!islogged">Login</a>
+            <a class="nav-link"   [routerLink]="['/register']" *ngIf="!islogged">Register</a>
+            <a class="nav-link"   *ngIf="islogged">{{username}}</a>
+            <a class="nav-link"   *ngIf="islogged" (click)="logout()">Logout</a>
           </div>
         </div>
       </div>

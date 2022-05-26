@@ -1,9 +1,12 @@
 import { Time } from '@angular/common';
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FilterAnimeApiCallerService } from '../ApiCallerService/filterAnime.api-caller.service';
 import { IAnime } from '../objects/anime.model';
 import { CommonService } from '../Shared/common.service';
+import { AuthService } from '../Shared/services/auth.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
@@ -16,13 +19,30 @@ export class NavbarComponent implements OnInit {
   lastRequest:Date;
   animesResults: IAnime[] = [];
   isDropped: boolean=false;
+  username:string;
+  uid:string;
+  islogged:boolean;
   
-  constructor(private apiSearch: FilterAnimeApiCallerService, private commonService: CommonService, private router: Router) { }
+  constructor(
+    private apiSearch: FilterAnimeApiCallerService, 
+    private commonService: CommonService, 
+    private router: Router, 
+    private location:Location, 
+    private authService: AuthService) { }
 
   ngOnInit(): void {
     this.searchFilter = "";
     this.lastRequest = new Date();
-  }
+
+    //detecte les changement de route pour changer le user si nécéssaire
+    this.router.events.subscribe(val => {
+      var ok = this.location.path();
+      if(this.location.path() == "" || this.location.path() == "/")
+      {
+        this.logInformation();
+      }
+    });
+  } 
 
   onKeyPress(search:any)
   {   
@@ -65,8 +85,27 @@ export class NavbarComponent implements OnInit {
 
     this.router.navigateByUrl('anime/'+formatedAnimeTitle+'/'+1);
   }
+
   onClickDropped(){
     this.isDropped=!this.isDropped;
+  }
+
+  logInformation()
+  {
+    if(localStorage.getItem('username') !== null)
+    {
+      this.username = localStorage.getItem('username');
+      this.uid = localStorage.getItem('token');
+      this.islogged = true;
+    }
+  }
+
+  logout()
+  {   
+      this.authService.logout();
+      this.username = undefined;
+      this.uid = undefined;
+      this.islogged = false;
   }
 
 }

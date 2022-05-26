@@ -3,6 +3,7 @@ import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browse
 import { ActivatedRoute, Router } from '@angular/router';
 import { AnimeDetailsApiCallerService } from '../ApiCallerService/animeDetails.api-caller.service';
 import { AnimeDetail } from '../objects/animeDetail.model';
+import { CommentsComponent } from './comments/comments.component';
 import { EpisodesComponent } from './episodes/episodes.component';
 
 @Component({
@@ -18,7 +19,10 @@ export class AnimeDetailComponent implements OnInit {
   safeSrc: SafeResourceUrl;
   animeUrl: string;
   animeInfo: AnimeDetail;
-  @ViewChild(EpisodesComponent) episodeComponent! : EpisodesComponent
+  
+  
+  @ViewChild(EpisodesComponent) episodeComponent! : EpisodesComponent;
+  @ViewChild(CommentsComponent) commentComponent! : CommentsComponent;
 
   constructor(private route:ActivatedRoute, public sanitizer: DomSanitizer, public api: AnimeDetailsApiCallerService, private router: Router) 
   { 
@@ -53,6 +57,7 @@ export class AnimeDetailComponent implements OnInit {
     this.api.getAnimeById(this.animeId).subscribe(data =>{
       this.animeInfo = data.results[0];
       this.episodeComponent.calculateLabels(this.animeInfo.totalepisode);
+      this.commentComponent.GetCommentaire();
     })
   }
 
