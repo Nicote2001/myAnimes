@@ -22,6 +22,7 @@ export class NavbarComponent implements OnInit {
   username:string;
   uid:string;
   islogged:boolean;
+  isDroppedConnexion:boolean=false;
   
   constructor(
     private apiSearch: FilterAnimeApiCallerService, 
@@ -89,7 +90,9 @@ export class NavbarComponent implements OnInit {
   onClickDropped(){
     this.isDropped=!this.isDropped;
   }
-
+  onClickDroppedConnexion(){
+    this.isDroppedConnexion=!this.isDroppedConnexion;
+  }
   logInformation()
   {
     if(localStorage.getItem('username') !== null)

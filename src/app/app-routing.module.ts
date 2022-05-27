@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { EditAccountComponent } from "./account/edit-account/edit-account.component";
 import { ForgotPasswordComponent } from "./account/forgot-password/forgot-password.component";
 import { LoginComponent } from "./account/login/login.component";
 import { RegisterComponent } from "./account/register/register.component";
@@ -18,6 +19,7 @@ const routes: Routes =
     {path: 'register', component: RegisterComponent},
     {path: 'forgot-password', component: ForgotPasswordComponent},
     {path: 'error/anime', component: AnimeEpisodeErrorComponent},
+    {path: 'profil', component: EditAccountComponent},
     {path: '**', redirectTo: '', pathMatch: 'full'},
 ];
 
