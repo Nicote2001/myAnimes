@@ -93,13 +93,15 @@ export class NavbarComponent implements OnInit {
   onClickDroppedConnexion(){
     this.isDroppedConnexion=!this.isDroppedConnexion;
   }
-  logInformation()
-  {
+  async logInformation()
+  { 
+    await this.commonService.delay(500);
     if(localStorage.getItem('username') !== null)
     {
       this.username = localStorage.getItem('username');
       this.uid = localStorage.getItem('token');
       this.islogged = true;
+      this.isDroppedConnexion=false;
     }
   }
 
@@ -109,6 +111,7 @@ export class NavbarComponent implements OnInit {
       this.username = undefined;
       this.uid = undefined;
       this.islogged = false;
+      this.isDroppedConnexion=false;
   }
 
 }

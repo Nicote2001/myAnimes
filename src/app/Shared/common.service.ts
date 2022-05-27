@@ -19,7 +19,9 @@ export class CommonService
     {
         var formatedTitle = "";
 
-        for(let i = 0 ; i < animeTitle.length ; i++)
+        if(animeTitle)
+        {
+          for(let i = 0 ; i < animeTitle.length ; i++)
         {
             if(animeTitle[i] === " " || this.rExpReplace.test(animeTitle[i]))
             {
@@ -33,6 +35,7 @@ export class CommonService
             {
                 formatedTitle += animeTitle[i];
             }
+        }
         }
 
         return formatedTitle

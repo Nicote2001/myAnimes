@@ -50,7 +50,7 @@
 
         <button class="connexion-button" (click)="onClickDroppedConnexion()" *ngIf="islogged">{{username}}</button>
 
-        <span class="dropdown-content-button" [hidden]="!isDroppedConnexion"  *ngIf="islogged">
+        <span class="dropdown-content-button" [hidden]="!isDroppedConnexion" hidden="true"  *ngIf="islogged">
           <div class="navbar-nav">
             <a class="nav-link search-css"   *ngIf="islogged" [routerLink]="['/profil']" >User Setting</a>
             <a class="nav-link search-css"   *ngIf="islogged" (click)="logout()">Logout</a>

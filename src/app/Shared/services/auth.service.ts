@@ -19,7 +19,6 @@ export class AuthService {
     this.fireauth.signInWithEmailAndPassword(email,password).then( res => {
         localStorage.setItem('uid',res.user.uid);
         this.getUser(res.user.uid);
-        console.log(localStorage.getItem('username'));
         alert("Login Succesful")
         if(res.user?.emailVerified == true) {
           this.router.navigate(['']);
@@ -77,13 +76,17 @@ export class AuthService {
   }
 
   //sign in with google
-  googleSignIn() {
+  async googleSignIn() {
     return this.fireauth.signInWithPopup(new GoogleAuthProvider).then(res => {
 
-      this.router.navigate(['/dashboard']);
-      localStorage.setItem('token',JSON.stringify(res.user?.uid));
+      localStorage.setItem('uid',JSON.stringify(res.user.uid));
       this.getUser(res.user?.uid);
-
+      if(this.currentUser === undefined || this.currentUser === null)
+      {
+        this.userService.addUser(new IUser("",res.user.email.split("@")[0],res.user.uid));
+        this.getUser(res.user.uid);
+      }
+      this.router.navigate(['']);
     }, err => {
       alert(err.message);
     })

@@ -21,8 +21,8 @@ export class AnimeDetailComponent implements OnInit {
   animeInfo: AnimeDetail;
   
   
-  @ViewChild(EpisodesComponent) episodeComponent! : EpisodesComponent;
-  @ViewChild(CommentsComponent) commentComponent! : CommentsComponent;
+  @ViewChild(EpisodesComponent) episodeComponent : EpisodesComponent;
+  @ViewChild(CommentsComponent) commentComponent : CommentsComponent;
 
   constructor(private route:ActivatedRoute, public sanitizer: DomSanitizer, public api: AnimeDetailsApiCallerService, private router: Router) 
   { 
@@ -47,7 +47,7 @@ export class AnimeDetailComponent implements OnInit {
     this.api.getAnimeWAtch(this.animeId,this.episode).subscribe(data =>{
       this.animeUrl = data.link
       console.log(data);
-      this.safeSrc = this.sanitizer.bypassSecurityTrustResourceUrl(this.animeUrl);
+      this.safeSrc = this.animeUrl;
     })
 
   }
@@ -56,7 +56,8 @@ export class AnimeDetailComponent implements OnInit {
   {
     this.api.getAnimeById(this.animeId).subscribe(data =>{
       this.animeInfo = data.results[0];
-      this.episodeComponent.calculateLabels(this.animeInfo.totalepisode);
+      var episodes = data.results[0].totalepisode;
+      this.episodeComponent.calculateLabels(episodes);
       this.commentComponent.GetCommentaire();
     })
   }
