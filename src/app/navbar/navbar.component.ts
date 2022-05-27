@@ -90,8 +90,9 @@ export class NavbarComponent implements OnInit {
     this.isDropped=!this.isDropped;
   }
 
-  logInformation()
-  {
+  async logInformation()
+  { 
+    await this.commonService.delay(200);
     if(localStorage.getItem('username') !== null)
     {
       this.username = localStorage.getItem('username');

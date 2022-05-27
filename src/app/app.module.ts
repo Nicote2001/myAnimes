@@ -49,6 +49,7 @@ import { ForgotPasswordComponent } from './account/forgot-password/forgot-passwo
 import { AnimeEpisodeErrorComponent } from './errors/anime-episode-error/anime-episode-error.component';
 import { EditAccountComponent } from './account/edit-account/edit-account.component';
 import { CommentsComponent } from './anime-detail/comments/comments.component';
+import { SafePipe } from './Shared/services/safePipe.service';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { CommentsComponent } from './anime-detail/comments/comments.component';
     ForgotPasswordComponent,
     AnimeEpisodeErrorComponent,
     EditAccountComponent,
-    CommentsComponent
+    CommentsComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
