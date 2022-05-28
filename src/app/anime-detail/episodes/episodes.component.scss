@@ -3,20 +3,20 @@
 }
 
 .episode-button {
-    background-color: #2d2e30;
+    background-color: #e5e5e5;
     border: none;
     border-radius: 0.3rem;
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
     margin-left: 0.25rem;
-    margin-right: 0.25rem;
+    margin-right: 0.25rem; 
     width: 4rem;
     text-align: center;
-    color: rgb(173, 170, 170);
+    color: black;
 }
 
-    .episode-button-active {
-    background-color: red;
+.episode-button-active {
+    background-color: #fca311;
     border: none;
     border-radius: 0.3rem;
     margin-top: 0.25rem;
@@ -25,17 +25,25 @@
     margin-right: 0.25rem;
     width: 4rem;
     text-align: center;
-    color: rgb(255, 255, 255);
+    color: black;
 }
 
 .episode-button a {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .episode-button:hover{
-background-color: red;
+    background-color: #fca311;
 }
 .tab-episode{
     text-align: center;
-    color: white;
-    background: red;
+    background:  #14213d; 
+    height: fit-content;  
+    padding-top: 1.5rem; 
+    padding-bottom: 1.5rem; 
+    border-radius: 5px;
+    width: 53.5rem;
+}
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    color: #fca311 !important;
+    border-color: #fca311 !important;
 }
