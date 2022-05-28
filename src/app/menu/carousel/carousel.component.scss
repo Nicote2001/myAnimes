@@ -6,7 +6,7 @@
    color: white;
    border-bottom-right-radius: 10px;
    border-bottom-left-radius: 10px;
-   background-color:#1C1C1C ;
+   background-color:#14213d ;
 }
 .caroussel-info-body h5{
     padding-top: 0.5rem;
@@ -24,17 +24,18 @@
     height: 15rem; 
     width: 13rem;
     margin: auto ; 
-    border-radius: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     margin-top: 1.5rem;
 }
 .color-container h5:hover{
-    color: red;
+    color: #fca311;
     cursor: pointer;
 }
 .button{
-    background-color: rgb(189, 13, 13);
+    background-color: #fca311;
     border: none;
-    color:white;
+    color:black;
     border-radius: 25px;
     width: 10rem;
     height: 3rem;
@@ -42,11 +43,11 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .button:hover{
-    background-color: red;
-    color: white;
+    background-color: #e5e5e5;
+    color: black;
 }
 .color-container{
-    background-color:#1C1C1C ;
+    background-color:#14213d ;
     border-radius: 10px;
 }
 

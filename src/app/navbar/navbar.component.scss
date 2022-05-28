@@ -4,12 +4,13 @@
     max-height: 300px;
     overflow-y: auto;
     z-index: 10;
-    background-color: #1C1C1C;
+    background-color: white;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     display: block;
-    border-radius: 5px;
     -ms-overflow-style: none;
     margin-top: 3rem;
+    border: 1px solid black;
+    border: none;
 }
 .search-drop-down::-webkit-scrollbar{
     display: none;
@@ -17,15 +18,14 @@
 
 .elementDropDown
 {
-    border-radius: 5px;
-    color: rgb(173, 170, 170);
+    color: black;
     cursor:pointer;
 }
 
 .elementDropDown:hover
 {
-    color: white;
-    background-color: gray;
+    color: black;
+    background-color: #fca311;
 }
 .navbar-image{
     margin: 0.5rem;
@@ -37,21 +37,22 @@
 }
 
 .container-link a:hover{
-    color: red;
+    color: #e5e5e5;  
 }
 .placeholder-css:focus{
-    border: 1px solid red;
+    border: 1px solid #fca311;
     outline: none !important;
-    box-shadow: 0 0 5px red;
+    box-shadow: 0 0 5px #fca311;
 }
 .search-css{
     cursor:pointer;
 }
 .search-css i:hover{
-    color: red;
+    color: black;
 }
 .navbar-css{
-    background-color: #0e0e0e;
+    background-color: #14213d;
+    border-radius: 10px;
 }
 .navbar-css a {
     color: white;
@@ -59,9 +60,12 @@
 .fa-bars{
     color: white;
 }
+.navbar-toggler:hover .fa-bars {
+    color: #fca311;
+}
 .navbar-toggler{
 justify-content: start;
-margin-left: 0.5rem;
+margin-left: 0.5rem; 
 }
 
  @media screen and (max-width: 550px) { 
@@ -76,49 +80,54 @@ margin-left: 0.5rem;
     width: 10rem;
     max-height: 90rem;
     z-index: 10;
-    background-color: #1C1C1C;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     display: block;
     border-radius: 5px;
     -ms-overflow-style: none;
-    background-color: rgb(189, 13, 13);
+    background-color: white;
     margin-left: 1rem;
     text-align: center;
   }
   .dropdown-content-button{
     position: absolute;
     margin-top: 3rem;
-    width: 8rem;
+    width: 6.5rem;
     max-height: 90rem;
     z-index: 10;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     display: block;
     border-radius: 5px;
     -ms-overflow-style: none;
-    background-color: rgb(189, 13, 13);
+    background-color: white;
     text-align: center;
-  }
+  } 
   .search-css:hover{
       cursor: pointer;
-      background-color: red; 
+      background-color: #fca311; 
       border-radius: 5px;
+  }
+  .search-css:hover{
+    color: black !important;
+
   }
   .search-css{
       margin-top: 0.01rem;
+      color: black !important;
   }
 .position{
     width: 15rem;
 }
 
 .button-css:hover{
-    background-color: red;
+    background-color: #e5e5e5;
     cursor: pointer;
+    color: black;
 }
 .button-css{
     height: 2.5rem;
     border-radius: 5px;
-    background-color: rgb(189, 13, 13);
-    color:white;
+    background-color: #fca311;
+    color:black;
     padding: 0.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -137,19 +146,21 @@ margin-left: 0.5rem;
     padding-bottom: 0.25rem;
     padding-left: 1rem;
     padding-right: 1rem;
-    background-color: rgb(189, 13, 13);
-    color: white;
+    background-color: #fca311;
+    color: black;
     border-radius: 30px;
     font-weight:500;
     font-size: 1rem;
     margin-right: 1rem;
-    height: 2.5rem;
+    height: 2.4rem;
+    border: none;
 }
 
 .connexion-button:hover{
     cursor: pointer;
-    background-color: red;
+    background-color: #e5e5e5;
+    color: black;
 }
-.position-container{
-    
+.position-container .dropdown-content-button{
+    margin-right: 4rem;
 }

@@ -1,4 +1,4 @@
-<div [ngClass]="{'filter-container': isQuickFilter, 'filter-container-full': !isQuickFilter}" style="background-color: #1C1C1C;">
+<div [ngClass]="{'filter-container': isQuickFilter, 'filter-container-full': !isQuickFilter}" style="background-color: #14213d;">
     <h3>{{title}}</h3>
     <form #myForm="ngForm" (submit)="SearchAnimesByFilter(myForm)" novalidate>
                 
@@ -53,7 +53,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col 4">
                         <div class="">
                             <div class="">
                                 <div class="form-check" *ngFor=" let item of producers.slice(66,99)">
@@ -66,7 +66,7 @@
                         </div>
                     </div>
                 </div>
-               <!-- nd genres drop down-->
+               <!-- nd genres drop down--> 
            </span>
             <div [ngClass]="{'labelFilter': isQuickFilter, 'labelFilter-full': !isQuickFilter}"  (click)="onClickDrop(yearString)">
                 Years <fa-icon [icon]="faAngleDown" style="margin-left: 0.5rem; "></fa-icon>

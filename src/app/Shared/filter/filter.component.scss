@@ -1,23 +1,23 @@
 .labelFilter
 {
-    background-color: #2d2e30; 
+    background-color: #e5e5e5; 
     text-align: center; 
     width: 9rem; 
     padding-top: 0.2rem ;
     padding-bottom: 0.2rem ;
     border-radius: 10px;
     margin-left: 1.6rem;
-    color: gray; 
+    color: black; 
     margin-top: 0.5rem;
 }
 .labelFilter:hover{
-    background-color: gray;
+    background-color: #fca311;
     cursor: pointer;
-    color: white;
+    color: black;
 }
 .form-check input:checked {
-    background-color:red;
-    border-color: red;
+    background-color:#fca311;
+    border-color: #fca311;
     }
     
 .dropdown-content {
@@ -25,92 +25,102 @@
     width: 45rem;
     max-height: 90rem;
     z-index: 10;
-    background-color: #1C1C1C;
+    background-color: white;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     display: block;
-    border-radius: 10px;
     -ms-overflow-style: none;
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+  }
+  .dropdown-content input{
+    
   }
   .dropdown-content-season{
     position: absolute;
     width: 20rem;
     max-height: 90rem;
     z-index: 10;
-    background-color: #1C1C1C;
+    background-color: white;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     display: block;
-    border-radius: 10px;
     -ms-overflow-style: none;
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
   }
   .dropdown-content-sort{
     position: absolute;
-    width: 15rem;
+    width: 9rem;
     max-height: 90rem;
     z-index: 10;
-    background-color: #1C1C1C;
+    background-color: white;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     display: block;
-    border-radius: 10px;
     -ms-overflow-style: none;
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
   }
   .dropdown-content-genre{
     position: absolute;
-    width: 20rem;
+    width: 9rem;
     max-height: 90rem;
     z-index: 10;
-    background-color: #1C1C1C;
+    background-color: white;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     display: block;
-    border-radius: 10px;
     -ms-overflow-style: none;
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+  }
+  .dropdown-content-genre input{
   }
   .dropdown-content-statut{
     position: absolute;
-    width: 10rem;
+    width: 9rem;
     max-height: 90rem;
     z-index: 10;
-    background-color: #1C1C1C;
+    background-color: white;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     display: block;
-    border-radius: 10px;
     -ms-overflow-style: none;
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
   }
   .dropdown-content-years{
     position: absolute;
     width: 20rem;
     max-height: 90rem;
     z-index: 10;
-    background-color: #1C1C1C;
+    background-color: white;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     display: block;
-    border-radius: 10px;
     -ms-overflow-style: none;
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
   }
   .season-container h2{
-      color: red;
+      color: #fca311;
       margin-left: 1rem;
       font-size: 0.8rem;
       padding-top: 0.5rem;
   }
   
   .form-check:hover{
-    background-color: gray;
+    background-color: #fca311;
     cursor: pointer;
-    color: white;
+    color: black;
   }
   .form-radio:hover{
-    background-color: gray;
+    background-color: #fca311;
     cursor: pointer;
-    color: white;
+    color: black;
   }
   .form-radio label,input:hover{
     cursor: pointer;
   }
   .form-radio input[type="radio"]{
-    accent-color:red;
+    accent-color:#fca311;
   } 
   .custom-control-input{
-    margin-left: 1rem;
   }
   .custom-control-label{
       margin-left: 1rem;
@@ -120,15 +130,15 @@
       margin: auto;
       height: 4rem;
       border-radius: 10px;
-      background-color: rgb(189, 13, 13);
+      background-color: #fca311;
       font-size: 1.5rem;
-      color: white;
+      color: black;
       font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
       border: none;
       margin-top: 1rem;
   }
   .button-filter:hover{
-    background-color: red;
+    background-color: #e5e5e5;
   }
   .filter-container{
       width: 26rem;
@@ -158,11 +168,11 @@
       cursor: text;
   }
 .year-container{
-    border-top: 1px solid white;
+    border-top: 1px solid black;
     margin-top: 1rem;
 }
 .year-container input[type=text]:focus {
-    background-color: rgb(241, 237, 237);
+    background-color: #fca21160;
 }
   .date-container label{
       width: 5rem;
@@ -176,7 +186,7 @@
   .date-container h2{
     margin-left: 1rem;
     font-size: 1.5rem;
-    color: white;
+    color: black;
     margin-bottom: 1.5rem;
     padding-top: 0.5rem;
   }
@@ -184,7 +194,7 @@
       cursor: text;
   }
   .date-container input[type=date]:focus {
-    background-color: rgb(241, 237, 237);
+    background-color: #fca21160;
 }
 .form-input-researsh{
   display: block;
@@ -197,7 +207,9 @@
   cursor: text;
 }
 .research-container input[type=text]:focus {
-  background-color: rgb(241, 237, 237);
+  border: 1px solid #fca311;
+  outline: none !important;
+  box-shadow: 0 0 5px #fca311;
 }
 .button-filter-container{
   display: block;

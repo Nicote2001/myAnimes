@@ -1,4 +1,4 @@
-<nav class=" navbar d-flex  navbar-css">
+<nav class=" navbar d-flex  navbar-css" style="">
     <div class="container-fluid-a">
       <button (click)="onClickDropped()"
         class="navbar-toggler"
@@ -14,10 +14,10 @@
       <span class="dropdown-content-home" [hidden]="!isDropped" (click)="onClickDropped()" >
         <div class="navbar-nav">
           <a class="nav-link active search-css" aria-current="page" href="#">Home</a>
-          <a class="nav-link search-css"   [routerLink]="['/login']" *ngIf="!islogged">Login</a>
-          <a class="nav-link search-css"   [routerLink]="['/register']" *ngIf="!islogged">Register</a>
-          <a class="nav-link search-css"   *ngIf="islogged">{{username}}</a>
-          <a class="nav-link search-css"   *ngIf="islogged" (click)="logout()">Logout</a>
+          <a class="nav-link active search-css" aria-current="page" href="#">Home</a>
+          <a class="nav-link active search-css" aria-current="page" href="#">Home</a>
+          <a class="nav-link active search-css" aria-current="page" href="#">Home</a>
+          <a class="nav-link active search-css" aria-current="page" href="#">Home</a>
         </div>
         </span>
     

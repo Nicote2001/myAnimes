@@ -8,13 +8,13 @@
     text-align: center;
 }
 .card-title:hover{
-    color: red;
+    color: #fca311;
 }
 .card-css:hover{
-    color: red;
+    color: #fca311;
 }
 .card:hover h5{
-    color: red;
+    color: #fca311;
 }
 .card-img-top {
     height: 15rem;
@@ -26,6 +26,8 @@
 .card-body{
     width: 10rem;
 }
+
 .change-page:hover{
-cursor: pointer;
+    cursor: pointer;
+    background-color: #14213d !important;
 }
