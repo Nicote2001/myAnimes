@@ -1,11 +1,14 @@
 .card{
-    background-color: transparent;
+    background-color:  #14213d;
+    width: 10rem;
+    height: 17rem;
+    margin-top: 1rem;
+    padding: 1rem;
 }
 .card-title{
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: white;
     font-size: 1rem;
-    text-align: center;
 }
 .card-title:hover{
     color: #fca311;
@@ -24,10 +27,18 @@
     margin: auto;
 }
 .card-body{
-    width: 10rem;
+    width: 8rem;
+    text-align: center;
 }
-
+.change-page{
+    margin-top: 1rem;
+}
 .change-page:hover{
     cursor: pointer;
     background-color: #14213d !important;
+    color: #fca311 !important;
+}
+.image-top{
+    max-height: 10rem;
+    max-width: 8rem;
 }

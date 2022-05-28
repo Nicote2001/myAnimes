@@ -1,23 +1,59 @@
 .divider:after,.divider:before {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: rgb(0, 0, 0);
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #fca311;
+  }
+  .vh-100{
+      background-color:#14213d;
+      width: 50rem;
+      height: 30rem !important;
+      border-radius: 10px;
+  }
+  .vh-100 label{
+      color: white; 
+  }
+  .vh-100 .account a{
+      color: #fca311;
+  }
+  .vh-100 p{
+      color: white;
+  }
+  .vh-100 .account .have:hover{
+        color: white;
+  }
+  .form-label{
+    color: white !important;
+ }
+ .button-sign{
+     background-color: #fca311;
+     color: black;
+ }
+ .button-sign:hover{
+     background-color: #e5e5e5;
+ }
+ .form-control{
+    color: #fca311 !important;
 }
-.vh-100{
-    background-color:#1C1C1C ;
-    width: 50rem;
-    height: 30rem !important;
-    border-radius: 10px;
+.form-outline .form-control:focus~.form-notch .form-notch-leading {
+   border-color: white !important;
 }
-.vh-100 label{
-    color: gray; 
+.form-outline .form-control:focus~.form-notch .form-notch-trailing {
+   border-color: white !important;
 }
-.log-in h5{
-    text-align: center;
-    font-weight: 700;
-    font-size: 2rem;
+.form-outline .form-control:focus~.form-notch .form-notch-middle{
+   border-color: white !important;
 }
-.input-css{
-    border: 1px solid gray;
+.form-outline .form-control~.form-notch .form-notch-leading {
+   border-color: white !important;
+}
+.form-outline .form-control~.form-notch .form-notch-trailing {
+   border-color: white !important;
+}
+.form-outline .form-control~.form-notch .form-notch-middle{
+   border-color: white !important;
+}
+.button-web:hover{
+    background-color: #e5e5e5 !important;
+    color: black !important;
 }
