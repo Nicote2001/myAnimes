@@ -2,7 +2,7 @@
     <h3>{{title}}</h3>
     <form #myForm="ngForm" (submit)="SearchAnimesByFilter(myForm)" novalidate>
                 
-    <div class="row ">
+    <div class="row "> 
         <div class="col-6">
             <div [ngClass]="{'labelFilter': isQuickFilter, 'labelFilter-full': !isQuickFilter}" (click)="onClickDrop(genreString)" (blur)="onBlurDrop(genreString)">
                 Genre  <fa-icon [icon]="faAngleDown" style="margin-left: 0.5rem; "></fa-icon>

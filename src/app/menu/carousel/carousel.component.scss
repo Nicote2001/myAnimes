@@ -1,6 +1,6 @@
 .caroussel-info-body{
-   width: 20rem;
-   height: 20.5rem;
+   max-width: 20rem;
+   height: 20rem;
    text-align: center;
    margin: auto;
    color: white;
@@ -16,13 +16,13 @@
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 0.8rem;
     text-align: center;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
     color: #bdbcbc; 
 }
 .img-caroussel{
-    height: 15rem; 
-    width: 13rem;
+    max-height: 15rem; 
+    max-width: 13rem;
     margin: auto ; 
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;

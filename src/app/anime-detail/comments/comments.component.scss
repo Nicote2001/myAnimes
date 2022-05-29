@@ -42,10 +42,10 @@
 
 .media-comment {
     margin: auto;
-    width: 40rem;
     background-color: #14213d;
     margin-top:20px;
     margin-bottom:20px;
+    padding: 0.1rem;
 }
 .media-comment p{
     text-align: justify;
@@ -77,10 +77,8 @@
     margin-top: 0.2rem;
     justify-content: right;
 }
-.button{
-    display: flex;
-    justify-content: right;
-    margin-right: 4.4rem;
+.pull-right{
+    float: right;
 }
 .pull-right:hover{
     background-color: #e5e5e5;

@@ -1,4 +1,4 @@
-<mdb-carousel [controls]="true" [indicators]="true" [animation]="'fade'" style="width: 20rem; height: 20rem; ">
+<mdb-carousel [controls]="true" [indicators]="true" [animation]="'fade'"  class="w-100 h-100">
   <mdb-carousel-item class="color-container" >
     <img  
       src="{{recommandationAnimes[0].image}}"
@@ -8,7 +8,7 @@
     />
     <div class="caroussel-info-body"> 
       <h5 (click)="goToAnimeFromCarousel(recommandationAnimes[0].title)">{{recommandationAnimes[0].title}}</h5>
-      <p>{{recommandationAnimes[0].summary.slice(0,275) + " ..."}}</p>
+      <p>{{recommandationAnimes[0].summary.slice(0,320) + " ..."}}</p>
       <button (click)="goToAnimeFromCarousel(recommandationAnimes[0].title)" class="button" >Watch Now</button>
     </div>
   </mdb-carousel-item >
@@ -16,12 +16,12 @@
       <img  
         src="{{item.image}}"
         class="d-block img-caroussel"
-        style=""
+        style="" 
         alt="..."
       />
       <div class="caroussel-info-body"> 
         <h5 (click)="goToAnimeFromCarousel(item)">{{item.title}}</h5>
-        <p>{{item.summary.slice(0,275) + " ..."}}</p>
+        <p>{{item.summary.slice(0,320) + " ..."}}</p>
         <button (click)="goToAnimeFromCarousel(item.title)" class="button" >Watch Now</button>
       </div>
      
