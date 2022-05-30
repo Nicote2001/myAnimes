@@ -43,17 +43,20 @@
     </div>
 </div>
 -->
-<section class="vh-100">
+<section class="vh-100" >
     <div class="container  h-100">
       <div class="row d-flex align-items-center justify-content-center h-100">
         <div class="col-md-8 col-lg-7 col-xl-6" >
+          <button type="button" class="btn btn-secondary" (click)="modalRef.close()">
+            Close
+          </button>
           <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/67f84de8-d494-455a-8a98-bf116e96d1f7/dcky27w-db048680-2771-4c91-bdb0-f09b61caae77.png/v1/fill/w_922,h_866,strp/kon___bleach_by_oukokudesign_dcky27w-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9OTYyIiwicGF0aCI6IlwvZlwvNjdmODRkZTgtZDQ5NC00NTVhLThhOTgtYmYxMTZlOTZkMWY3XC9kY2t5Mjd3LWRiMDQ4NjgwLTI3NzEtNGM5MS1iZGIwLWYwOWI2MWNhYWU3Ny5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.w-1S6DDvWwXpOyCCjUSBy4hHlmaNUE5GKiQUa-G87is"
             class="img-fluid" alt="Phone image">
         </div>
         <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
           <form>
             <div class="form-outline mb-4">
-              <input type="email" id="form1Example13" class="form-control form-control-lg active" />
+              <input type="email" id="form1Example13" name="email" class="form-control form-control-lg active" [(ngModel)]="email" />
               <label class="form-label" for="form1Example13">Email address</label>
               <div class="form-notch">
                 <div class="form-notch-leading" style="width: 9px; "></div>
@@ -64,7 +67,7 @@
 
           <!-- Password input -->
           <div class="form-outline mb-4">
-            <input type="password" id="form1Example23" class="form-control form-control-lg active" />
+            <input type="password" name="password" id="form1Example23" class="form-control form-control-lg active" [(ngModel)]="password"/>
             <label class="form-label" for="form1Example23">Password</label>
             <div class="form-notch">
               <div class="form-notch-leading" style="width: 9px; "></div>
@@ -75,22 +78,22 @@
   
             <div class="d-flex justify-content-around align-items-center mb-4 account">
               <!-- Checkbox -->
-              <a href="/register" class="have">Don't have an account ?</a>
+              <a (click)="closeWithRegister()" class="have">Don't have an account ?</a>
             </div>
   
             <!-- Submit button -->
-            <button type="submit" class="btn btn-primary btn-lg btn-block button-sign">Sign in</button>
+            <button (click)="login()" class="btn btn-primary btn-lg btn-block button-sign">Sign in</button>
   
             <div class="divider d-flex align-items-center my-4">
               <p class="text-center fw-bold mx-3 mb-0 " style="color: white;">OR</p>
             </div>
   
-            <button class="btn btn-lg btn-block btn-primary button-web" style="background-color: #dd4b39;"
-              type="submit"><i class="fab fa-google me-2 "></i> Continue with Google</button>
-            <a class="btn btn-primary btn-lg btn-block button-web" style="background-color: #55acee" href="#!"
+            <button class="btn btn-lg btn-block btn-primary button-web" (click)="closeWithGoogle()" style="background-color: #dd4b39;">
+              <i class="fab fa-google me-2 " ></i> Continue with Google
+            </button>
+            <a class="btn btn-primary btn-lg btn-block button-web" style="background-color: #55acee"  (click)="closeWithTwitter()"
               role="button">
               <i class="fab fa-twitter me-2 "></i>Continue with Twitter</a> 
-  
           </form>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { GoogleAuthProvider, GithubAuthProvider, FacebookAuthProvider, user} from '@angular/fire/auth'
+import { GoogleAuthProvider, GithubAuthProvider, FacebookAuthProvider, user, TwitterAuthProvider} from '@angular/fire/auth'
 import { Router } from '@angular/router';
 import { UserService } from './user.service';
 import { IUser } from 'src/app/objects/DataBaseObject/user.model';
@@ -15,11 +15,14 @@ export class AuthService {
   constructor(private fireauth : AngularFireAuth, private router : Router, private userService: UserService) { }
 
   // login method
-  login(email : string, password : string) {
-    this.fireauth.signInWithEmailAndPassword(email,password).then( res => {
+  async login(email : string, password : string) {
+    var ok = false;
+    await this.fireauth.signInWithEmailAndPassword(email,password).then( res => {
         localStorage.setItem('uid',res.user.uid);
         this.getUser(res.user.uid);
         alert("Login Succesful")
+        ok = true;
+
         if(res.user?.emailVerified == true) {
           this.router.navigate(['']);
         } else {
@@ -27,9 +30,10 @@ export class AuthService {
         }
 
     }, err => {
+      ok = false;
         alert(err.message);
-        this.router.navigate(['/login']);
     })
+    return ok;
   }
 
   // register method
@@ -78,6 +82,23 @@ export class AuthService {
   //sign in with google
   async googleSignIn() {
     return this.fireauth.signInWithPopup(new GoogleAuthProvider).then(res => {
+
+      localStorage.setItem('uid',JSON.stringify(res.user.uid));
+      this.getUser(res.user?.uid);
+      if(this.currentUser === undefined || this.currentUser === null)
+      {
+        this.userService.addUser(new IUser("",res.user.email.split("@")[0],res.user.uid));
+        this.getUser(res.user.uid);
+      }
+      this.router.navigate(['']);
+    }, err => {
+      alert(err.message);
+    })
+  }
+
+  //sign in with twitter
+  async twitterSignIn() {
+    return this.fireauth.signInWithPopup(new TwitterAuthProvider).then(res => {
 
       localStorage.setItem('uid',JSON.stringify(res.user.uid));
       this.getUser(res.user?.uid);

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
 import { AuthService } from 'src/app/Shared/services/auth.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class RegisterComponent implements OnInit {
   password : string = '';
   userName : string = '';
 
-  constructor(private auth : AuthService) { }
+  constructor(private auth : AuthService, public modalRef: MdbModalRef<RegisterComponent>) { }
 
   ngOnInit(): void {
   }

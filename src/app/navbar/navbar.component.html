@@ -46,7 +46,7 @@
         </form>
       </div>
       <div class="d-flex position-container ">
-        <button class="connexion-button" (click)="onClickDroppedConnexion()" [routerLink]="['/login']" *ngIf="!islogged">Sign In</button>
+        <button class="connexion-button" (click)="openModalConnexion()"  *ngIf="!islogged">Sign In</button>
 
         <button class="connexion-button" (click)="onClickDroppedConnexion()" *ngIf="islogged">{{username}}</button>
 

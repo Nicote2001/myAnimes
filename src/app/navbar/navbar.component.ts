@@ -7,6 +7,10 @@ import { IAnime } from '../objects/anime.model';
 import { CommonService } from '../Shared/common.service';
 import { AuthService } from '../Shared/services/auth.service';
 import {Location} from '@angular/common';
+import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
+import { LoginComponent } from '../account/login/login.component';
+import { RegisterComponent } from '../account/register/register.component';
+import { LoginModal } from '../objects/ModalObect/login-modal.model';
 
 @Component({
   selector: 'app-navbar',
@@ -23,13 +27,16 @@ export class NavbarComponent implements OnInit {
   uid:string;
   islogged:boolean;
   isDroppedConnexion:boolean=false;
+
+  modalRef: MdbModalRef<LoginComponent| RegisterComponent> | null = null;
   
   constructor(
     private apiSearch: FilterAnimeApiCallerService, 
     private commonService: CommonService, 
     private router: Router, 
     private location:Location, 
-    private authService: AuthService) { }
+    private authService: AuthService,
+    private modalService: MdbModalService) { }
 
   ngOnInit(): void {
     this.searchFilter = "";
@@ -112,6 +119,26 @@ export class NavbarComponent implements OnInit {
       this.uid = undefined;
       this.islogged = false;
       this.isDroppedConnexion=false;
+  }
+
+  openModalConnexion() 
+  {
+    this.modalRef = this.modalService.open(LoginComponent);
+    this.modalRef.onClose.subscribe((message: boolean) => {
+      if(message)
+      {
+        this.openModalRegister();
+      }
+      else
+      {
+        this.logInformation();
+      }
+    });
+  }
+
+  openModalRegister()
+  {
+    this.modalRef = this.modalService.open(RegisterComponent);
   }
 
 }
