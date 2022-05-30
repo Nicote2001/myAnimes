@@ -35,7 +35,7 @@
             [value]="searchFilter"
           />
           <div class="search-drop-down" >
-               <div *ngFor="let anime of animesResults;" class="elementDropDown" (click)="goToAnime(anime.title)">
+               <div *ngFor="let anime of animesResults;" class="elementDropDown" (click)="goToAnime(anime)">
                  <img class="navbar-image" src="{{anime.images.webp.small_image_url}}">
                 {{anime.title.slice(0,18)+"..."}}
                </div>

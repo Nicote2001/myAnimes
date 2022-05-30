@@ -1,0 +1,70 @@
+.divider:after,.divider:before {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #fca311;
+  }
+  .vh-100{
+      background-color:#14213d;
+      width: 50rem;
+      height: 30rem !important;
+      border-radius: 5px;
+      padding-left: 1rem;
+      padding-right: 1rem;
+  }
+  .vh-100 label{
+      color: white; 
+  }
+  .vh-100 .account a{
+      color: #fca311;
+  }
+  .vh-100 p{
+      color: white;
+  } 
+  .vh-100 .account .have:hover{
+        color: white;
+        cursor: pointer;
+  }
+  .form-label{
+    color: white !important;
+ }
+ .button-sign{
+     background-color: #fca311;
+     color: black;
+ }
+ .button-sign:hover{
+     background-color: #e5e5e5;
+ }
+ .form-control{
+    color: #fca311 !important;
+}
+.form-outline .form-control:focus~.form-notch .form-notch-leading {
+   border-color: white !important;
+}
+.form-outline .form-control:focus~.form-notch .form-notch-trailing {
+   border-color: white !important;
+}
+.form-outline .form-control:focus~.form-notch .form-notch-middle{
+   border-color: white !important;
+}
+.form-outline .form-control~.form-notch .form-notch-leading {
+   border-color: white !important;
+}
+.form-outline .form-control~.form-notch .form-notch-trailing {
+   border-color: white !important;
+}
+.form-outline .form-control~.form-notch .form-notch-middle{
+   border-color: white !important;
+}
+.button-web:hover{
+    background-color: #e5e5e5 !important;
+    color: black !important;
+}
+input:-webkit-autofill,
+  input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+  }
+
+  h1{
+      color:white
+  }

@@ -7,7 +7,7 @@
       </div>
   <h1 style="text-align: center; color: black; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">{{animeInfo.title +" Episode "+episode}}</h1>
 </div>
-<iframe class="frame" [src]="safeSrc | safe" width="100%" height="" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+<iframe class="frame" [src]="safeSrc | safe" width="100%" height="" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen *ngIf="safeSrc">
 </iframe>
 <div *ngIf="animeInfo">
       <app-episodes [totalEpisodes] = "animeInfo.totalepisode" [current] = "episode" (PageEmiter)="changerEpisode($event)"></app-episodes>

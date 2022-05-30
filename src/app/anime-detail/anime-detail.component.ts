@@ -1,7 +1,9 @@
 import { Component, Directive, OnInit, ViewChild } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
 import { AnimeDetailsApiCallerService } from '../ApiCallerService/animeDetails.api-caller.service';
+import { CommonErrorComponent } from '../errors/common-error/common-error.component';
 import { AnimeDetail } from '../objects/animeDetail.model';
 import { CommentsComponent } from './comments/comments.component';
 import { EpisodesComponent } from './episodes/episodes.component';

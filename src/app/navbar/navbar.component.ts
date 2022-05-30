@@ -1,16 +1,12 @@
-import { Time } from '@angular/common';
-import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FilterAnimeApiCallerService } from '../ApiCallerService/filterAnime.api-caller.service';
 import { IAnime } from '../objects/anime.model';
 import { CommonService } from '../Shared/common.service';
 import { AuthService } from '../Shared/services/auth.service';
-import {Location} from '@angular/common';
 import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
 import { LoginComponent } from '../account/login/login.component';
 import { RegisterComponent } from '../account/register/register.component';
-import { LoginModal } from '../objects/ModalObect/login-modal.model';
 
 @Component({
   selector: 'app-navbar',
@@ -33,8 +29,7 @@ export class NavbarComponent implements OnInit {
   constructor(
     private apiSearch: FilterAnimeApiCallerService, 
     private commonService: CommonService, 
-    private router: Router, 
-    private location:Location, 
+    private router: Router,
     private authService: AuthService,
     private modalService: MdbModalService) { }
 
@@ -42,14 +37,6 @@ export class NavbarComponent implements OnInit {
     this.searchFilter = "";
     this.lastRequest = new Date();
 
-    //detecte les changement de route pour changer le user si nécéssaire
-    this.router.events.subscribe(val => {
-      var ok = this.location.path();
-      if(this.location.path() == "" || this.location.path() == "/")
-      {
-        this.logInformation();
-      }
-    });
   } 
 
   onKeyPress(search:any)
@@ -80,18 +67,16 @@ export class NavbarComponent implements OnInit {
     })
   }
 
-  goToAnime(anime:string)
+  goToAnime(anime:IAnime)
   {
-    if(anime ==="Naruto: Shippuuden")
+    if(anime.title ==="Naruto: Shippuuden")
     {
-      anime ="Naruto-Shippuden";
+      anime.title ="Naruto-Shippuden";
     }
-    var formatedAnimeTitle = this.commonService.FormatAnimeTitle(anime)
+    this.commonService.goToAnime(anime);
 
     this.animesResults = [];
     this.searchFilter ="";
-
-    this.router.navigateByUrl('anime/'+formatedAnimeTitle+'/'+1);
   }
 
   onClickDropped(){

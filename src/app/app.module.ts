@@ -50,6 +50,7 @@ import { AnimeEpisodeErrorComponent } from './errors/anime-episode-error/anime-e
 import { EditAccountComponent } from './account/edit-account/edit-account.component';
 import { CommentsComponent } from './anime-detail/comments/comments.component';
 import { SafePipe } from './Shared/services/safePipe.service';
+import { CommonErrorComponent } from './errors/common-error/common-error.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { SafePipe } from './Shared/services/safePipe.service';
     AnimeEpisodeErrorComponent,
     EditAccountComponent,
     CommentsComponent,
-    SafePipe
+    SafePipe,
+    CommonErrorComponent
   ],
   imports: [
     BrowserModule,

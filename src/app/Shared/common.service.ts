@@ -1,13 +1,17 @@
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
+import { MdbModalRef, MdbModalService } from "mdb-angular-ui-kit/modal";
 import { AnimeDetailsApiCallerService } from "../ApiCallerService/animeDetails.api-caller.service";
+import { CommonErrorComponent } from "../errors/common-error/common-error.component";
 import { IAnime } from "../objects/anime.model";
 
 @Injectable({providedIn: 'root'})
 
 export class CommonService
 {
-    constructor(public api: AnimeDetailsApiCallerService, public apiAnimeDetails: AnimeDetailsApiCallerService, private router: Router)
+  modalRef: MdbModalRef<CommonErrorComponent> | null = null;
+
+    constructor(public api: AnimeDetailsApiCallerService, public apiAnimeDetails: AnimeDetailsApiCallerService, private router: Router,  private modalService: MdbModalService)
     {
 
     }
@@ -64,7 +68,15 @@ export class CommonService
       
       if(!isFound)
       {
-        this.router.navigateByUrl('error/anime');
+        this.openErrorComponent('This anime is not available for the moment !');
       }
+    }
+
+    openErrorComponent(message:string)
+    {
+      this.modalRef = this.modalService.open(CommonErrorComponent, {
+        modalClass: 'modal-dialog-centered modal-lg',
+        data: { message: message}
+      });
     }
 }

@@ -15,8 +15,6 @@ const routes: Routes =
     {path: 'menu', component: MenuComponent},
     {path: 'anime/:id/:episode', component: AnimeDetailComponent},
     {path: 'anime/search', component: SearchAnimeComponent},
-    {path: 'login', component: LoginComponent},
-    {path: 'register', component: RegisterComponent},
     {path: 'forgot-password', component: ForgotPasswordComponent},
     {path: 'error/anime', component: AnimeEpisodeErrorComponent},
     {path: 'profil', component: EditAccountComponent},

@@ -52,46 +52,23 @@
         <fieldset>
             <div class="row" style="margin-top: 0.5rem;" >
                 <div class="form-group col-xs-12 col-sm-12 col-lg-12" style="margin:auto;">
-                    <textarea class="form-control" id="message" placeholder="Your message" required="" style="height: 4rem;"></textarea>
+                    <textarea class="form-control" id="message" placeholder="Your message" required="" style="height: 4rem;" name="comment" [(ngModel)]="comment"></textarea>
                 </div>
             </div>  	
         </fieldset>
-        <button type="submit" class="btn btn-normal pull-right" >Submit</button>
+        <button type="button" class="btn btn-normal pull-right" (click)="PostComment()" [disabled]="">Submit</button>
     </form>
 
-    <h3 class="comment">4 Comments</h3>
+    <h3 class="comment">{{commentTabs.length}} Comments</h3>
 
 
-          <div class="media g-mb-30 media-comment">
+          <div class="media g-mb-30 media-comment" *ngFor=" let comment of commentTabs" >
               <div class="media-body u-shadow-v18 g-bg-secondary g-pa-30">
                 <div class="g-mb-15">
-                  <h5 class="h5 g-color-gray-dark-v1 mb-0">John Doe</h5>
-                  <span class="g-color-gray-dark-v4 g-font-size-12">5 days ago</span>
+                  <h5 class="h5 g-color-yellow-v1 mb-0">{{comment.username}}</h5>
+                  <span class="g-color-gray-dark-v4 g-font-size-12">{{comment.date.slice(4,21)}}</span>
                 </div>
-          
-                <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue
-                  felis in faucibus ras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
-          
-                <ul class="list-inline d-sm-flex my-0">
-                  <li class="list-inline-item g-mr-20">
-                    <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
-                      <i class="fa fa-thumbs-up g-pos-rel g-top-1 g-mr-3"></i>
-                      178
-                    </a>
-                  </li>
-                  <li class="list-inline-item g-mr-20">
-                    <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
-                      <i class="fa fa-thumbs-down g-pos-rel g-top-1 g-mr-3"></i>
-                      34
-                    </a>
-                  </li>
-                  <li class="list-inline-item ml-auto">
-                    <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
-                      <i class="fa fa-reply g-pos-rel g-top-1 g-mr-3"></i>
-                      Reply
-                    </a>
-                  </li>
-                </ul>
+                <p>{{comment.comment}}</p>
               </div>
           </div>
       </div>
