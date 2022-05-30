@@ -56,7 +56,6 @@ export class AuthService {
       localStorage.removeItem('uid');
       localStorage.removeItem('username');
       this.currentUser = undefined;
-      this.router.navigate(['/login']);
     }, err => {
       alert(err.message);
     })
