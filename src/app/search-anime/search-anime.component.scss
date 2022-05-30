@@ -1,7 +1,7 @@
 .card{
     background-color:  #14213d;
-    width: 10rem;
-    height: 17rem;
+    width: 13rem;
+    height: 22rem;
     margin-top: 1rem;
     padding: 1rem;
 }
@@ -20,8 +20,7 @@
     color: #fca311;
 }
 .card-img-top {
-    height: 15rem;
-    width: 10rem;
+    max-height: 15rem;
 }
 .card-container{
     margin: auto;
@@ -29,6 +28,7 @@
 .card-body{
     width: 8rem;
     text-align: center;
+    margin: auto;
 }
 .change-page{
     margin-top: 1rem;
@@ -39,6 +39,5 @@
     color: #fca311 !important;
 }
 .image-top{
-    max-height: 10rem;
-    max-width: 8rem;
+    max-height: 15rem;
 }

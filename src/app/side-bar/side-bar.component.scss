@@ -11,6 +11,8 @@
     background: #14213d;
     padding: 0.4rem;
     border-radius: 25px;
+    height: 30rem !important;
+    margin-bottom: 2rem !important;
 }
 .img-container{
     text-align: end;
@@ -26,3 +28,15 @@
 .section-top-ranking:hover fa-icon{
     color: black;
 }
+@media (min-width: 1199px) and (max-width: 1399px) { 
+    .top-backgroud{
+        width: 22rem !important;
+    }
+ }
+@media (min-width: 991px) and (max-width: 1198px) { 
+    .top-backgroud{
+        width: 40rem !important;
+    }
+}
+
+
