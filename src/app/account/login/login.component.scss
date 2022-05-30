@@ -8,7 +8,9 @@
       background-color:#14213d;
       width: 50rem;
       height: 30rem !important;
-      border-radius: 10px;
+      border-radius: 5px;
+      padding-left: 1rem;
+      padding-right: 1rem;
   }
   .vh-100 label{
       color: white; 
@@ -21,6 +23,7 @@
   } 
   .vh-100 .account .have:hover{
         color: white;
+        cursor: pointer;
   }
   .form-label{
     color: white !important;
