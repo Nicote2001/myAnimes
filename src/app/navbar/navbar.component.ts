@@ -102,7 +102,7 @@ export class NavbarComponent implements OnInit {
   }
   async logInformation()
   { 
-    await this.commonService.delay(500);
+    await this.commonService.delay(1000);
     if(localStorage.getItem('username') !== null)
     {
       this.username = localStorage.getItem('username');
@@ -123,7 +123,9 @@ export class NavbarComponent implements OnInit {
 
   openModalConnexion() 
   {
-    this.modalRef = this.modalService.open(LoginComponent);
+    this.modalRef = this.modalService.open(LoginComponent, {
+      modalClass: 'modal-dialog-centered modal-lg'
+    });
     this.modalRef.onClose.subscribe((message: boolean) => {
       if(message)
       {
@@ -138,7 +140,18 @@ export class NavbarComponent implements OnInit {
 
   openModalRegister()
   {
-    this.modalRef = this.modalService.open(RegisterComponent);
+    this.modalRef = this.modalService.open(RegisterComponent, {
+      modalClass: 'modal-dialog-centered modal-lg'
+    })
+    this.modalRef.onClose.subscribe((message: boolean) => {
+      if(message)
+      {
+        this.openModalConnexion();
+      }
+      else
+      {
+      }
+    });
   }
 
 }

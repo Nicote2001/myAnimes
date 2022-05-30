@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  register() {
+  async register() {
 
     if(this.email == '') {
       alert('Please enter email');
@@ -35,12 +35,20 @@ export class RegisterComponent implements OnInit {
       return;
     }
 
-    this.auth.register(this.email,this.password, this.userName);
+    var isLogged = await this.auth.register(this.email,this.password, this.userName);
     
     this.email = '';
     this.password = '';
     this.userName = '';
 
+    if(isLogged){
+      this.modalRef.close(true);
+    }
+
+  }
+
+  closeFromLogin(){
+    this.modalRef.close(true);
   }
 
 }

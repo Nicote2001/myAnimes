@@ -37,16 +37,17 @@ export class AuthService {
   }
 
   // register method
-  register(email : string, password : string, username:string) {
-    this.fireauth.createUserWithEmailAndPassword(email, password).then( res => {
+  async register(email : string, password : string, username:string) {
+    var ok = false;
+    await this.fireauth.createUserWithEmailAndPassword(email, password).then( res => {
       alert('Registration Successful');
       this.userService.addUser(new IUser("",username,res.user.uid));
       this.sendEmailForVarification(res.user);
-      this.router.navigate(['/login']);
+      ok = true;
     }, err => {
       alert(err.message);
-      this.router.navigate(['/register']);
     })
+    return ok;
   }
 
   // sign out
@@ -81,7 +82,8 @@ export class AuthService {
 
   //sign in with google
   async googleSignIn() {
-    return this.fireauth.signInWithPopup(new GoogleAuthProvider).then(res => {
+    var ok = false;
+    await this.fireauth.signInWithPopup(new GoogleAuthProvider).then(res => {
 
       localStorage.setItem('uid',JSON.stringify(res.user.uid));
       this.getUser(res.user?.uid);
@@ -89,11 +91,13 @@ export class AuthService {
       {
         this.userService.addUser(new IUser("",res.user.email.split("@")[0],res.user.uid));
         this.getUser(res.user.uid);
+        ok=true;
       }
       this.router.navigate(['']);
     }, err => {
       alert(err.message);
     })
+    return ok;
   }
 
   //sign in with twitter

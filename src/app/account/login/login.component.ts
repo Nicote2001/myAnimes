@@ -45,13 +45,15 @@ export class LoginComponent implements OnInit {
   }
 
   closeWithLogin(){
-    this.auth.login(this.email,this.password);
     this.modalRef.close(false);
   }
 
-  closeWithGoogle(){
-    this.auth.googleSignIn();
-    this.modalRef.close(this.result);
+  async closeWithGoogle(){
+    var isLogged=false;
+    isLogged = await this.auth.googleSignIn();
+    if(isLogged){
+      this.modalRef.close(this.result);
+    }
   }
 
   closeWithTwitter(){
