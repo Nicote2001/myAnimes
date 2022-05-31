@@ -4,6 +4,10 @@ import { MdbModalRef, MdbModalService } from "mdb-angular-ui-kit/modal";
 import { AnimeDetailsApiCallerService } from "../ApiCallerService/animeDetails.api-caller.service";
 import { CommonErrorComponent } from "../errors/common-error/common-error.component";
 import { IAnime } from "../objects/anime.model";
+import { AnimeDetail } from "../objects/animeDetail.model";
+import { AnimeUser } from "../objects/animeUser";
+import { AnimeWatch } from "../objects/animeWatch.model";
+import { AnimeUserService } from "./services/AnimeUser.service";
 
 @Injectable({providedIn: 'root'})
 
@@ -11,12 +15,12 @@ export class CommonService
 {
   modalRef: MdbModalRef<CommonErrorComponent> | null = null;
 
-    constructor(public api: AnimeDetailsApiCallerService, public apiAnimeDetails: AnimeDetailsApiCallerService, private router: Router,  private modalService: MdbModalService)
+    constructor(public api: AnimeDetailsApiCallerService, public apiAnimeDetails: AnimeDetailsApiCallerService, private router: Router,  private modalService: MdbModalService, private animeUserSerivce: AnimeUserService)
     {
 
     }
 
-    private rExp : RegExp = /[:;°!.★]/g;
+    private rExp : RegExp = /[:;°!.★)(]/g;
     private rExpReplace : RegExp = /[★]/g;
 
     public FormatAnimeTitle(animeTitle: string)
@@ -78,5 +82,10 @@ export class CommonService
         modalClass: 'modal-dialog-centered modal-lg',
         data: { message: message}
       });
+    }
+
+    async saveAnimeEpisode(animeId : string,anime : AnimeDetail, episode: number)
+    {
+      await this.animeUserSerivce.addSave(new AnimeUser("",animeId,anime.title,anime.image,localStorage.getItem('uid'),episode,new Date().toString()));
     }
 }

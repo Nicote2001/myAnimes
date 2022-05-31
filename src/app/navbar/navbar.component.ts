@@ -36,6 +36,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.searchFilter = "";
     this.lastRequest = new Date();
+    this.logInformation();
 
   } 
 
