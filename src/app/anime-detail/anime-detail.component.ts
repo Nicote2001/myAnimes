@@ -58,7 +58,7 @@ export class AnimeDetailComponent implements OnInit {
       this.animeInfo = data.results[0];
       var episodes = data.results[0].totalepisode;
       this.episodeComponent.calculateLabels(episodes);
-      this.commentComponent.GetCommentaire();
+      this.commentComponent.isDroppedComment = false;
     })
   }
 

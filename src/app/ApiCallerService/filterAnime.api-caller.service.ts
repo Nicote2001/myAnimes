@@ -7,7 +7,6 @@ import { IAnime } from '../objects/anime.model';
 
 export class FilterAnimeApiCallerService
 {
-    topAnimes: IAnime[] = [];
     constructor(private http : HttpClient)
     {
 

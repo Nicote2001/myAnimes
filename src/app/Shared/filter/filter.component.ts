@@ -5,6 +5,7 @@ import { IAnime } from 'src/app/objects/anime.model';
 import { Filter } from 'src/app/objects/filter.model';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CacheFilterService } from '../services/cacheFilterService';
 
 @Component({
   selector: 'app-filter',
@@ -16,7 +17,7 @@ export class FilterComponent implements OnInit {
   @Input() isQuickFilter:boolean;
   @Output() apiCallChanged: EventEmitter<string> =   new EventEmitter();
 
-  constructor(private api: FilterAnimeApiCallerService, private router:Router) { }
+  constructor(private api: FilterAnimeApiCallerService, private router:Router, private cacheFilterService: CacheFilterService) { }
 
   readonly genreString:string ="genre";
   readonly producerString:string ="producer";
@@ -94,7 +95,7 @@ export class FilterComponent implements OnInit {
 
   async getGenres()
   {
-    this.api.getGenre().subscribe(async data =>{
+    this.cacheFilterService.getGenre().subscribe(async data =>{
       for(let i=0; i<19; i++)
       {
          this.genres.push(new Filter(data.data[i].mal_id,data.data[i].name,false));
@@ -106,7 +107,7 @@ export class FilterComponent implements OnInit {
 
   getProducers()
   {
-    this.api.getProducers().subscribe(data =>{
+    this.cacheFilterService.getProducers().subscribe(data =>{
       for(let i=0; i<data.data.length; i++)
       {
          this.producers.push(new Filter(data.data[i].mal_id,data.data[i].name,false));

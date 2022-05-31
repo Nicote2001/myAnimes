@@ -24,11 +24,6 @@ export class EditAccountComponent implements OnInit {
     this.getAnimes();
   }
 
-  ResetPassword()
-  {
-
-  }
-
   async getAnimes()
   {
     this.animes = await this.api.getAnimeByUid();

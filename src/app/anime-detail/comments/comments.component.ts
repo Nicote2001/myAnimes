@@ -15,12 +15,12 @@ export class CommentsComponent implements OnInit {
   comment : string = '';
   commentTabs: IComment[];
   modalRef: MdbModalRef<CommonErrorComponent> | null = null;
+  isDroppedComment: boolean = false;
 
 
   constructor(private commentService:CommentsService,  private modalService: MdbModalService) { }
 
   ngOnInit(): void {
-    this.GetCommentaire();
   }
 
   async GetCommentaire()
@@ -48,6 +48,12 @@ export class CommentsComponent implements OnInit {
               isSucess: false
             }
     });
+  }
+
+  dropComment()
+  {
+    this.isDroppedComment = true;
+    this.GetCommentaire();
   }
 
 }
