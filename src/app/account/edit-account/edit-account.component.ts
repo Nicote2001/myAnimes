@@ -5,6 +5,7 @@ import { AnimeUser } from 'src/app/objects/animeUser';
 import { CommonService } from 'src/app/Shared/common.service';
 import { AnimeUserService } from 'src/app/Shared/services/AnimeUser.service';
 import { AuthService } from 'src/app/Shared/services/auth.service';
+import { UserService } from 'src/app/Shared/services/user.service';
 
 @Component({
   selector: 'app-edit-account',
@@ -17,7 +18,7 @@ export class EditAccountComponent implements OnInit {
   username:string = "";
   animes:AnimeUser[];
 
-  constructor(private api: AnimeUserService, private authService: AuthService, private router: Router) { }
+  constructor(private api: AnimeUserService, private authService: AuthService, private router: Router, private userService: UserService, private commonServicee: CommonService) { }
 
   ngOnInit(): void {
     this.getUsernameAndEmail();
@@ -56,7 +57,7 @@ export class EditAccountComponent implements OnInit {
   {
     if(localStorage.getItem('username') !== this.username)
     {
-      
+      this.userService.updateUsername(this.username,localStorage.getItem('uid'));
     }
   }
 

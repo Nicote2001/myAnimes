@@ -86,6 +86,6 @@ export class CommonService
 
     async saveAnimeEpisode(animeId : string,anime : AnimeDetail, episode: number)
     {
-      await this.animeUserSerivce.addSave(new AnimeUser("",animeId,anime.title,anime.image,localStorage.getItem('uid'),episode,new Date().toString()));
+      await this.animeUserSerivce.updateSave(new AnimeUser("",animeId,anime.title,anime.image,localStorage.getItem('uid'),episode,new Date().toString()));
     }
 }

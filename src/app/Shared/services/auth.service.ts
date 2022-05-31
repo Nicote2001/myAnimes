@@ -24,12 +24,6 @@ export class AuthService {
         alert("Login Succesful")
         ok = true;
 
-        if(res.user?.emailVerified == true) {
-          this.router.navigate(['']);
-        } else {
-          this.router.navigate(['/error-anime']);
-        }
-
     }, err => {
       ok = false;
         alert(err.message);
@@ -84,18 +78,17 @@ export class AuthService {
   //sign in with google
   async googleSignIn() {
     var ok = false;
-    await this.fireauth.signInWithPopup(new GoogleAuthProvider).then(res => {
+    await this.fireauth.signInWithPopup(new GoogleAuthProvider).then(async res => {
 
-      localStorage.setItem('uid',JSON.stringify(res.user.uid));
+      localStorage.setItem('uid',res.user.uid);
       localStorage.setItem('email',res.user.email);
-      this.getUser(res.user?.uid);
+      await this.getUser(res.user?.uid);
       if(this.currentUser === undefined || this.currentUser === null)
       {
         this.userService.addUser(new IUser("",res.user.email.split("@")[0],res.user.uid));
         this.getUser(res.user.uid);
-        ok=true;
       }
-      this.router.navigate(['']);
+      ok=true;
     }, err => {
       alert(err.message);
     })

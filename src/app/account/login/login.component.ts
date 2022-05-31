@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
     var isLogged=false;
     isLogged = await this.auth.googleSignIn();
     if(isLogged){
-      this.modalRef.close(this.result);
+      this.modalRef.close(false);
     }
   }
 
