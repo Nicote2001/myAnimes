@@ -44,7 +44,7 @@ export class FilterComponent implements OnInit {
   yearDropped : boolean;
 
   faAngleDown = faAngleDown;
-  faFilter = faFilter;
+  faFilter = faFilter; 
 
   animes : IAnime[] = [];
 

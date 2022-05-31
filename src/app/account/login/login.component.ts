@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
 import { LoginModal } from 'src/app/objects/ModalObect/login-modal.model';
 import { AuthService } from 'src/app/Shared/services/auth.service';
+import { faSquareXmark, faX, faXmark } from '@fortawesome/free-solid-svg-icons';
+
+
 
 @Component({
   selector: 'app-login',
@@ -13,6 +16,7 @@ export class LoginComponent implements OnInit {
   email : string = '';
   password : string = '';
   result: LoginModal;
+  faXmark = faXmark;
 
   constructor(private auth : AuthService, public modalRef: MdbModalRef<LoginComponent>) { }
 
