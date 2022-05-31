@@ -4,7 +4,6 @@ import { FilterAnimeApiCallerService } from 'src/app/ApiCallerService/filterAnim
 import { IAnime } from 'src/app/objects/anime.model';
 import { Filter } from 'src/app/objects/filter.model';
 import { NgForm } from '@angular/forms';
-import { runInThisContext } from 'vm';
 import { Router } from '@angular/router';
 
 @Component({

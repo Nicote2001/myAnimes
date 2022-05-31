@@ -1,9 +1,6 @@
 import { Component, Directive, OnInit, ViewChild } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
-import { ActivatedRoute, Router } from '@angular/router';
-import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
-import { AnimeDetailsApiCallerService } from '../ApiCallerService/animeDetails.api-caller.service';
-import { CommonErrorComponent } from '../errors/common-error/common-error.component';
+import { ActivatedRoute, Router } from '@angular/router';import { AnimeDetailsApiCallerService } from '../ApiCallerService/animeDetails.api-caller.service';
 import { AnimeDetail } from '../objects/animeDetail.model';
 import { CommonService } from '../Shared/common.service';
 import { CommentsComponent } from './comments/comments.component';
@@ -70,9 +67,17 @@ export class AnimeDetailComponent implements OnInit {
     this.router.navigateByUrl('anime/'+this.animeId+'/'+episode);
   }
 
-  saveEpisode()
+  async saveEpisode()
   {
-    this.commonService.saveAnimeEpisode(this.animeId,this.animeInfo,this.episode);
+    if(localStorage.getItem('username') != null || localStorage.getItem('username') != undefined){
+      await this.commonService.saveAnimeEpisode(this.animeId,this.animeInfo,this.episode);
+      this.commonService.openErrorComponent("SUCESS !!",true);
+    }
+    else
+    {
+      this.commonService.openErrorComponent("You need to be logged to save where you are !", false);
+    }
+
   }
 
 }

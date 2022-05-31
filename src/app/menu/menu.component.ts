@@ -1,14 +1,10 @@
-import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { AnimeDetailsApiCallerService } from '../ApiCallerService/animeDetails.api-caller.service';
 import { MenuApiCallerService } from '../ApiCallerService/menu.api-caller.service';
-import { IAnime } from '../objects/anime.model';
 import { AnimeDetail } from '../objects/animeDetail.model';
 import { AnimeWatch } from '../objects/animeWatch.model';
-import { RecentAnimeMenu } from '../objects/recentAnimeMenu.model';
 import { CommonService } from '../Shared/common.service';
 
 @Component({

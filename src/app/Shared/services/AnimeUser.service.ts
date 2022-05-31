@@ -10,7 +10,7 @@ import { AnimeUser } from 'src/app/objects/animeUser';
 export class AnimeUserService {
 
 
-  constructor(private afs : AngularFirestore, private fireStorage : AngularFireStorage) { }
+  constructor(private afs : AngularFirestore) { }
 
 
   // add user

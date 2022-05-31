@@ -16,7 +16,7 @@ export class CarouselComponent implements OnInit {
 
   public topAnimes: IAnime[] = [];
 
-  constructor(private api : MenuApiCallerService, private commonService:CommonService, private router:Router) 
+  constructor(private commonService:CommonService, private router:Router) 
   {
     
   }

@@ -1,8 +1,5 @@
-import { ActiveDescendantKeyManager } from '@angular/cdk/a11y';
-import { AfterViewInit, Component, EventEmitter, Injectable, Input, OnInit, Output, Renderer2 } from '@angular/core';
-import { faFileCirclePlus } from '@fortawesome/free-solid-svg-icons';
-import { MdbTabsComponent } from 'mdb-angular-ui-kit/tabs';
-import { totalmem } from 'os';
+import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, Renderer2 } from '@angular/core';
+
 
 @Component({
   selector: 'app-episodes',

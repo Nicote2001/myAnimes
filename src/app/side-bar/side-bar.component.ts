@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { faCake, faRankingStar, faStar } from '@fortawesome/free-solid-svg-icons';
+import { faCake, faRankingStar } from '@fortawesome/free-solid-svg-icons';
 import { MenuApiCallerService } from '../ApiCallerService/menu.api-caller.service';
 import { IAnime } from '../objects/anime.model';
 import { CommonService } from '../Shared/common.service';
@@ -16,7 +16,7 @@ export class SideBarComponent implements OnInit {
   public topAnimeNow: IAnime[] = [];
   faRankingStar = faRankingStar;
 
-  constructor(private api:MenuApiCallerService, private router:Router, private commonService: CommonService) { }
+  constructor(private api:MenuApiCallerService, private commonService: CommonService) { }
 
   ngOnInit(): void {
     this.getTopAnimes();

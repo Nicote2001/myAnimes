@@ -1,7 +1,6 @@
 import { Component, Injectable, Input, OnInit } from '@angular/core';
 import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
 import { CommonErrorComponent } from 'src/app/errors/common-error/common-error.component';
-import { AnimeDetail } from 'src/app/objects/animeDetail.model';
 import { IComment } from 'src/app/objects/DataBaseObject/comment.model';
 import { CommentsService } from 'src/app/Shared/services/comment.service';
 
@@ -45,7 +44,9 @@ export class CommentsComponent implements OnInit {
   {
     this.modalRef = this.modalService.open(CommonErrorComponent, {
       modalClass: 'modal-dialog-centered modal-lg',
-      data: { message: 'You need to be logged to comment !'}
+      data: { message: 'You need to be logged to comment !',
+              isSucess: false
+            }
     });
   }
 

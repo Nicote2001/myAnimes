@@ -11,7 +11,7 @@ import { CommonService } from '../common.service';
 })
 export class UserService {
 
-  constructor(private afs : AngularFirestore, private fireStorage : AngularFireStorage, private commonService: CommonService) { }
+  constructor(private afs : AngularFirestore, private commonService: CommonService) { }
 
 
   // add user
@@ -43,7 +43,7 @@ export class UserService {
     var item = await this.getUserByUidAndGetId(id);
     await this.afs.doc('Users/'+item[0].id).update({username: username});
     localStorage.setItem('username', username);
-    this.commonService.openErrorComponent("SUCESS ! Your username will be change on your next login !")
+    this.commonService.openErrorComponent("SUCESS ! Your username will be change on your next login !",true)
   }
 }
 

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { GoogleAuthProvider, GithubAuthProvider, FacebookAuthProvider, user, TwitterAuthProvider} from '@angular/fire/auth'
-import { Router } from '@angular/router';
+import { GoogleAuthProvider, TwitterAuthProvider} from '@angular/fire/auth'
+
 import { UserService } from './user.service';
 import { IUser } from 'src/app/objects/DataBaseObject/user.model';
 
@@ -12,7 +12,7 @@ export class AuthService {
 
   private currentUser : IUser;
 
-  constructor(private fireauth : AngularFireAuth, private router : Router, private userService: UserService) { }
+  constructor(private fireauth : AngularFireAuth, private userService: UserService) { }
 
   // login method
   async login(email : string, password : string) {
@@ -58,9 +58,8 @@ export class AuthService {
   }
 
   // forgot password
-  forgotPassword(email : string) {
-      this.fireauth.sendPasswordResetEmail(email).then(() => {
-        this.router.navigate(['/varify-email']);
+  async forgotPassword(email : string) {
+      await this.fireauth.sendPasswordResetEmail(email).then(() => {
       }, err => {
         alert('Something went wrong');
       })
@@ -69,7 +68,6 @@ export class AuthService {
   // email varification
   sendEmailForVarification(user : any) {
     user.sendEmailVerification().then((res : any) => {
-      this.router.navigate(['/varify-email']);
     }, (err : any) => {
       alert('Something went wrong. Not able to send mail to your email.')
     })
@@ -107,7 +105,6 @@ export class AuthService {
         this.userService.addUser(new IUser("",res.user.email.split("@")[0],res.user.uid));
         this.getUser(res.user.uid);
       }
-      this.router.navigate(['']);
     }, err => {
       alert(err.message);
     })

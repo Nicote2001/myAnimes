@@ -24,7 +24,7 @@ export class SearchAnimeComponent implements OnInit {
   faAngleLeft = faAngleLeft
 
 
-  constructor(private route:ActivatedRoute, public sanitizer: DomSanitizer, public api: FilterAnimeApiCallerService, private router: Router, private commonService:CommonService, private apiAnimeDetails:AnimeDetailsApiCallerService) 
+  constructor(public sanitizer: DomSanitizer, public api: FilterAnimeApiCallerService, private router: Router, private commonService:CommonService) 
   { 
     if(this.router.getCurrentNavigation().extras.state !== undefined){
       this.apiCall = this.router.getCurrentNavigation().extras.state.apiCall;

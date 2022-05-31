@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Auth, user } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { AnimeUser } from 'src/app/objects/animeUser';
 import { CommonService } from 'src/app/Shared/common.service';
@@ -33,7 +32,6 @@ export class EditAccountComponent implements OnInit {
   async getAnimes()
   {
     this.animes = await this.api.getAnimeByUid();
-    console.log(this.animes);
   }
 
   getUsernameAndEmail()
@@ -48,9 +46,10 @@ export class EditAccountComponent implements OnInit {
     this.router.navigateByUrl('anime/'+anime.animeId+'/'+anime.currentEpisode);
   }
 
-  sendPasswordReset()
+  async sendPasswordReset()
   {
-      this.authService.forgotPassword(this.email);
+      await this.authService.forgotPassword(this.email);
+      this.commonServicee.openErrorComponent("A password reset link was sent to your email !", false);
   }
 
   saveUsername()

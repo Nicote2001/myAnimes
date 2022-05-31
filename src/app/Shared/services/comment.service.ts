@@ -9,7 +9,7 @@ import { IComment } from 'src/app/objects/DataBaseObject/comment.model';
 })
 export class CommentsService {
 
-  constructor(private afs : AngularFirestore, private fireStorage : AngularFireStorage) { }
+  constructor(private afs : AngularFirestore) { }
 
 
   // add user

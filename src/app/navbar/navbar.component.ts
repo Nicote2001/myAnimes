@@ -7,6 +7,7 @@ import { AuthService } from '../Shared/services/auth.service';
 import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
 import { LoginComponent } from '../account/login/login.component';
 import { RegisterComponent } from '../account/register/register.component';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
@@ -31,7 +32,8 @@ export class NavbarComponent implements OnInit {
     private commonService: CommonService, 
     private router: Router,
     private authService: AuthService,
-    private modalService: MdbModalService) { }
+    private modalService: MdbModalService,
+    private location: Location) { }
 
   ngOnInit(): void {
     this.searchFilter = "";
@@ -105,6 +107,11 @@ export class NavbarComponent implements OnInit {
       this.uid = undefined;
       this.islogged = false;
       this.isDroppedConnexion=false;
+
+      if(this.location.path() === "/profil")
+      {
+        this.router.navigate(['']);
+      }
   }
 
   openModalConnexion() 

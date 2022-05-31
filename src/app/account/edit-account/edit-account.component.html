@@ -18,10 +18,10 @@
     </div>
   </div>
   <button type="button" class="btn btn-warning" (click)="saveUsername()">
-    Close
+    Save
   </button>
   <h1 class="inputAccount">Account Password Reset</h1>
-  <button (click)="ResetPassword()" class="button" >Send Reset Password</button>
+  <button (click)="sendPasswordReset()" class="button" >Send Reset Password</button>
   <h1 class="inputAccount">Last Watched</h1>
   <div class="list-group">
     <a class="list-group-item list-group-item-action flex-column align-items-start" *ngFor="let anime of animes" (click)=" goToAnime(anime)" >

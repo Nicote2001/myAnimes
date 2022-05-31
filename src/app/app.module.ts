@@ -38,7 +38,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FilterComponent } from './Shared/filter/filter.component';
 import { FormsModule } from '@angular/forms';
 import { SearchAnimeComponent } from './search-anime/search-anime.component';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
@@ -46,7 +45,6 @@ import { LoginComponent } from './account/login/login.component';
 import { RegisterComponent } from './account/register/register.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { ForgotPasswordComponent } from './account/forgot-password/forgot-password.component';
-import { AnimeEpisodeErrorComponent } from './errors/anime-episode-error/anime-episode-error.component';
 import { EditAccountComponent } from './account/edit-account/edit-account.component';
 import { CommentsComponent } from './anime-detail/comments/comments.component';
 import { SafePipe } from './Shared/services/safePipe.service';
@@ -66,7 +64,6 @@ import { CommonErrorComponent } from './errors/common-error/common-error.compone
     LoginComponent,
     RegisterComponent,
     ForgotPasswordComponent,
-    AnimeEpisodeErrorComponent,
     EditAccountComponent,
     CommentsComponent,
     SafePipe,

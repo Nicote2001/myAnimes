@@ -6,7 +6,6 @@ import { CommonErrorComponent } from "../errors/common-error/common-error.compon
 import { IAnime } from "../objects/anime.model";
 import { AnimeDetail } from "../objects/animeDetail.model";
 import { AnimeUser } from "../objects/animeUser";
-import { AnimeWatch } from "../objects/animeWatch.model";
 import { AnimeUserService } from "./services/AnimeUser.service";
 
 @Injectable({providedIn: 'root'})
@@ -72,15 +71,17 @@ export class CommonService
       
       if(!isFound)
       {
-        this.openErrorComponent('This anime is not available for the moment !');
+        this.openErrorComponent('This anime is not available for the moment !', false);
       }
     }
 
-    openErrorComponent(message:string)
+    openErrorComponent(message:string, isSucess:boolean)
     {
       this.modalRef = this.modalService.open(CommonErrorComponent, {
         modalClass: 'modal-dialog-centered modal-lg',
-        data: { message: message}
+        data: { message: message,
+                isSucess: isSucess
+        }
       });
     }
 
