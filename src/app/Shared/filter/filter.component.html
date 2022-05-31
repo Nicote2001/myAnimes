@@ -1,6 +1,6 @@
 <div [ngClass]="{'filter-container': isQuickFilter, 'filter-container-full': !isQuickFilter}" style="background-color: #14213d;">
     <h3>{{title}}</h3>
-    <form #myForm="ngForm" (submit)="SearchAnimesByFilter(myForm)" novalidate>
+    <form #myForm="ngForm" (submit)="SearchAnimesByFilter(myForm)" novalidate> 
                 
     <div class="row "> 
         <div class="col-6">
@@ -26,8 +26,8 @@
             </div>
             <span [ngClass]="{'dropdown-content': isQuickFilter, 'dropdown-content-full': !isQuickFilter}" [hidden]="!producerDropped" hidden="true">
                 <!--genres drop down-->
-                <div class="row">
-                    <div class="col-4">
+                <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-1 row-cols-xl-3 row-cols-xxl-3">
+                    <div class="col">
                         <div class="">
                             <div class="">
                                 <div class="">
@@ -41,7 +41,7 @@
                             </div>
                     </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col">
                         <div class="">
                             <div class="">
                                 <div class="form-check" *ngFor=" let item of producers.slice(33,66)">
@@ -53,7 +53,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col 4">
+                    <div class="col">
                         <div class="">
                             <div class="">
                                 <div class="form-check" *ngFor=" let item of producers.slice(66,99)">
@@ -169,5 +169,5 @@
         <button  [ngClass]="{'button-filter': isQuickFilter, 'button-filter-full': !isQuickFilter}" type="submit">Filter <fa-icon [icon]="faFilter" style="margin-left: 0.5rem; "></fa-icon></button>
         </div>
     </div>
-    </form><!-- Form ends -->
+    </form><!-- Form ends --> 
 </div>

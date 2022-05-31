@@ -47,14 +47,15 @@
     <div class="container  h-100">
       <div class="row d-flex align-items-center justify-content-center h-100">
         <div class="col-md-8 col-lg-7 col-xl-6" >
-          <button type="button" class="btn btn-secondary" (click)="modalRef.close()">
-            Close
-          </button>
           <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/67f84de8-d494-455a-8a98-bf116e96d1f7/dcky27w-db048680-2771-4c91-bdb0-f09b61caae77.png/v1/fill/w_922,h_866,strp/kon___bleach_by_oukokudesign_dcky27w-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9OTYyIiwicGF0aCI6IlwvZlwvNjdmODRkZTgtZDQ5NC00NTVhLThhOTgtYmYxMTZlOTZkMWY3XC9kY2t5Mjd3LWRiMDQ4NjgwLTI3NzEtNGM5MS1iZGIwLWYwOWI2MWNhYWU3Ny5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.w-1S6DDvWwXpOyCCjUSBy4hHlmaNUE5GKiQUa-G87is"
-            class="img-fluid" alt="Phone image">
+            class="img-fluid"  alt="Phone image">
         </div>
-        <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+        <div class="col-md-10 col-lg-5 col-xl-5 offset-xl-1">
+          
           <form>
+            <div class="button-container" style="width:100%;">
+            <button type="button" class="btn btn-close " (click)="modalRef.close()"></button>
+          </div>
             <div class="form-outline mb-4">
               <input type="email" id="form1Example13" name="email" class="form-control form-control-lg active" [(ngModel)]="email" />
               <label class="form-label" for="form1Example13">Email address</label>
@@ -99,20 +100,3 @@
       </div>
     </div>
 </section>
-
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>

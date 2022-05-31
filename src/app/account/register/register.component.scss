@@ -6,13 +6,13 @@
   }
   .vh-100{
       background-color:#14213d;
-      width: 50rem;
-      height: 35rem !important;
+      width: 100%;
+      height: 37rem !important;
       border-radius: 5px;
       padding-left: 1rem;
       padding-right: 1rem;
   }
-  .vh-100 label{
+  .vh-100 label{ 
       color: white; 
   }
   .vh-100 .account a{
@@ -64,3 +64,45 @@ input:-webkit-autofill,
   input:-webkit-autofill:focus {
     transition: background-color 600000s 0s, color 600000s 0s;
   }
+  @media (min-width: 768px) and (max-width: 992px) { 
+    .vh-100{
+        height: 37rem !important;
+    }
+    .img-fluid{
+        display: none;
+    }
+ }
+ @media (max-width: 767px) { 
+    .vh-100{
+        height: 37rem !important;
+    }
+    .img-fluid{
+        display: none;
+    }
+ }
+ .btn-close{
+    width: 0.5rem !important;
+    height: 1rem !important;
+    background-color: #fca311;
+    justify-content: right;
+    text-align: right;
+    float: right;
+    margin-top: 0.5rem;
+
+}
+.btn-close:hover{
+    background-color: #e5e5e5;
+}
+.btn-close{
+    width: 0.1rem !important;
+    height: 1rem !important;
+    background-color: #fca311;
+}
+.btn-close:hover{
+    background-color: #e5e5e5;
+}
+.button-container{
+   display: flex;
+   justify-content: right;
+   margin-bottom: 2rem;
+}

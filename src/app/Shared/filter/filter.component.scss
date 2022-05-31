@@ -22,8 +22,8 @@
     
 .dropdown-content {
     position: absolute;
-    width: 45rem;
-    max-height: 90rem;
+    width: 37rem;
+    max-height: 300rem;
     z-index: 10;
     background-color: white;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -37,7 +37,7 @@
   }
   .dropdown-content-season{
     position: absolute;
-    width: 20rem;
+    width: 13rem;
     max-height: 90rem;
     z-index: 10;
     background-color: white;
@@ -74,7 +74,7 @@
   .dropdown-content-genre input{
   }
   .dropdown-content-statut{
-    position: absolute;
+    position: absolute; 
     width: 9rem;
     max-height: 90rem;
     z-index: 10;
@@ -99,9 +99,9 @@
   }
   .season-container h2{
       color: #fca311;
-      margin-left: 1rem;
       font-size: 0.8rem;
       padding-top: 0.5rem;
+      text-align: center;
   }
   
   .form-check:hover{
@@ -162,7 +162,7 @@
     margin-left:1rem ;
     margin-bottom: 0.5rem;
     border-radius: 10px;
-    width: 14rem;
+    width: 11rem;
   }
   .form-input-special:hover{
       cursor: text;
@@ -220,6 +220,31 @@
   text-align: center;
   margin: auto;
 }
+.dropdown-content::-webkit-scrollbar{
+  display: none;
+}
+@media (min-width: 992px) and (max-width: 1199px) { 
+  .dropdown-content {
+    width: 14rem !important;
+    overflow-y: auto !important;
+    height: 25rem !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) { 
+  .dropdown-content {
+    width: 14rem !important;
+    overflow-y: auto !important;
+    height: 25rem !important;
+  }
+}
+@media (max-width: 767px) { 
+  .dropdown-content {
+    width: 14rem !important;
+    overflow-y: auto !important;
+    height: 25rem !important;
+  }
+}
+
 
 
 
@@ -232,16 +257,15 @@
 {
     display: block;
     background-color: #e5e5e5; 
+    margin-left: auto;
+    margin-right: auto;
     text-align: center; 
-    width: 19.7rem; 
+    width: 75%; 
     padding-top: 0.2rem ;
     padding-bottom: 0.2rem ;
     border-radius: 10px;
-    margin-left: 1.6rem;
     color: black; 
     margin-top: 0.5rem;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .labelFilter-full:hover{
@@ -258,62 +282,62 @@
 }
 .dropdown-content-full {
     position: absolute;
-    width: 45rem;
+    width: 43rem;
     max-height: 90rem;
     z-index: 10;
     background-color: white;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     display: block;
     -ms-overflow-style: none;
-    margin-left: 1.5rem;
+    margin-left: 2.5%;
     margin-top: 0.5rem;
   }
   .dropdown-content-season-full{
     position: absolute;
-    width: 19.5rem;
+    width: 13rem;
     max-height: 90rem;
     z-index: 10;
     background-color: white;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     display: block;
     -ms-overflow-style: none;
-    margin-left: 1.5rem;
+    margin-left: 2.5%;
     margin-top: 0.5rem;
   }
   .dropdown-content-sort-full{
     position: absolute;
-    width: 19.5rem;
+    width: 13rem;
     max-height: 90rem;
     z-index: 10;
     background-color: white;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     display: block;
     -ms-overflow-style: none;
-    margin-left: 1.5rem;
+    margin-left: 2.5%;
     margin-top: 0.5rem;
   }
   .dropdown-content-genre-full{
     position: absolute;
-    width: 19.5rem;
+    width: 13rem;
     max-height: 90rem;
     z-index: 10;
     background-color: white;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     display: block;
     -ms-overflow-style: none;
-    margin-left: 1.5rem;
+    margin-left: 2.5%;
     margin-top: 0.5rem;
   }
   .dropdown-content-statut-full{
     position: absolute;
-    width: 19.5rem;
+    width: 13rem;
     max-height: 90rem;
     z-index: 10;
     background-color: white;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     display: block;
     -ms-overflow-style: none;
-    margin-left: 1.5rem;
+    margin-left: 2.5%;
     margin-top: 0.5rem;
   }
   .dropdown-content-years-full{
@@ -325,14 +349,14 @@
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     display: block;
     -ms-overflow-style: none;
-    margin-left: 1.5rem;
+    margin-left: 2.5%;
     margin-top: 0.5rem;
   }
   .season-container-full h2{
       color: #fca311;
-      margin-left: 1rem;
       font-size: 0.8rem;
       padding-top: 0.5rem;
+      text-align: center;
   }
   
   .form-check-full:hover{
@@ -358,8 +382,7 @@
       margin-left: 1rem;
   }
   .button-filter-full{
-      width: 19.7rem;
-      margin: auto;
+      width: 90%;
       height: 4rem;
       border-radius: 10px;
       background-color: #fca311;
@@ -368,17 +391,16 @@
       font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
       border: none;
       margin-top: 1rem;
-      display: inline;
-      margin-left: 1rem;
+      margin-left: 5%;
   }
   .button-filter-full:hover{
     background-color: #e5e5e5;
   }
   .filter-container-full{
-      width: 46.5rem;
-      height: 16.5rem;
-      border-radius: 10px;
-      margin: auto;
+    width: 90%;
+    height: 21rem;
+    border-radius: 10px;
+    margin: auto;
   }
   .filter-container-full h3{
       color: white;
@@ -386,6 +408,7 @@
       padding-left: 1.6rem;
       padding-top: 1rem;
       font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
   }
   .form-check-label-special-full{
     margin-left:1rem ;
@@ -397,7 +420,7 @@
     margin-left:1rem ;
     margin-bottom: 0.5rem;
     border-radius: 10px;
-    width: 14rem;
+    width: 11rem;
   }
   .form-input-special-full:hover{
       cursor: text;
@@ -436,15 +459,13 @@
   box-shadow: 0 0 5px #fca311;
 }
 .form-input-researsh-full{
-  width: 20rem;
-  margin: auto;
+  width: 90%;
+  margin-left: 5%;
   border-radius: 10px;
   height: 3rem;
 }
 .research-container-full{
-  width: 22rem;
-  display: inline;
-  margin-left: 1.2rem;
+  width: 100%;
 }
 .research-container-full input:hover{
   cursor: text;
@@ -457,4 +478,77 @@
 .button-filter-container-full{
   display: inline;
   width: 20rem;
+}
+
+.dropdown-content-full::-webkit-scrollbar{
+  display: none;
+}
+@media (min-width: 992px) and (max-width: 1199px) { 
+  .dropdown-content-full {
+    width: 14rem !important;
+    overflow-y: auto !important;
+    height: 25rem !important;
+    margin-left: 4.5% !important;
+  }
+  .dropdown-content-genre-full{
+    margin-left: 4.5% !important;
+  }
+  .dropdown-content-season-full{
+    margin-left: 4.5% !important;
+  }
+  .dropdown-content-sort-full{
+    margin-left: 4.5% !important;
+  }
+  .dropdown-content-statut-full{
+    margin-left: 4.5% !important;
+  }
+  .dropdown-content-years-full{
+    margin-left: 4.5% !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) { 
+  .dropdown-content-full {
+    width: 14rem !important;
+    overflow-y: auto !important;
+    height: 25rem !important;
+    margin-left: 4% !important;
+  }
+  .dropdown-content-genre-full{
+    margin-left: 4% !important;
+  }
+  .dropdown-content-season-full{
+    margin-left: 4% !important;
+  }
+  .dropdown-content-sort-full{
+    margin-left: 4% !important;
+  }
+  .dropdown-content-statut-full{
+    margin-left: 4% !important;
+  }
+  .dropdown-content-years-full{
+    margin-left: 4% !important;
+  }
+}
+@media (max-width: 767px) { 
+  .dropdown-content-full {
+    width: 14rem !important;
+    overflow-y: auto !important;
+    height: 25rem !important;
+    margin-left: 4.2% !important;
+  }
+  .dropdown-content-genre-full{
+    margin-left: 4.2% !important;
+  }
+  .dropdown-content-season-full{
+    margin-left: 4.2% !important;
+  }
+  .dropdown-content-sort-full{
+    margin-left: 4.2% !important;
+  }
+  .dropdown-content-statut-full{
+    margin-left: 4.2% !important;
+  }
+  .dropdown-content-years-full{
+    margin-left: 4.2% !important;
+  }
 }
