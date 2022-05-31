@@ -57,9 +57,9 @@ export class SearchAnimeComponent implements OnInit {
     this.currentPage = 1;
   }
 
-  goToAnime(anime : IAnime)
+  async goToAnime(anime : IAnime)
   {
-    this.commonService.goToAnime(anime);
+    await this.commonService.goToAnime(anime);
   }
 
   onClickChangePage(number: number)

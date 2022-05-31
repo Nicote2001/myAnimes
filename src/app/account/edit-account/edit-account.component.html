@@ -1,1 +1,36 @@
-<p>edit-account works!</p>
+<h1 class="inputAccount">Account Information</h1>
+<div class="form-outline mb-4">
+    <input type="email" id="form1Example13" class="form-control form-control-lg active" value="{{email}}" disabled="true" />
+    <label class="form-label" for="form1Example13">Email address</label>
+    <div class="form-notch">
+      <div class="form-notch-leading" style="width: 9px; "></div>
+      <div class="form-notch-middle" style="width: 88.8px; "></div>
+      <div class="form-notch-trailing"></div>
+    </div>
+  </div>
+  <div class="form-outline mb-4">
+    <input type="text" id="form1Example13" class="form-control form-control-lg active" [(ngModel)]="username" />
+    <label class="form-label" for="form1Example13">Username</label>
+    <div class="form-notch">
+      <div class="form-notch-leading" style="width: 9px; "></div>
+      <div class="form-notch-middle" style="width: 88.8px; "></div>
+      <div class="form-notch-trailing"></div>
+    </div>
+  </div>
+  <button type="button" class="btn btn-warning" (click)="saveUsername()">
+    Close
+  </button>
+  <h1 class="inputAccount">Account Password Reset</h1>
+  <button (click)="ResetPassword()" class="button" >Send Reset Password</button>
+  <h1 class="inputAccount">Last Watched</h1>
+  <div class="list-group">
+    <a class="list-group-item list-group-item-action flex-column align-items-start" *ngFor="let anime of animes" (click)=" goToAnime(anime)" >
+      <div class="d-flex w-100 justify-content-between">
+        <img src="{{anime.imgUrl}}" style="width: 5rem; margin: 0.2rem; border-radius: 5px;"/>
+        <h5 class="mb-1">{{anime.animeTitle}}</h5>
+        <small>{{anime.lastUpdate.slice(4,21)}}</small>
+        <p class="mb-1">Episode {{anime.currentEpisode}}</p>
+      </div>
+    </a>
+  </div>
+

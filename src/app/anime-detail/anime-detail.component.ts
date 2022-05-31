@@ -5,6 +5,7 @@ import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
 import { AnimeDetailsApiCallerService } from '../ApiCallerService/animeDetails.api-caller.service';
 import { CommonErrorComponent } from '../errors/common-error/common-error.component';
 import { AnimeDetail } from '../objects/animeDetail.model';
+import { CommonService } from '../Shared/common.service';
 import { CommentsComponent } from './comments/comments.component';
 import { EpisodesComponent } from './episodes/episodes.component';
 
@@ -26,7 +27,7 @@ export class AnimeDetailComponent implements OnInit {
   @ViewChild(EpisodesComponent) episodeComponent : EpisodesComponent;
   @ViewChild(CommentsComponent) commentComponent : CommentsComponent;
 
-  constructor(private route:ActivatedRoute, public sanitizer: DomSanitizer, public api: AnimeDetailsApiCallerService, private router: Router) 
+  constructor(private route:ActivatedRoute, public sanitizer: DomSanitizer, public api: AnimeDetailsApiCallerService, private router: Router, private commonService: CommonService) 
   { 
     route.params.subscribe(val => {
       if(this.route.snapshot.params['id'] !== this.animeId)
@@ -67,6 +68,11 @@ export class AnimeDetailComponent implements OnInit {
   changerEpisode(episode)
   {
     this.router.navigateByUrl('anime/'+this.animeId+'/'+episode);
+  }
+
+  saveEpisode()
+  {
+    this.commonService.saveAnimeEpisode(this.animeId,this.animeInfo,this.episode);
   }
 
 }

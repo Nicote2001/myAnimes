@@ -12,5 +12,6 @@
 <div *ngIf="animeInfo">
       <app-episodes [totalEpisodes] = "animeInfo.totalepisode" [current] = "episode" (PageEmiter)="changerEpisode($event)"></app-episodes>
 </div>
+<button (click)=" saveEpisode()">save Episode</button>
 <app-comments [animeId]="animeId"></app-comments>
   

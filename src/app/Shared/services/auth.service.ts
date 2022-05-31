@@ -19,6 +19,7 @@ export class AuthService {
     var ok = false;
     await this.fireauth.signInWithEmailAndPassword(email,password).then( res => {
         localStorage.setItem('uid',res.user.uid);
+        localStorage.setItem('email',res.user.email);
         this.getUser(res.user.uid);
         alert("Login Succesful")
         ok = true;
@@ -55,6 +56,7 @@ export class AuthService {
     this.fireauth.signOut().then( () => {
       localStorage.removeItem('uid');
       localStorage.removeItem('username');
+      localStorage.removeItem('email');
       this.currentUser = undefined;
     }, err => {
       alert(err.message);
@@ -85,6 +87,7 @@ export class AuthService {
     await this.fireauth.signInWithPopup(new GoogleAuthProvider).then(res => {
 
       localStorage.setItem('uid',JSON.stringify(res.user.uid));
+      localStorage.setItem('email',res.user.email);
       this.getUser(res.user?.uid);
       if(this.currentUser === undefined || this.currentUser === null)
       {
@@ -104,6 +107,7 @@ export class AuthService {
     return this.fireauth.signInWithPopup(new TwitterAuthProvider).then(res => {
 
       localStorage.setItem('uid',JSON.stringify(res.user.uid));
+      localStorage.setItem('email',res.user.email);
       this.getUser(res.user?.uid);
       if(this.currentUser === undefined || this.currentUser === null)
       {
@@ -121,6 +125,11 @@ export class AuthService {
     var results = await this.userService.getUserByUid(uid);
     this.currentUser = results[0];
     localStorage.setItem('username',this.currentUser.username);
+  }
+
+  async updateUser(newUsername: string)
+  {
+    this.userService.updateUsername(newUsername, this.currentUser.id);
   }
 
 }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { updateCurrentUser } from 'firebase/auth';
 import { IUser } from 'src/app/objects/DataBaseObject/user.model';
 
 @Injectable({
@@ -21,14 +22,16 @@ export class UserService {
     return this.afs.collection('Users').add(Record);
   }
 
-  deleteStudent(user : IUser) {
-    this.afs.doc('/Users/'+user.id).delete();
- }
-
   getUserByUid(uid : string) 
   {
     return new Promise<any>((resolve)=> {
       this.afs.collection('Users', ref => ref.where('uid', '==', uid)).valueChanges().subscribe(users => resolve(users))
       })
-      }
+  }
+
+  updateUsername(username:string, id:string)
+  {
+    this.afs.doc('User/${id}').update({username :username});
+  }
 }
+
