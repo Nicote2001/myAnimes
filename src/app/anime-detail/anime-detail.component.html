@@ -9,6 +9,13 @@
 </div>
 <iframe class="frame" [src]="safeSrc | safe" width="100%" height="" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen *ngIf="safeSrc">
 </iframe>
+<div  width="100%" height="" class="frame frame-before " *ngIf="!safeSrc && animeInfo" >
+  <div class="d-flex justify-content-center" style="vertical-align: middle">
+    <div class="spinner-border text-warning" style="width: 5rem; height: 5rem; margin-top: 12rem;" he role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+</div>
 <div *ngIf="animeInfo">
       <app-episodes [totalEpisodes] = "animeInfo.totalepisode" [current] = "episode" (PageEmiter)="changerEpisode($event)"></app-episodes>
 </div>

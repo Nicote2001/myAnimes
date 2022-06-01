@@ -49,6 +49,9 @@ import { EditAccountComponent } from './account/edit-account/edit-account.compon
 import { CommentsComponent } from './anime-detail/comments/comments.component';
 import { SafePipe } from './Shared/services/safePipe.service';
 import { CommonErrorComponent } from './errors/common-error/common-error.component';
+import { PopularAnimesComponent } from './popular-animes/popular-animes.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { OnGoingAnimesComponent } from './on-going-animes/on-going-animes.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +70,10 @@ import { CommonErrorComponent } from './errors/common-error/common-error.compone
     EditAccountComponent,
     CommentsComponent,
     SafePipe,
-    CommonErrorComponent
+    CommonErrorComponent,
+    PopularAnimesComponent,
+    ContactUsComponent,
+    OnGoingAnimesComponent
   ],
   imports: [
     BrowserModule,

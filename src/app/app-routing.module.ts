@@ -3,7 +3,10 @@ import { RouterModule, Routes } from "@angular/router";
 import { EditAccountComponent } from "./account/edit-account/edit-account.component";
 import { ForgotPasswordComponent } from "./account/forgot-password/forgot-password.component";
 import { AnimeDetailComponent } from "./anime-detail/anime-detail.component";
+import { ContactUsComponent } from "./contact-us/contact-us.component";
 import { MenuComponent } from "./menu/menu.component";
+import { OnGoingAnimesComponent } from "./on-going-animes/on-going-animes.component";
+import { PopularAnimesComponent } from "./popular-animes/popular-animes.component";
 import { SearchAnimeComponent } from "./search-anime/search-anime.component";
 
 const routes: Routes = 
@@ -14,6 +17,9 @@ const routes: Routes =
     {path: 'anime/search', component: SearchAnimeComponent},
     {path: 'forgot-password', component: ForgotPasswordComponent},
     {path: 'profil', component: EditAccountComponent},
+    {path: 'populars', component: PopularAnimesComponent},
+    {path: 'on-going', component: OnGoingAnimesComponent},
+    {path: 'contact-us', component: ContactUsComponent},
     {path: '**', redirectTo: '', pathMatch: 'full'},
 ];
 

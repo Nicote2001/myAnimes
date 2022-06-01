@@ -54,6 +54,7 @@ export class AnimeDetailComponent implements OnInit {
 
   getAnimeInfo()
   {
+    this.safeSrc = undefined;
     this.api.getAnimeById(this.animeId).subscribe(data =>{
       this.animeInfo = data.results[0];
       var episodes = data.results[0].totalepisode;
@@ -64,6 +65,7 @@ export class AnimeDetailComponent implements OnInit {
 
   changerEpisode(episode)
   {
+    this.safeSrc = undefined;
     this.router.navigateByUrl('anime/'+this.animeId+'/'+episode);
   }
 

@@ -8,6 +8,7 @@ import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
 import { LoginComponent } from '../account/login/login.component';
 import { RegisterComponent } from '../account/register/register.component';
 import { Location } from '@angular/common';
+import { GlobalPagesAnimesApiCallerService } from '../ApiCallerService/globalPagesAnimes.api-caller.service';
 
 @Component({
   selector: 'app-navbar',
@@ -24,6 +25,7 @@ export class NavbarComponent implements OnInit {
   uid:string;
   islogged:boolean;
   isDroppedConnexion:boolean=false;
+  randomAnime: IAnime;
 
   modalRef: MdbModalRef<LoginComponent| RegisterComponent> | null = null;
   
@@ -33,7 +35,8 @@ export class NavbarComponent implements OnInit {
     private router: Router,
     private authService: AuthService,
     private modalService: MdbModalService,
-    private location: Location) { }
+    private location: Location,
+    private globalapi: GlobalPagesAnimesApiCallerService) { }
 
   ngOnInit(): void {
     this.searchFilter = "";
@@ -72,10 +75,6 @@ export class NavbarComponent implements OnInit {
 
   goToAnime(anime:IAnime)
   {
-    if(anime.title ==="Naruto: Shippuuden")
-    {
-      anime.title ="Naruto-Shippuden";
-    }
     this.commonService.goToAnime(anime);
 
     this.animesResults = [];
@@ -145,6 +144,15 @@ export class NavbarComponent implements OnInit {
       {
       }
     });
+  }
+
+  async goRandomAnime()
+  {
+    this.globalapi.getRandomAnime().subscribe(data =>{
+      this.randomAnime = data.data;
+      console.log(this.randomAnime);
+      this.commonService.goToAnime(this.randomAnime,true);
+    })
   }
 
 }

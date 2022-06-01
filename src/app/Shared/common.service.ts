@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { MdbModalRef, MdbModalService } from "mdb-angular-ui-kit/modal";
 import { AnimeDetailsApiCallerService } from "../ApiCallerService/animeDetails.api-caller.service";
+import { GlobalPagesAnimesApiCallerService } from "../ApiCallerService/globalPagesAnimes.api-caller.service";
 import { CommonErrorComponent } from "../errors/common-error/common-error.component";
 import { IAnime } from "../objects/anime.model";
 import { AnimeDetail } from "../objects/animeDetail.model";
@@ -14,7 +15,7 @@ export class CommonService
 {
   modalRef: MdbModalRef<CommonErrorComponent> | null = null;
 
-    constructor(public api: AnimeDetailsApiCallerService, public apiAnimeDetails: AnimeDetailsApiCallerService, private router: Router,  private modalService: MdbModalService, private animeUserSerivce: AnimeUserService)
+    constructor(public api: AnimeDetailsApiCallerService, public apiAnimeDetails: AnimeDetailsApiCallerService, private router: Router,  private modalService: MdbModalService, private animeUserSerivce: AnimeUserService, private globalApi: GlobalPagesAnimesApiCallerService)
     {
 
     }
@@ -53,26 +54,40 @@ export class CommonService
         return new Promise( resolve => setTimeout(resolve, ms) );
     }
 
-    async goToAnime(anime : IAnime)
+    async goToAnime(anime : IAnime, fromRandom:boolean=false)
     {
         var isFound = false;
+
+        if(anime.title ==="Naruto: Shippuuden")
+        {
+          anime.title ="Naruto-Shippuden";
+        }
 
       this.apiAnimeDetails.getAnimeById(this.FormatAnimeTitle(anime.title)).subscribe(data =>{
         this.router.navigateByUrl('anime/'+this.FormatAnimeTitle(anime.title)+'/'+ 1);
         isFound = true;
+        return;
       });
   
       this.apiAnimeDetails.getAnimeById(this.FormatAnimeTitle(anime.title_english)).subscribe(data =>{
         this.router.navigateByUrl('anime/'+this.FormatAnimeTitle(anime.title_english)+'/'+ 1);
         isFound = true;
+        return;
       })
   
-      await this.delay(1000);
+      await this.delay(1500);
       
-      if(!isFound)
+      if(!isFound && !fromRandom)
       {
         this.openErrorComponent('This anime is not available for the moment !', false);
+        return;
       }
+      else if(!isFound && fromRandom)
+      (
+        this.globalApi.getRandomAnime().subscribe(data =>{
+          this.goToAnime(data.data,true);
+        })
+      )
     }
 
     openErrorComponent(message:string, isSucess:boolean)
