@@ -1,43 +1,38 @@
 .card{
-    background-color:  #14213d;
-    width: 13rem;
-    height: 22rem;
     margin-top: 1rem;
     padding: 1rem;
-}
-.card-title{
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: white;
-    font-size: 1rem;
-}
-.card-title:hover{
-    color: #fca311;
-}
-.card-css:hover{
-    color: #fca311;
-}
-.card:hover h5{
-    color: #fca311;
-}
-.card-img-top {
-    max-height: 15rem;
-}
-.card-container{
-    margin: auto;
-}
-.card-body{
-    width: 8rem;
-    text-align: center;
-    margin: auto;
-}
-.change-page{
-    margin-top: 1rem;
+    height: 22rem;
+    width: 13rem;
 }
 .change-page:hover{
     cursor: pointer;
     background-color: #14213d !important;
     color: #fca311 !important;
 }
+.change-page{
+    margin-top: 1rem;
+}
 .image-top{
-    max-height: 15rem;
+    max-height: 15rem; 
+} 
+.card-title{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: black;
+}
+h5{
+    text-align: center;
+}
+.card:hover h5{
+    color: #fca311;
+}
+.card:hover{
+    background-color: rgb(235, 233, 233) ;
+}
+.card-container{
+    margin: auto;
+}
+.card-body{
+    width: 10rem;
+    text-align: center;
+    margin: auto;
 }
