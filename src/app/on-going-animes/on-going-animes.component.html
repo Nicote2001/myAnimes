@@ -1,5 +1,8 @@
+<div class="col d-block  d-lg-block">
+  <app-filter [isQuickFilter]="true"></app-filter>
+</div>
 <div class="col-12 ">
-    <h3 style="color: black; margin-top: 3rem; border-bottom: 1px solid black;">Popular Animes</h3>
+    <h3 style="color: black; margin-top: 3rem; border-bottom: 1px solid black;">Ongoing Anime</h3>
       <div class="row  row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-3 row-cols-xxl-4  ">
           <div class="card-container-size d-flex justify-content-center" *ngFor="
           let anime of animes">
@@ -12,7 +15,7 @@
                     <h5 class="card-title">{{anime.title.slice(0,20)}}</h5>
                   </div>
                 </button>
-              </div>
+              </div> 
       </div>
     </div>
   

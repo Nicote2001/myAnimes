@@ -18,7 +18,7 @@ export class CommonErrorComponent implements OnInit {
   ngOnInit(): void {
     if(!this.isSucess)
     {
-      this.image = "https://www.pngkey.com/png/full/227-2278265_19-danganronpa-monokuma.png";
+      this.image = "https://cdn140.picsart.com/280279776029211.png";
     }
   }
 
