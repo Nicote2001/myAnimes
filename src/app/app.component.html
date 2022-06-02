@@ -6,10 +6,10 @@
   <!-- Navbar -->
     <div class="container " style=" background-color: #e5e5e5;">
         <div class="row" style="">
-          <div class="col-xl-8 col-lg-12 col-md-12 " style="margin-top: 1rem;">
+          <div  [ngClass]="{'col-xl-8 col-lg-12 col-md-12 ': !isHidden, 'col-xl-12 col-lg-12 col-md-12 col-12': isHidden}"  style="margin-top: 1rem;">
             <router-outlet></router-outlet>
           </div>
-          <div class="col d-block  d-lg-block d-xl-block" style="margin-top: 1rem;">
+          <div *ngIf="!isHidden" class="col d-block  d-lg-block d-xl-block" style="margin-top: 1rem;">
               <app-side-bar></app-side-bar>
           </div>
         </div>

@@ -1,4 +1,6 @@
+import { Location } from '@angular/common';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'MyAnimesVostfr';
+  title = 'animeas';
+  isHidden;
+
+  constructor( private router: Router, private location: Location) 
+  {
+    router.events.subscribe(val => {
+      if (location.path() == "/contact-us") {
+          this.isHidden = true;
+      } else {
+         this.isHidden = false;
+      }
+    });
+  }
 }

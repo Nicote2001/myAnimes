@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { faCake, faRankingStar } from '@fortawesome/free-solid-svg-icons';
@@ -15,8 +16,11 @@ export class SideBarComponent implements OnInit {
   public topAnimes: IAnime[] = [];
   public topAnimeNow: IAnime[] = [];
   faRankingStar = faRankingStar;
+  isHidden;
 
-  constructor(private api:MenuApiCallerService, private commonService: CommonService) { }
+  constructor(private api:MenuApiCallerService, private commonService: CommonService, private router: Router, private location: Location) 
+  {
+  }
 
   ngOnInit(): void {
     this.getTopAnimes();
