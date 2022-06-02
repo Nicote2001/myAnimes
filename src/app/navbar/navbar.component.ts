@@ -26,6 +26,7 @@ export class NavbarComponent implements OnInit {
   islogged:boolean;
   isDroppedConnexion:boolean=false;
   randomAnime: IAnime;
+  isRandom: boolean = false;
 
   modalRef: MdbModalRef<LoginComponent| RegisterComponent> | null = null;
   
@@ -148,11 +149,14 @@ export class NavbarComponent implements OnInit {
 
   async goRandomAnime()
   {
+    this.isRandom = true;
     this.globalapi.getRandomAnime().subscribe(data =>{
       this.randomAnime = data.data;
-      console.log(this.randomAnime);
       this.commonService.goToAnime(this.randomAnime,true);
     })
+
+    await this.commonService.delay(15000);
+    this.isRandom = false;
   }
 
 }
