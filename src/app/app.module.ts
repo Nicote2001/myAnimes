@@ -52,6 +52,7 @@ import { CommonErrorComponent } from './errors/common-error/common-error.compone
 import { PopularAnimesComponent } from './popular-animes/popular-animes.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { OnGoingAnimesComponent } from './on-going-animes/on-going-animes.component';
+import { CommonAlertComponent } from './errors/common-alert/common-alter.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +74,8 @@ import { OnGoingAnimesComponent } from './on-going-animes/on-going-animes.compon
     CommonErrorComponent,
     PopularAnimesComponent,
     ContactUsComponent,
-    OnGoingAnimesComponent
+    OnGoingAnimesComponent,
+    CommonAlertComponent
   ],
   imports: [
     BrowserModule,

@@ -18,7 +18,7 @@ const routes: Routes =
     {path: 'forgot-password', component: ForgotPasswordComponent},
     {path: 'profil', component: EditAccountComponent},
     {path: 'populars', component: PopularAnimesComponent},
-    {path: 'on-going', component: OnGoingAnimesComponent},
+    {path: 'season/:moment', component: OnGoingAnimesComponent},
     {path: 'contact-us', component: ContactUsComponent},
     {path: '**', redirectTo: '', pathMatch: 'full'},
 ];

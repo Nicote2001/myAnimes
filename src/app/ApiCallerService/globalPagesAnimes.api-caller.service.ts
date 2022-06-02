@@ -23,7 +23,12 @@ export class GlobalPagesAnimesApiCallerService
 
     public getOnGoingAnimes(page:number): Observable<any>
     {
-        return this.http.get<any>('https://api.jikan.moe/v4/anime?status=airing/')
+        return this.http.get<any>('https://api.jikan.moe/v4/seasons/now?page='+page)
+    }
+
+    public getUpComingAnimes(page:number)
+    {
+        return this.http.get<any>('https://api.jikan.moe/v4/seasons/upcoming?page='+page)
     }
     
 }
