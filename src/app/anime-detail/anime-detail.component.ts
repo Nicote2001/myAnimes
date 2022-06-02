@@ -73,7 +73,7 @@ export class AnimeDetailComponent implements OnInit {
   {
     if(localStorage.getItem('username') != null || localStorage.getItem('username') != undefined){
       await this.commonService.saveAnimeEpisode(this.animeId,this.animeInfo,this.episode);
-      this.commonService.openErrorComponent("SUCESS !!",true);
+      this.commonService.openErrorComponent("The anime was saved successfully !",true);
     }
     else
     {
