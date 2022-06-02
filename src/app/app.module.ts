@@ -36,7 +36,7 @@ import { AnimeDetailComponent } from './anime-detail/anime-detail.component';
 import { EpisodesComponent } from './anime-detail/episodes/episodes.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FilterComponent } from './Shared/filter/filter.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchAnimeComponent } from './search-anime/search-anime.component';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
@@ -104,6 +104,7 @@ import { CommonAlertComponent } from './errors/common-alert/common-alter.compone
     VgBufferingModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
