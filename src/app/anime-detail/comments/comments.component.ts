@@ -33,6 +33,7 @@ export class CommentsComponent implements OnInit {
     if(localStorage.getItem('username') != null || localStorage.getItem('username') != undefined){
       this.commentService.addComment(new IComment("",this.animeId,localStorage.getItem('username'),new Date().toString(),this.comment));
       this.GetCommentaire();
+      this.comment='';
     }
     else
     {

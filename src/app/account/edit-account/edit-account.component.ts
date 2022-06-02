@@ -55,4 +55,17 @@ export class EditAccountComponent implements OnInit {
     }
   }
 
+  async deleteAnime(anime:AnimeUser)
+  {
+    var isSuccess = await this.api.deleteAnime(anime.animeId);
+
+    if(isSuccess)
+    {
+      this.getAnimes();
+    }
+    else{
+      alert('error');
+    }
+  }
+
 }

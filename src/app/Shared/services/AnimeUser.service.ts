@@ -44,7 +44,6 @@ export class AnimeUserService {
   async updateSave(item:AnimeUser)
   {
     var animeUserExist = await this.getAnimeByUidAndId(item.animeId);
-    console.log(animeUserExist);
     if(animeUserExist.length>0)
     {
       this.afs.doc(`AnimeUsers/`+animeUserExist[0].id).update({currentEpisode:item.currentEpisode});
@@ -52,6 +51,22 @@ export class AnimeUserService {
     else
     {
       this.addSave(item);
+    }
+  }
+
+  async deleteAnime(animeId:string)
+  {
+    var item = await this.getAnimeByUidAndId(animeId);
+
+    if(item.length>0)
+    {
+      await this.afs.doc(`AnimeUsers/`+item[0].id).delete();
+      return true;
+    }
+    else
+    {
+      //error
+      return false;
     }
   }
   
