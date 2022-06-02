@@ -165,3 +165,18 @@ margin-left: 0.5rem;
 .position-container .dropdown-content-button{
     margin-right: 4rem;
 }
+.container-social{
+    margin-top: 0.1rem;
+}
+.social{
+    margin-left: 0.5rem;
+}
+.social:hover{
+  background-color: #e5e5e5 !important;
+  color: black !important;
+}
+@media (max-width: 833px) {
+    .container-social{
+        display: none;
+    }
+  }
