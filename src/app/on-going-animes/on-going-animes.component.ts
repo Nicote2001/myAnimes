@@ -21,6 +21,7 @@ export class OnGoingAnimesComponent implements OnInit {
   maxPage:number;
   season:string;
   modalRef: MdbModalRef<CommonAlertComponent> | null = null;
+  title:string;
 
   constructor(private api: GlobalPagesAnimesApiCallerService, private router: Router,private route:ActivatedRoute, private commonService:CommonService, private modalService: MdbModalService) {
     route.params.subscribe(val => {
@@ -51,12 +52,14 @@ export class OnGoingAnimesComponent implements OnInit {
   {
     if(this.season === "on-going")
     {
+      this.title = "On Going"
       this.api.getOnGoingAnimes(this.currentPage).subscribe(data =>{
         this.animes=data.data.slice(0,25);
         this.maxPage = data.pagination.last_visible_page;
       });
     }
     else{ 
+      this.title = "Up Coming"
       this.api.getUpComingAnimes(this.currentPage).subscribe(data =>{
         this.animes=data.data.slice(0,25);
         this.maxPage = data.pagination.last_visible_page;
