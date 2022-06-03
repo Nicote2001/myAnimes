@@ -14,25 +14,24 @@
       <span class="dropdown-content-home" [hidden]="!isDropped" (click)="onClickDropped()" >
         <div class="navbar-nav">
           <a class="nav-link active search-css" aria-current="page" [routerLink]="['']">Home</a>
-          <a class="nav-link active search-css" aria-current="page" [routerLink]="['/populars']">Populars Animes</a>
-          <a class="nav-link active search-css" aria-current="page" (click)="goRandomAnime()">Radom Anime <div [hidden]="!isRandom" class="spinner-border text-warning" style="width: 0.8rem; height: 0.8rem; margin-left: 0.2rem;" he role="status">
+          <a class="nav-link active search-css" aria-current="page" [routerLink]="['/populars']">Popular Anime</a>
+          <a class="nav-link active search-css" aria-current="page" (click)="goRandomAnime()">Random Anime <div [hidden]="!isRandom" class="spinner-border text-warning" style="width: 0.8rem; height: 0.8rem; margin-left: 0.2rem;" he role="status">
             <span class="visually-hidden">Loading...</span>
           </div></a>
-          <a class="nav-link active search-css" aria-current="page" [routerLink]="['season/on-going']">On Going Animes</a>
-          <a class="nav-link active search-css" aria-current="page" [routerLink]="['season/up-coming']">Up Coming Animes</a>
+          <a class="nav-link active search-css" aria-current="page" [routerLink]="['season/on-going']">Ongoing Anime</a>
+          <a class="nav-link active search-css" aria-current="page" [routerLink]="['season/up-coming']">Upcoming Anime</a>
           <a class="nav-link active search-css" aria-current="page" [routerLink]="['/contact-us']">Contact Us</a>
           <a class="nav-link active search-css" aria-current="page" [routerLink]="['/faq']">FAQ</a>
         </div>
         </span>
      
-      <a class="navbar-brand" href="#">Animea</a>
+      <a class="navbar-brand" href="#"><img class="logo" src="../../assets/images/Animea_logo.png"></a>
       <div class="container-social">
         <div class="d-inline-block ">
             <a class="btn btn-primary social" style="background-color: #55acee;" href="#!" role="button"
             ><i class="fab fa-twitter"></i>
             </a>
         </div>
-        <img src="../../assets/images/Animea_logo.png">
         <div class="d-inline-block "><a class="btn btn-primary social" style="background-color: #ac2bac;" href="#!" role="button"
             ><i class="fab fa-instagram"></i
           ></a></div>
@@ -70,7 +69,7 @@
 
         <button class="connexion-button" (click)="openModalConnexion()"  *ngIf="!islogged">Sign In</button>
 
-        <button class="connexion-button" (click)="onClickDroppedConnexion()" *ngIf="islogged">{{username}}</button>
+        <button class="connexion-button" (click)="onClickDroppedConnexion()" *ngIf="islogged">{{username.slice(0,10) + "..."}}</button>
 
         <span class="dropdown-content-button" [hidden]="!isDroppedConnexion" hidden="true"  *ngIf="islogged">
           <div class="navbar-nav">
