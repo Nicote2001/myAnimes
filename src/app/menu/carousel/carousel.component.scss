@@ -50,5 +50,9 @@
     background-color:#14213d ;
     border-radius: 10px;
 }
-
+@media(max-width: 600px) { 
+    .caroussel-info-body{
+        height: 22rem !important;
+    }
+}
 
