@@ -12,7 +12,26 @@
     border: 1px solid black;
     border: none;
 }
+.search-drop-down-little {
+    position: absolute;
+    text-align: left;
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 10;
+    background-color: white;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: block;
+    -ms-overflow-style: none;
+    margin-top: 0.2rem;
+    border: 1px solid black;
+    border: none;
+}
 .search-drop-down::-webkit-scrollbar{
+    display: none;
+}
+
+.search-drop-down-little::-webkit-scrollbar{
     display: none;
 }
 
@@ -29,7 +48,6 @@
 }
 .navbar-image{
     margin: 0.5rem;
-    width: 3rem;
     border-radius: 0.5rem;
 }
 .container-link{
@@ -95,6 +113,18 @@ margin-left: 0.5rem;
     -ms-overflow-style: none;
     background-color: white;
     margin-left: 1rem;
+    text-align: center;
+  }
+  .dropdown-content-bar{
+    position: absolute;
+    width: 100%;
+    max-height: 90rem;
+    z-index: 10;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: block;
+    border-radius: 5px;
+    -ms-overflow-style: none;
+    background-color: white;
     text-align: center;
   }
   .dropdown-content-button{
@@ -188,10 +218,14 @@ margin-left: 0.5rem;
     .container-social{
         display: none;
     }
+    .navbar-css{
+        background-color: #14213d;
+        border-radius: 0px;
+    }
 }
 .logo{
     width: 8rem;
-    height: 3rem;
+    height: 2.5rem;
 }
 @media(max-width: 400px) { 
     .logo{

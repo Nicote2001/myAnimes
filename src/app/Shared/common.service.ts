@@ -75,7 +75,7 @@ export class CommonService
         return;
       })
   
-      await this.delay(1500);
+      await this.delay(3000);
       
       if(!isFound && !fromRandom)
       {

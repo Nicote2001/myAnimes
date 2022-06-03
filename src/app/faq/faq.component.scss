@@ -1,0 +1,10 @@
+div{
+    margin-top: 5rem;
+}
+
+@media (max-width: 650px) {
+    div{
+        text-align: center;
+        margin-top: 3rem;
+    }
+}

@@ -11,3 +11,14 @@
  text-align: center;
  margin-top: 1rem;
 }
+
+.navbarcss{
+    margin-top: 1rem !important;
+}
+
+@media (max-width: 850px) {
+
+    .navbarcss{
+        margin-top: 0rem !important;
+    }
+}
