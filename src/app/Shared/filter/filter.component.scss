@@ -553,10 +553,10 @@
   }
   .dropdown-content-years-full{
     margin-left: 4.2% !important;
-    width: 7.5rem !important;
+    width: 12rem !important;
   }
   .form-input-special-full{
-    width: 2rem;
+    width: 2rem !important;
   }
 }
 @media(max-width: 400px) { 
@@ -589,8 +589,8 @@
     margin-left: 2.5% !important;
   }
   .button-filter-full{
-  width: 95% !important;
-  margin-left: 2.5% !important;
+    width: 95% !important;
+    margin-left: 2.5% !important;
   }
 }
 @media (max-width: 767px) { 
@@ -617,10 +617,10 @@
   }
   .dropdown-content-years{
     margin-left: 4.2% !important;
-    width: 7.5rem !important;
+    width: 12rem !important;
   }
   .form-input-special{
-    width: 2rem;
+    width: 2rem !important;
   }
 }
 @media(max-width: 400px) { 
