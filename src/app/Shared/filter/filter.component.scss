@@ -569,7 +569,7 @@
     margin-right: 5rem;
   }
   .form-input-special-full{
-    width: 2rem;
+    width: 2rem !important;
   }
   .filter-container-full{
     height: 21rem;
@@ -581,17 +581,17 @@
     width: 7.5rem !important;
   }
   .labelFilter-full
-{
-    width: 6.5rem; 
-}
-.form-input-researsh-full{
-    width: 95%;
-    margin-left: 2.5%;
-}
-.button-filter-full{
-  width: 95%;
-  margin-left: 2.5%;
-}
+  {
+    width: 6.5rem !important; 
+  }
+  .form-input-researsh-full{
+    width: 95% !important;
+    margin-left: 2.5% !important;
+  }
+  .button-filter-full{
+  width: 95% !important;
+  margin-left: 2.5% !important;
+  }
 }
 @media (max-width: 767px) { 
   .dropdown-content {
@@ -637,7 +637,8 @@
   }
   .filter-container{
     height: 21rem;
-    width: 17rem;
+    width: 16rem;
+    margin: auto !important;
   }
   .dropdown-content-sort{
     width: 7.5rem !important;
@@ -646,12 +647,12 @@
     width: 7.5rem !important;
   }
   .form-input-researsh{
-    width: 95%;
+    width: 95% !important;
     margin-left: 2.5%;
 }
   .labelFilter{
     width: 6.5rem; 
-    margin-left: 8%;
+    margin-left: 5%;
 }
   .button-filter{
     width: 95%;
