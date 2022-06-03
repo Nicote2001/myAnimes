@@ -31,3 +31,11 @@
 .image-top{
     max-height: 15rem; 
 } 
+
+@media (max-width: 350px) {
+    .card-body{
+        width: 6rem;
+        text-align: center;
+        margin: auto;
+    } 
+}

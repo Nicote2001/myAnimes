@@ -1,6 +1,7 @@
 <div class="animeInformations" *ngIf="animeInfo">
-  <div class="flex-row description-card"><img class="card-img-sm-left description-card-img" style="max-width: 10rem; max-height:15rem" src="{{animeInfo.image}}"/>
+  <div class="flex-row description-card">
         <div class="card-body">
+          <img class="card-img-sm-left description-card-img" style="max-width: 10rem; max-height:15rem; float: left;" src="{{animeInfo.image}}"/>
           <h4 class="card-title h5 h4-sm">{{animeInfo.title}}</h4>
           <p class="card-text">{{animeInfo.summary.slice(0,700) + " ..."}}</p>
         </div>
@@ -13,7 +14,7 @@
   <div class="d-flex justify-content-center" style="vertical-align: middle">
     <div class="spinner-border text-warning" style="width: 5rem; height: 5rem; margin-top: 12rem;" he role="status">
       <span class="visually-hidden">Loading...</span>
-    </div>
+    </div> 
   </div>
 </div>
 <div *ngIf="animeInfo">

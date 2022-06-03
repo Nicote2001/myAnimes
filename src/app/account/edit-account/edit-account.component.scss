@@ -35,6 +35,53 @@ h1{
     border-radius: 5px;
     cursor: pointer;
 }
-.watched-css{
-    
-}
+@media (max-width: 500px) {
+    .image{
+    }
+    .title{
+        width: 10rem;
+    }
+    .updated{
+        display: none;
+    }
+    .episode{
+        
+    }
+    .delete{
+
+    }
+  }
+  @media (max-width: 455px) {
+    .image{
+        
+    }
+    .title{
+        display: none;
+    }
+    .updated{
+        display: flex;
+        margin-left: 2rem;
+    }
+    .episode{
+       
+    }
+    .delete{
+
+    }
+  }
+  @media (max-width: 340px) {
+    .image{
+    }
+    .title{
+        display: none;
+    }
+    .updated{
+        display: none;
+    }
+    .episode{
+        margin-left: 3rem;
+    }
+    .delete{
+
+    }
+  }

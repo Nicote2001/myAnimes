@@ -7,7 +7,7 @@
       alt="..."
     />
     <div class="caroussel-info-body"> 
-      <h5 (click)="goToAnimeFromCarousel(recommandationAnimes[0].title)">{{recommandationAnimes[0].title}}</h5>
+      <h5 (click)="goToAnimeFromCarousel(recommandationAnimes[0].title)">{{recommandationAnimes[0].title.slice(0,18) + " ..."}}</h5>
       <p>{{recommandationAnimes[0].summary.slice(0,260) + " ..."}}</p>
       <button (click)="goToAnimeFromCarousel(recommandationAnimes[0].title)" class="button" >Watch Now</button>
     </div>
@@ -20,7 +20,7 @@
         alt="..."
       />
       <div class="caroussel-info-body"> 
-        <h5 (click)="goToAnimeFromCarousel(item)">{{item.title}}</h5>
+        <h5 (click)="goToAnimeFromCarousel(item)">{{item.title.slice(0,18)+" ..."}}</h5>
         <p>{{item.summary.slice(0,260) + " ..."}}</p>
         <button (click)="goToAnimeFromCarousel(item.title)" class="button" >Watch Now</button>
       </div>

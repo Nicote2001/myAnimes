@@ -55,4 +55,8 @@
         height: 22rem !important;
     }
 }
-
+@media(max-width: 400px) { 
+    .caroussel-info-body{
+        height: 25rem !important;
+    }
+}

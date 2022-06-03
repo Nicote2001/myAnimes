@@ -510,7 +510,7 @@
   .dropdown-content-full {
     width: 14rem !important;
     overflow-y: auto !important;
-    height: 25rem !important;
+    height: 20rem !important;
     margin-left: 4% !important;
   }
   .dropdown-content-genre-full{
@@ -541,14 +541,121 @@
   }
   .dropdown-content-season-full{
     margin-left: 4.2% !important;
+    width: 8rem !important;
   }
   .dropdown-content-sort-full{
     margin-left: 4.2% !important;
+    width: 7.5rem !important;
   }
   .dropdown-content-statut-full{
     margin-left: 4.2% !important;
+    width: 7.5rem !important;
   }
   .dropdown-content-years-full{
     margin-left: 4.2% !important;
+    width: 7.5rem !important;
+  }
+  .form-input-special-full{
+    width: 2rem;
   }
 }
+@media(max-width: 400px) { 
+  
+  .dropdown-content-years-full{
+    width: 13rem !important;
+  }
+  .dropdown-content-season-full{
+    width: 7.5rem !important;
+    margin-right: 5rem;
+  }
+  .form-input-special-full{
+    width: 2rem;
+  }
+  .filter-container-full{
+    height: 21rem;
+  }
+  .dropdown-content-sort-full{
+    width: 7.5rem !important;
+  }
+  .dropdown-content-statut-full{
+    width: 7.5rem !important;
+  }
+  .labelFilter-full
+{
+    width: 6.5rem; 
+}
+.form-input-researsh-full{
+    width: 95%;
+    margin-left: 2.5%;
+}
+.button-filter-full{
+  width: 95%;
+  margin-left: 2.5%;
+}
+}
+@media (max-width: 767px) { 
+  .dropdown-content {
+    width: 14rem !important;
+    overflow-y: auto !important;
+    height: 25rem !important;
+    margin-left: 4.2% !important;
+  }
+  .dropdown-content-genre{
+    margin-left: 4.2% !important;
+  }
+  .dropdown-content-season{
+    margin-left: 4.2% !important;
+    width: 8rem !important;
+  }
+  .dropdown-content-sort{
+    margin-left: 4.2% !important;
+    width: 7.5rem !important;
+  }
+  .dropdown-content-statut{
+    margin-left: 4.2% !important;
+    width: 7.5rem !important;
+  }
+  .dropdown-content-years{
+    margin-left: 4.2% !important;
+    width: 7.5rem !important;
+  }
+  .form-input-special{
+    width: 2rem;
+  }
+}
+@media(max-width: 400px) { 
+  
+  .dropdown-content-years{
+    width: 13rem !important;
+  }
+  .dropdown-content-season{
+    width: 7.5rem !important;
+    margin-right: 5rem;
+  }
+  .form-input-special{
+    width: 2rem;
+  }
+  .filter-container{
+    height: 21rem;
+    width: 17rem;
+  }
+  .dropdown-content-sort{
+    width: 7.5rem !important;
+  }
+  .dropdown-content-statut{
+    width: 7.5rem !important;
+  }
+  .form-input-researsh{
+    width: 95%;
+    margin-left: 2.5%;
+}
+  .labelFilter{
+    width: 6.5rem; 
+    margin-left: 8%;
+}
+  .button-filter{
+    width: 95%;
+  
+}
+}
+

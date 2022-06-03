@@ -295,6 +295,12 @@ textarea.input1 + .shadow-input1 {
   .container-contact1 {
     padding: 90px 15px 88px 15px;
   }
+  
+}
+@media (max-width: 400px) {
+  .social{
+    width: 1rem;
+}
 }
 .btn-primary{
     color: white !important;
