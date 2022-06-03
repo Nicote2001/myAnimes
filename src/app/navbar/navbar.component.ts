@@ -27,6 +27,7 @@ export class NavbarComponent implements OnInit {
   isDroppedConnexion:boolean=false;
   randomAnime: IAnime;
   isRandom: boolean = false;
+  isDroppedSearch:boolean = false;
 
   modalRef: MdbModalRef<LoginComponent| RegisterComponent> | null = null;
   
@@ -66,7 +67,6 @@ export class NavbarComponent implements OnInit {
   {
     this.apiSearch.getSearchBarAnime(this.searchFilter).subscribe(data =>{
       this.animesResults = data.data.slice(0,15);
-      console.log(data);
     if(this.searchFilter ==="")
     {
       this.animesResults = [];
@@ -80,6 +80,7 @@ export class NavbarComponent implements OnInit {
 
     this.animesResults = [];
     this.searchFilter ="";
+    this.isDroppedSearch = false;
   }
 
   onClickDropped(){
@@ -157,6 +158,19 @@ export class NavbarComponent implements OnInit {
 
     await this.commonService.delay(15000);
     this.isRandom = false;
+  }
+
+  dropSearchBar()
+  {
+    if(window.innerWidth<550)
+    {
+      this.isDroppedSearch = !this.isDroppedSearch;
+    }
+
+    if(this.isDroppedSearch && window.innerWidth>550)
+    {
+      this.isDroppedSearch = !this.isDroppedSearch;
+    }
   }
 
 }

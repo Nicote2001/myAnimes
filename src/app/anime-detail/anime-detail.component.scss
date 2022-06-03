@@ -9,6 +9,11 @@
     background-clip: border-box;
     margin-bottom: 2rem;
 }
+.css-spiner{
+    width: 5rem; 
+    height: 5rem; 
+    margin-top: 12rem;
+}
 .description-card-img{
     border-radius: 10px;
     margin: 1%;
@@ -30,12 +35,22 @@
     .frame{
         height: 18rem;
     }
+    .css-spiner{
+        width: 3rem; 
+        height: 3rem; 
+        margin-top: 7rem;
+    }
  }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) and (max-width: 767px) { 
     .frame{
         height: 19rem;
+    }
+    .css-spiner{
+        width: 5rem; 
+        height: 5rem; 
+        margin-top: 2rem;
     }
  }
 
