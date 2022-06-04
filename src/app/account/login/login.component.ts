@@ -61,6 +61,7 @@ export class LoginComponent implements OnInit {
   }
 
   closeWithTwitter(){
+    alert('dont work yet')
     this.auth.twitterSignIn();
     this.modalRef.close(false);
   }

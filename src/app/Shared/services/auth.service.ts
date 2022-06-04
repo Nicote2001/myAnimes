@@ -113,8 +113,11 @@ export class AuthService {
   async getUser(uid:string)
   {
     var results = await this.userService.getUserByUid(uid);
-    this.currentUser = results[0];
-    localStorage.setItem('username',this.currentUser.username);
+    if(results.length > 0)
+    {
+      this.currentUser = results[0];
+      localStorage.setItem('username',this.currentUser.username);
+    }
   }
 
   async updateUser(newUsername: string)
