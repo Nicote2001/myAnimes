@@ -88,9 +88,10 @@ export class FilterComponent implements OnInit {
       if(this.producers[i].title == producer.title)
       {
         producer.isActive = !producer.isActive;
-        this.genres[i].isActive = producer.isActive;
+        this.producers[i].isActive = producer.isActive;
       }
     }
+    console.log(this.producers,"oui")
   }
 
   async getGenres()

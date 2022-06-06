@@ -17,7 +17,7 @@ export class CommentsService {
     comment.id = this.afs.createId();
     let Record = {}
     Record['id'] = comment.id;
-    Record['animeId'] = comment.animeId;
+    Record['animeId'] = comment.animeId.toLowerCase();
     Record['username'] = comment.username;
     Record['date'] = comment.date;
     Record['comment'] = comment.comment;
@@ -27,7 +27,7 @@ export class CommentsService {
   getCommentsByAnimeId(animeId:string)
   {
     return new Promise<any>((resolve)=> {
-      this.afs.collection('Comments', ref => ref.where('animeId', '==', animeId)).valueChanges().subscribe(comments => resolve(comments))
+      this.afs.collection('Comments', ref => ref.where('animeId', '==', animeId.toLocaleLowerCase())).valueChanges().subscribe(comments => resolve(comments))
       })
       
   }

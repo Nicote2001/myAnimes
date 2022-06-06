@@ -45,7 +45,7 @@
                         <div class="">
                             <div class="">
                                 <div class="form-check" *ngFor=" let item of producers.slice(33,66)">
-                                    <input class="form-check-input" type="checkbox" value="{{item.isActive}}" id="flexCheckDefault" (change)="changeGenre(item)">
+                                    <input class="form-check-input" type="checkbox" value="{{item.isActive}}" id="flexCheckDefault" (change)="changeProducer(item)">
                                     <label class="form-check-label" for="flexCheckDefault">
                                     {{item.title.slice(0,20)}}
                                     </label>
@@ -57,7 +57,7 @@
                         <div class="">
                             <div class="">
                                 <div class="form-check" *ngFor=" let item of producers.slice(66,99)">
-                                    <input class="form-check-input" type="checkbox" value="{{item.isActive}}" id="flexCheckDefault" (change)="changeGenre(item)">
+                                    <input class="form-check-input" type="checkbox" value="{{item.isActive}}" id="flexCheckDefault" (change)="changeProducer(item)">
                                     <label class="form-check-label" for="flexCheckDefault">
                                     {{item.title.slice(0,20)}}
                                     </label>
@@ -118,7 +118,7 @@
                      <label [ngClass]="{'custom-control-label': isQuickFilter, 'custom-control-label-full': !isQuickFilter}" for="score">Score</label>
                   </div>
                   <div [ngClass]="{'form-radio': isQuickFilter, 'form-radio-full': !isQuickFilter}">
-                     <input id="popularity" type="radio" [ngClass]="{'custom-control-input': isQuickFilter, 'custom-control-input-full': !isQuickFilter}" value="popularity" name="sort" ngModel required>
+                     <input id="popularity" type="radio" [ngClass]="{'custom-control-input': isQuickFilter, 'custom-control-input-full': !isQuickFilter}" value="favorites" name="sort" ngModel required>
                      <label [ngClass]="{'custom-control-label': isQuickFilter, 'custom-control-label-full': !isQuickFilter}" for="popularity">Popularity</label>
                   </div>
                   <div [ngClass]="{'form-radio': isQuickFilter, 'form-radio-full': !isQuickFilter}">

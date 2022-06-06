@@ -69,6 +69,7 @@ export class SearchAnimeComponent implements OnInit {
       this.currentPage += number;
       this.api.getAnimesSearchByFilter(this.apiCall+="&page="+this.currentPage).subscribe(data =>{
         this.animes=data.data.slice(0,25);
+          window.scroll(0,200);
       });
     }
   }

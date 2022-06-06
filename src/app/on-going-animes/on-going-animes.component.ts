@@ -46,6 +46,7 @@ export class OnGoingAnimesComponent implements OnInit {
       this.currentPage += number;
       this.getAnimes();
     }
+    window.scroll(0,0);
   }
 
   getAnimes()

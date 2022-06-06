@@ -35,7 +35,7 @@ export class FilterAnimeApiCallerService
             return this.http.get<any>(apiRequest)
         }
         else{
-            return this.http.get<any>(apiRequest+="&type=tv")
+            return this.http.get<any>(apiRequest+="&type=tv&sort=desc")
         }
     }
     

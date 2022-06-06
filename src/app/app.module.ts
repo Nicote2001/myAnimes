@@ -54,7 +54,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { OnGoingAnimesComponent } from './on-going-animes/on-going-animes.component';
 import { CommonAlertComponent } from './errors/common-alert/common-alter.component';
 import { FaqComponent } from './faq/faq.component';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -113,7 +113,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     provideFirestore(() => getFirestore()),
   ],
   providers: [
-    {provide : LocationStrategy , useClass: HashLocationStrategy}
+    {provide : LocationStrategy , useClass: PathLocationStrategy}
   ],
   bootstrap: [AppComponent]
 })

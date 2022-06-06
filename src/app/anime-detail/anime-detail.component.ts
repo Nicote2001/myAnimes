@@ -61,6 +61,7 @@ export class AnimeDetailComponent implements OnInit {
       var episodes = data.results[0].totalepisode;
       this.episodeComponent.calculateLabels(episodes);
       this.commentComponent.isDroppedComment = false;
+      window.scroll(0,400);
     })
   }
 
@@ -68,6 +69,7 @@ export class AnimeDetailComponent implements OnInit {
   {
     this.safeSrc = undefined;
     this.router.navigateByUrl('anime/'+this.animeId+'/'+episode);
+    window.scroll(0,400);
   }
 
   async saveEpisode()

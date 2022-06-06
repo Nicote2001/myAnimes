@@ -54,7 +54,9 @@ export class MenuComponent implements OnInit {
     if(this.page + number > 0)
     {
       this.page += number;
-      this.getRecentAnimes(this.page)
+      this.getRecentAnimes(this.page);
+      window.scroll(0,600);
+      
     }
   }
 
