@@ -28,6 +28,7 @@ export class PopularAnimesComponent implements OnInit {
     {
       this.page += number;
       this.getPopularAnimes(this.page);
+      window.scroll(0,0);
     }
   }
 
