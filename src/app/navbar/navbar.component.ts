@@ -9,6 +9,9 @@ import { LoginComponent } from '../account/login/login.component';
 import { RegisterComponent } from '../account/register/register.component';
 import { Location } from '@angular/common';
 import { GlobalPagesAnimesApiCallerService } from '../ApiCallerService/globalPagesAnimes.api-caller.service';
+import { AnimeCommonApiCallerService } from '../ApiCallerService/animeCommon.api-caller.service';
+import { AnimeGogo } from '../objects/animegogo.model';
+import { title } from 'process';
 
 @Component({
   selector: 'app-navbar',
@@ -19,7 +22,7 @@ export class NavbarComponent implements OnInit {
 
   searchFilter:string;
   lastRequest:Date;
-  animesResults: IAnime[] = [];
+  animesResults: AnimeGogo[] = [];
   isDropped: boolean=false;
   username:string;
   uid:string;
@@ -38,7 +41,8 @@ export class NavbarComponent implements OnInit {
     private authService: AuthService,
     private modalService: MdbModalService,
     private location: Location,
-    private globalapi: GlobalPagesAnimesApiCallerService) { }
+    private globalapi: GlobalPagesAnimesApiCallerService,
+    private commonApi: AnimeCommonApiCallerService) { }
 
   ngOnInit(): void {
     this.searchFilter = "";
@@ -57,16 +61,14 @@ export class NavbarComponent implements OnInit {
       {
           this.searchFilter+=search.data;
       }
-      console.log(this.searchFilter);
-
       this.getSearchBarAnimes();
 
   }
 
-  getSearchBarAnimes()
+  async getSearchBarAnimes()
   {
-    this.apiSearch.getSearchBarAnime(this.searchFilter).subscribe(data =>{
-      this.animesResults = data.data.slice(0,15);
+    await this.commonApi.getSearchAnimeGogo(this.searchFilter).then(data =>{
+      this.animesResults = data.slice(0,15);
     if(this.searchFilter ==="")
     {
       this.animesResults = [];
@@ -74,9 +76,9 @@ export class NavbarComponent implements OnInit {
     })
   }
 
-  goToAnime(anime:IAnime)
+  goToAnime(anime:AnimeGogo)
   {
-    this.commonService.goToAnime(anime);
+    this.commonService.goToAnime(new IAnime(anime.animeId,anime.animeTitle,null,0,0,0,"",""));
 
     this.animesResults = [];
     this.searchFilter ="";

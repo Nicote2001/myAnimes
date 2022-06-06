@@ -1,11 +1,13 @@
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { MdbModalRef, MdbModalService } from "mdb-angular-ui-kit/modal";
+import { AnimeCommonApiCallerService } from "../ApiCallerService/animeCommon.api-caller.service";
 import { AnimeDetailsApiCallerService } from "../ApiCallerService/animeDetails.api-caller.service";
 import { GlobalPagesAnimesApiCallerService } from "../ApiCallerService/globalPagesAnimes.api-caller.service";
 import { CommonErrorComponent } from "../errors/common-error/common-error.component";
 import { IAnime } from "../objects/anime.model";
 import { AnimeDetail } from "../objects/animeDetail.model";
+import { AnimeKitus } from "../objects/animeKitsu.model";
 import { AnimeUser } from "../objects/animeUser";
 import { AnimeUserService } from "./services/AnimeUser.service";
 
@@ -15,7 +17,7 @@ export class CommonService
 {
   modalRef: MdbModalRef<CommonErrorComponent> | null = null;
 
-    constructor(public api: AnimeDetailsApiCallerService, public apiAnimeDetails: AnimeDetailsApiCallerService, private router: Router,  private modalService: MdbModalService, private animeUserSerivce: AnimeUserService, private globalApi: GlobalPagesAnimesApiCallerService)
+    constructor(public api: AnimeDetailsApiCallerService, public apiAnimeDetails: AnimeDetailsApiCallerService, private router: Router,  private modalService: MdbModalService, private animeUserSerivce: AnimeUserService, private globalApi: GlobalPagesAnimesApiCallerService, private apiCommon: AnimeCommonApiCallerService)
     {
 
     }
@@ -63,19 +65,25 @@ export class CommonService
           anime.title ="Naruto-Shippuden";
         }
 
-      this.apiAnimeDetails.getAnimeById(this.FormatAnimeTitle(anime.title)).subscribe(data =>{
+        this.apiCommon.getAnimeById(this.FormatAnimeTitle(anime.title)).then(data =>{
         this.router.navigateByUrl('anime/'+this.FormatAnimeTitle(anime.title)+'/'+ 1);
         isFound = true;
         return;
       });
   
-      this.apiAnimeDetails.getAnimeById(this.FormatAnimeTitle(anime.title_english)).subscribe(data =>{
+        this.apiCommon.getAnimeById(this.FormatAnimeTitle(anime.title_english)).then(data =>{
         this.router.navigateByUrl('anime/'+this.FormatAnimeTitle(anime.title_english)+'/'+ 1);
         isFound = true;
         return;
       })
-  
-      await this.delay(3000);
+
+       await this.apiCommon.getSearchAnimeGogo(this.FormatAnimeTitle(anime.title)).then(data =>{
+         if(data.length>0){
+          this.router.navigateByUrl('anime/'+this.FormatAnimeTitle(data[0].animeId)+'/'+ 1);
+          isFound = true;
+          return
+         }
+      })
       
       if(!isFound && !fromRandom)
       {

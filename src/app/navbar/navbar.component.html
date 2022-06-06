@@ -56,8 +56,8 @@
           />
           <div class="search-drop-down" >
                <div *ngFor="let anime of animesResults;" class="elementDropDown" (click)="goToAnime(anime)">
-                 <img class="navbar-image" src="{{anime.images.webp.small_image_url}}">
-                {{anime.title.slice(0,18)+"..."}}
+                 <img class="navbar-image" src="{{anime.animeImg}}" width="50px" height="75px">
+                {{anime.animeTitle.slice(0,25)+"..."}}
                </div>
           </div>
         </form>
@@ -103,8 +103,8 @@
       />
       <div class="search-drop-down-little" >
            <div *ngFor="let anime of animesResults;" class="elementDropDown" (click)="goToAnime(anime)">
-             <img class="navbar-image" src="{{anime.images.webp.small_image_url}}">
-            {{anime.title.slice(0,18)+"..."}}
+             <img class="navbar-image" src="{{anime.animeImg}}" width="50px" height="75px">
+            {{anime.animeTitle.slice(0,25)+"..."}}
            </div>
       </div>
     </form>

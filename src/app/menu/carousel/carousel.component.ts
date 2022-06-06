@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { MenuApiCallerService } from 'src/app/ApiCallerService/menu.api-caller.service';
 import { IAnime } from 'src/app/objects/anime.model';
 import { AnimeDetail } from 'src/app/objects/animeDetail.model';
+import { AnimeKitus } from 'src/app/objects/animeKitsu.model';
 import { CommonService } from 'src/app/Shared/common.service';
 
 @Component({
@@ -12,7 +13,7 @@ import { CommonService } from 'src/app/Shared/common.service';
 })
 export class CarouselComponent implements OnInit {
 
-  @Input() recommandationAnimes: AnimeDetail[];
+  @Input() recommandationAnimes: AnimeKitus[];
 
   public topAnimes: IAnime[] = [];
 
@@ -25,9 +26,8 @@ export class CarouselComponent implements OnInit {
   }
 
 
-  goToAnimeFromCarousel(animeTitle: string)
+  goToAnimeFromCarousel(anime: AnimeKitus)
   {
-    var formatedTitle = this.commonService.FormatAnimeTitle(animeTitle); 
-    this.router.navigateByUrl('anime/'+formatedTitle+'/'+1);
+    this.commonService.goToAnime(new IAnime(anime.titles.en_jp,anime.titles.en,null,1,0,0,"",""))
   }
 }

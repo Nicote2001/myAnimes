@@ -21,5 +21,10 @@ export class AnimeDetailsApiCallerService
     public getAnimeById(animeId:string){
         return this.http.get<any>('https://krish-anime-api-98k6.vercel.app/api/details/' + animeId)
     }
+
+    public getAnimeGogo(animeId:string){
+        return this.http.get<any>('https://gogoanime.herokuapp.com/search?keyw=' + animeId)
+    }
+    
     
 }

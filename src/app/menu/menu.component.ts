@@ -3,9 +3,12 @@ import { Router } from '@angular/router';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { AnimeDetailsApiCallerService } from '../ApiCallerService/animeDetails.api-caller.service';
 import { MenuApiCallerService } from '../ApiCallerService/menu.api-caller.service';
+import { IAnime } from '../objects/anime.model';
 import { AnimeDetail } from '../objects/animeDetail.model';
+import { AnimeKitus } from '../objects/animeKitsu.model';
 import { AnimeWatch } from '../objects/animeWatch.model';
 import { CommonService } from '../Shared/common.service';
+import { CacheFilterService } from '../Shared/services/cacheFilterService';
 
 @Component({
   selector: 'app-menu',
@@ -14,7 +17,8 @@ import { CommonService } from '../Shared/common.service';
 })
 export class MenuComponent implements OnInit {
 
-  public recommandationAnimes: AnimeDetail[] = [];
+  public recommandationAnimesPreFetch: IAnime[] = [];
+  public recommandationAnimes: AnimeKitus[] = [];
   public recentAnimes: AnimeWatch[] = [];
   public page: number = 1; //current page
   public totalAnimes : any;
@@ -23,7 +27,7 @@ export class MenuComponent implements OnInit {
   faAngleLeft = faAngleLeft
 
   constructor(private api : MenuApiCallerService, private router: Router, private apiDetails : AnimeDetailsApiCallerService,
-    private apiCommun: CommonService) 
+    private cacheService:CacheFilterService) 
   {
   }
 
@@ -33,18 +37,15 @@ export class MenuComponent implements OnInit {
     console.log();
   }
 
-  getRecommandationAnime()
+  async getRecommandationAnime()
   {
     this.api.getRecommandationAnimes().subscribe(data =>{
       for(let i = 0; i < 3; i++)
       {
-        this.apiDetails.getAnimeById(this.apiCommun.FormatAnimeTitle(data.data[i].entry[0].title)).subscribe(item =>{
-            this.recommandationAnimes.push(item.results[0]);
-        });
-        this.apiDetails.getAnimeById(this.apiCommun.FormatAnimeTitle(data.data[i].entry[1].title)).subscribe(item =>{
-          this.recommandationAnimes.push(item.results[0]);
-      })
+        this.recommandationAnimesPreFetch.push(data.data[i].entry[0]);
+        this.recommandationAnimesPreFetch.push(data.data[i].entry[1]);
       }
+        this.cacheService.getAnimesCarousel(this.recommandationAnimesPreFetch).then(x=>this.recommandationAnimes=x);
     })
   }
 
