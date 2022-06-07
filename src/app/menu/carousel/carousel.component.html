@@ -1,7 +1,9 @@
 <mdb-carousel [controls]="true" [indicators]="false" [animation]="'fade'"  class="w-100 h-100">
     <mdb-carousel-item class="color-container"  *ngFor=" let item of recommandationAnimes">
-      <div class="caroussel-info-body" [ngStyle]="{'background-image': 'url('+ item.coverImage.original +')'}"> 
-        <h5 (click)="goToAnimeFromCarousel(item)">{{item.titles.en_jp}}</h5>
+      <div (click)="goToAnimeFromCarousel(item)" class="caroussel-info-body" [ngStyle]="{'background-image': 'url('+ item.coverImage.original +')'}"> 
+        <div class="container-h5">
+        <h5 class="text-h5" (click)="goToAnimeFromCarousel(item)">{{item.titles.en_jp}}</h5>
+        </div>
       </div>
     </mdb-carousel-item >
   </mdb-carousel>

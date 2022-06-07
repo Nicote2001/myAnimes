@@ -1,6 +1,6 @@
 .search-drop-down {
     position: absolute;
-    width: 20rem;
+    width: 18rem;
     max-height: 300px;
     overflow-y: auto;
     z-index: 10;
@@ -11,6 +11,20 @@
     margin-top: 3rem;
     border: 1px solid black;
     border: none;
+}
+.title{
+    overflow: hidden;
+    width:300px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.title-2{
+    overflow: hidden;
+    width:100%;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
 }
 .search-drop-down-little {
     position: absolute;
@@ -26,9 +40,6 @@
     margin-top: 0.2rem;
     border: 1px solid black;
     border: none;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
 }
 .search-drop-down::-webkit-scrollbar{
     display: none;
@@ -40,6 +51,8 @@
 
 .elementDropDown
 {
+    display: flex;
+    align-items: center !important;
     color: black;
     cursor:pointer;
 }

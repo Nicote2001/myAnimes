@@ -225,6 +225,7 @@
   display: none;
 }
 @media (min-width: 992px) and (max-width: 1199px) { 
+  
   .dropdown-content {
     width: 14rem !important;
     overflow-y: auto !important;
@@ -245,8 +246,11 @@
     height: 25rem !important;
   }
 }
-
-
+@media (max-width: 1199px) { 
+  .filter-container{
+    width: 22.5rem;
+  } 
+}
 
 
 
@@ -283,8 +287,6 @@
 }
 .dropdown-content-full {
     position: absolute;
-    width: 43rem;
-    max-height: 90rem;
     z-index: 10;
     background-color: white;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -292,6 +294,9 @@
     -ms-overflow-style: none;
     margin-left: 2.5%;
     margin-top: 0.5rem;
+    width: 14rem !important;
+    overflow-y: auto !important;
+    height: 25rem !important;
   }
   .dropdown-content-season-full{
     position: absolute;
@@ -340,6 +345,7 @@
     -ms-overflow-style: none;
     margin-left: 2.5%;
     margin-top: 0.5rem;
+    
   }
   .dropdown-content-years-full{
     position: absolute;
@@ -601,6 +607,7 @@
     height: 25rem !important;
   }
   .dropdown-content-genre{
+    
   }
   .dropdown-content-season{
     width: 8rem !important;
@@ -619,13 +626,19 @@
   }
 }
 @media(max-width: 400px) { 
-  
+  .dropdown-content {
+    margin-left: -0%;
+  }
+  .dropdown-content-genre{
+    margin-left: -0%;
+  }
   .dropdown-content-years{
     width: 13rem !important;
+    margin-left: -0%;
   }
   .dropdown-content-season{
     width: 7.5rem !important;
-    margin-right: 5rem;
+    margin-left: -0%;
   }
   .form-input-special{
     width: 2rem;
@@ -637,13 +650,15 @@
   }
   .dropdown-content-sort{
     width: 7.5rem !important;
+    margin-left: -0%;
   }
   .dropdown-content-statut{
+    margin-left: -0%;
     width: 7.5rem !important;
   }
   .form-input-researsh{
     width: 95% !important;
-    margin-left: 2.5%;
+   
 }
   .labelFilter{
     width: 6.5rem; 
