@@ -11,19 +11,30 @@
    background-position:center;
    background-color: black;
    background-repeat: no-repeat;
-    background-color: #101010;
-    overflow: hidden;
+   background-color: #101010;
+   overflow: hidden;
 }
 .caroussel-info-body h5{
-    width: 10rem;
-    text-align: center;
-    margin-left: 1rem;
-    background-image: url('https://animea.site/app/theme/assets/img/texture.webp');
-    background-size: cover;
-    background-clip: text;
-    -webkit-background-clip:text ;
+    color: #fff;
+    font-size: 46px;
+    line-height: 1.2;
+    max-height: 134.4px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-weight: 900;
+    background: url('https://animea.site/app/theme/assets/img/texture.webp');
+    background-repeat: repeat-x;
+    background-position: 50% 50%;
+    width: 60%;
     color: transparent;
-    font-size: 3rem;
+    -webkit-font-smoothing: antialiased;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
     
 }
 .caroussel-info-body h5:hover {
