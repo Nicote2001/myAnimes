@@ -1,68 +1,52 @@
+
 .caroussel-info-body{
-   max-width: 20rem;
-   height: 20rem;
-   text-align: center;
+    display: flex !important;
+    align-items: center !important;
+   max-width: 100%;
+   height: 25rem;
+   align-items: center;
    margin: auto;
-   color: white;
-   border-bottom-right-radius: 10px;
-   border-bottom-left-radius: 10px;
-   background-color:#14213d ;
+   border-radius: 10px;
+   background-size: cover;
+   background-position:center;
+   background-color: black;
+   background-repeat: no-repeat;
+    background-color: #101010;
+    overflow: hidden;
 }
 .caroussel-info-body h5{
-    padding-top: 0.5rem;
+    width: 10rem;
+    text-align: center;
+    margin-left: 1rem;
+    background-image: url('https://animea.site/app/theme/assets/img/texture.webp');
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip:text ;
+    color: transparent;
+    font-size: 3rem;
     
 }
-.caroussel-info-body p{
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 0.8rem;
-    text-align: center;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    color: #bdbcbc; 
-}
-.img-caroussel{
-    max-height: 15rem; 
-    max-width: 13rem;
-    margin: auto ; 
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    margin-top: 1.5rem;
-}
-.color-container h5:hover{
+.caroussel-info-body h5:hover {
     color: #fca311;
     cursor: pointer;
 }
-.button{
-    background-color: #fca311;
-    border: none;
-    color:black;
-    border-radius: 25px;
-    width: 10rem;
-    height: 3rem;
-    font-size: 1.5rem;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-.button:hover{
-    background-color: #e5e5e5;
-    color: black;
-}
-.color-container{
-    background-color:#14213d ;
-    border-radius: 10px;
-}
-@media(max-width: 600px) { 
-    .caroussel-info-body{
-        height: 22rem !important;
+
+@media (min-width: 401px) and (max-width: 501px) { 
+    .caroussel-info-body p{
+    display: none;
     }
-}
-@media(max-width: 400px) { 
-    .caroussel-info-body{
-        height: 13rem !important;
+    .img-caroussel{
+        height: 10rem; 
+        width: 100%;
     }
-    p{
-    text-overflow: ellipsis;
-    width:90%;
-    overflow: hidden;     
-    white-space: nowrap;
+  }
+
+  @media (max-width: 400px) { 
+    .caroussel-info-body p{
+        display: none;
+        }
+    .img-caroussel{
+        height: 13rem; 
+        width: 100%;
     }
-}
+  }
