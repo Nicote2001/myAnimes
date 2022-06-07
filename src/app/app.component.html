@@ -10,7 +10,9 @@
             <router-outlet></router-outlet>
           </div>
           <div *ngIf="!isHidden" class="col d-block  d-lg-block d-xl-block" style="margin-top: 1rem;">
-            <app-filter [isQuickFilter]="true"></app-filter>
+            <div class="filter-quick-container" *ngIf="!isHidenFilter">
+              <app-filter [isQuickFilter]="true"></app-filter>
+            </div>
               <app-side-bar></app-side-bar>
           </div>
         </div>
