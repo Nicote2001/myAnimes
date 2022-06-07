@@ -45,8 +45,10 @@ export class CacheFilterService {
   {
     //systeme cache home made
     var date = localStorage.getItem('animeCarouselDate');
+    var cacheDate = new Date(date).getDate();
+    var nowDate = new Date().getDate();
     
-    if (date === undefined || date === null || new Date(date).getDate() > new Date().getDate()) 
+    if (date === undefined || date === null || cacheDate < nowDate) 
     {
       var items = [];
       for(let i=0; i<animes.length; i++){
