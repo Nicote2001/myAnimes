@@ -21,4 +21,17 @@
     .navbarcss{
         margin-top: 0rem !important;
     }
+
+}
+@media (max-width: 500px) {
+
+    .frame{
+        width: 20rem;
+    }
+
+}
+.frame{
+    display: flex;
+    margin: auto;
+    margin-bottom: 2rem;
 }
