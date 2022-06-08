@@ -48,11 +48,14 @@ export class CacheFilterService {
     var cacheDate = new Date(date).getDate();
     var nowDate = new Date().getDate();
     
-    if (date === undefined || date === null || cacheDate < nowDate) 
+    if (date === undefined || date === null || cacheDate !== nowDate) 
     {
       var items = [];
       for(let i=0; i<animes.length; i++){
-        items.push(await this.apiMenu.getAnimeKitsuCarousel(animes[i]));
+        var item = await this.apiMenu.getAnimeKitsuCarousel(animes[i]);
+        if(item.coverImage){
+          items.push(item);
+        }
       }
       this.cacheAnimesCarousel=items;
       localStorage.setItem('animeCarousel',JSON.stringify(this.cacheAnimesCarousel));

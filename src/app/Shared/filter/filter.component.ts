@@ -97,7 +97,7 @@ export class FilterComponent implements OnInit {
   async getGenres()
   {
     this.cacheFilterService.getGenre().subscribe(async data =>{
-      for(let i=0; i<19; i++)
+      for(let i=0; i<18; i++)
       {
          this.genres.push(new Filter(data.data[i].mal_id,data.data[i].name,false));
       }
