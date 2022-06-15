@@ -48,22 +48,36 @@ export class CacheFilterService {
     var cacheDate = new Date(date).getDate();
     var nowDate = new Date().getDate();
     
-    if (date === undefined || date === null || cacheDate !== nowDate) 
+    if (date === undefined || date === null ) 
     {
-      var items = [];
-      for(let i=0; i<animes.length; i++){
-        var item = await this.apiMenu.getAnimeKitsuCarousel(animes[i]);
-        if(item.coverImage){
-          items.push(item);
-        }
+      this.getCached(animes);
+    }
+    else
+    {
+      if(cacheDate !== nowDate)
+      {
+        this.getCached(animes);
       }
-      this.cacheAnimesCarousel=items;
-      localStorage.setItem('animeCarousel',JSON.stringify(this.cacheAnimesCarousel));
-      localStorage.setItem('animeCarouselDate',JSON.stringify(new Date().toDateString()));
     }
 
     this.cacheAnimesCarousel = JSON.parse(localStorage.getItem('animeCarousel'));
 
     return this.cacheAnimesCarousel;
+  }
+
+  async getCached(animes:IAnime[])
+  {
+    var items = [];
+    for(let i=0; i<animes.length; i++)
+    { 
+      var item = await this.apiMenu.getAnimeKitsuCarousel(animes[i]);
+      if(item.coverImage)
+      {
+        items.push(item);
+      }
+    }
+    this.cacheAnimesCarousel=items;
+    localStorage.setItem('animeCarousel',JSON.stringify(this.cacheAnimesCarousel));
+    localStorage.setItem('animeCarouselDate',JSON.stringify(new Date().toDateString()));
   }
 }
