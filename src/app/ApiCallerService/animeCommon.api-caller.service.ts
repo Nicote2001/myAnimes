@@ -29,21 +29,21 @@ export class AnimeCommonApiCallerService
     public getSearchAnimeGogo(animeId:string)
     {
         return new Promise<any>((resolve)=> {
-            this.http.get<any>('https://gogoanime.herokuapp.com/search?keyw=' + animeId).subscribe(animes => resolve(animes));
+            this.http.get<any>('https://animea-gogoanime.herokuapp.com/search?keyw=' + animeId).subscribe(animes => resolve(animes));
            })
     }
 
     public getAnimeDetailGogo(animeId:string)
     {
         return new Promise<any>((resolve)=> {
-            this.http.get<any>('"https://gogoanime.herokuapp.com/anime-details/' + animeId).subscribe(animes => resolve(animes));
+            this.http.get<any>('"https://animea-gogoanime.herokuapp.com/anime-details/' + animeId).subscribe(animes => resolve(animes));
            })
     }
 
     public getAnimeUrlGogo(animeId:string)
     {
         return new Promise<any>((resolve)=> {
-            this.http.get<any>('https://gogoanime.herokuapp.com/vidcdn/watch/'+animeId+'-episode-1').subscribe(animes => resolve(animes));
+            this.http.get<any>('https://animea-gogoanime.herokuapp.com/vidcdn/watch/'+animeId+'-episode-1').subscribe(animes => resolve(animes));
            })
     }
     

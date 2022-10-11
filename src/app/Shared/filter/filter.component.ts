@@ -111,7 +111,7 @@ export class FilterComponent implements OnInit {
     this.cacheFilterService.getProducers().subscribe(data =>{
       for(let i=0; i<data.data.length; i++)
       {
-         this.producers.push(new Filter(data.data[i].mal_id,data.data[i].name,false));
+         this.producers.push(new Filter(data.data[i].mal_id,data.data[i].titles[0].title,false));
       }
     })
   }

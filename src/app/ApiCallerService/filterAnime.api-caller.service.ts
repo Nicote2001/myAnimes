@@ -27,7 +27,7 @@ export class FilterAnimeApiCallerService
     }
 
     public getProducers(){
-        return this.http.get<any>('https://api.jikan.moe/v4/producers')
+        return this.http.get<any>('https://api.jikan.moe/v4/producers');
     }
 
     public getAnimesSearchByFilter(apiRequest: string){

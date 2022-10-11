@@ -23,7 +23,7 @@ export class AnimeDetailsApiCallerService
     }
 
     public getAnimeGogo(animeId:string){
-        return this.http.get<any>('https://gogoanime.herokuapp.com/search?keyw=' + animeId)
+        return this.http.get<any>('https://animea-gogoanime.herokuapp.com/search?keyw=' + animeId)
     }
     
     
